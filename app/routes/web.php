@@ -11,4 +11,5 @@ return [
     '/renstra' => 'renstra',
     '/program-doktor' => 'program_doktor',
     '/magister-kenotariatans' => 'magister_kenotariatans',
+    '/magister_hukum' => 'magister_hukum',
 ];

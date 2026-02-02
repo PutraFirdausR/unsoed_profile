@@ -1,63 +1,56 @@
 <?php
 // =========================================================================
-// 1. DATA CENTER (MOCK DATA)
+// 1. KONEKSI & LOAD DATA DARI DATABASE
 // =========================================================================
 
-// DATA 1: PENELITIAN
-$researchData = [
-    ['no' => 1,  'mitra' => 'OP. Jindal Global Law School',            'level' => 'Internasional', 'judul' => 'Joint Research',                      'waktu' => '6 Des 2017 - 6 Des 2022'],
-    ['no' => 2,  'mitra' => 'University of Limpopo, South Africa',     'level' => 'Internasional', 'judul' => 'International Conference',            'waktu' => '12 Sep 2018 - 12 Sep 2023'],
-    ['no' => 3,  'mitra' => 'University Kebangsaan Malaysia',          'level' => 'Internasional', 'judul' => 'Joint Research, Joint Publication',   'waktu' => '1 Juni 2020 - 1 Juni 2025'],
-    ['no' => 4,  'mitra' => 'Universiti Sains Islam Malaysia (USIM)',  'level' => 'Internasional', 'judul' => 'Joint Research, Joint Publication',   'waktu' => '8 Juli 2019 - 8 Juli 2020'],
-    ['no' => 5,  'mitra' => 'Shoolini University India',               'level' => 'Internasional', 'judul' => 'Joint Publication, Int. Conference',  'waktu' => '11 Juni 2020 - 11 Juni 2025'],
-    ['no' => 6,  'mitra' => 'University Pretoria, South Africa',       'level' => 'Internasional', 'judul' => 'MOU Bidang Penelitian',               'waktu' => '30 Agust 2019 - 30 Agust 2024'],
-    ['no' => 7,  'mitra' => 'Global Alliance Against Drugs and Crime', 'level' => 'Internasional', 'judul' => 'Letter of Intent (Penelitian)',       'waktu' => '10 Sep 2019 - 10 Sep 2020'],
-    ['no' => 8,  'mitra' => 'The International Institute IFIMES',      'level' => 'Internasional', 'judul' => 'Letter of Intent (Penelitian)',       'waktu' => '10 Sep 2019 - 10 Sep 2020'],
-    ['no' => 9,  'mitra' => 'Lembaga Perlindungan Saksi & Korban',     'level' => 'Nasional',      'judul' => 'Pendanaan Penelitian',                'waktu' => '12 Sep 2013 - 12 Sep 2018'],
-    ['no' => 10, 'mitra' => 'Universitas Djuanda Bogor',               'level' => 'Nasional',      'judul' => 'Kerjasama Perguruan Tinggi',          'waktu' => '17 Okt 2014 - 17 Okt 2019'],
-    ['no' => 11, 'mitra' => 'IAIN Purwokerto',                         'level' => 'Lokal',         'judul' => 'Pelaksanaan Tri Dharma',              'waktu' => '5 Juni 2015 - Sekarang'],
-    ['no' => 12, 'mitra' => 'Fakultas Hukum Univ. Kuningan',           'level' => 'Nasional',      'judul' => 'Pelatihan Penulisan Jurnal',          'waktu' => '20 Mar 2018 - 20 Mar 2021'],
-    ['no' => 13, 'mitra' => 'Paguyuban Seruni',                        'level' => 'Lokal',         'judul' => 'FGD (Riset Dosen)',                   'waktu' => '11 Apr 2018 - 11 Apr 2023'],
-    ['no' => 14, 'mitra' => 'Ditjen Pemasyarakatan Kemenkumham',       'level' => 'Nasional',      'judul' => 'Pengkajian, Penelitian',              'waktu' => '2 Juli 2018 - 2 Juli 2020'],
-    ['no' => 15, 'mitra' => 'SMP Negeri 1 Baturraden',                 'level' => 'Lokal',         'judul' => 'Pengembangan Ilmu Pengetahuan',       'waktu' => '28 Agust 2018 - 28 Agust 2023'],
-    ['no' => 16, 'mitra' => 'BNN Kabupaten Banyumas',                  'level' => 'Lokal',         'judul' => 'Pengembangan Ilmu Pengetahuan',       'waktu' => '28 Agust 2018 - 28 Agust 2023'],
-    ['no' => 17, 'mitra' => 'Ikatan Notaris Indonesia (Banyumas)',     'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '6 Mar 2019 - 6 Mar 2024'],
-    ['no' => 18, 'mitra' => 'Majelis Pengawas Daerah Notaris',         'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '6 Mar 2019 - 6 Mar 2024'],
-    ['no' => 19, 'mitra' => 'IPPAT Wilayah Banyumas',                  'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '8 Mar 2019 - 8 Mar 2024'],
-    ['no' => 20, 'mitra' => 'Universitas Khairun Ternate',             'level' => 'Nasional',      'judul' => 'Peningkatan Kualitas Tri Dharma',     'waktu' => '10 Apr 2019 - 10 Apr 2024'],
-    ['no' => 21, 'mitra' => 'Ditjen Pemasyarakatan Kemenkumham',       'level' => 'Nasional',      'judul' => 'Pendidikan & Penelitian',             'waktu' => '22 Apr 2019 - 22 Apr 2022'],
-    ['no' => 22, 'mitra' => 'Pemerintah Desa Kab. Banyumas',           'level' => 'Lokal',         'judul' => 'Mitra Penelitian Dosen',              'waktu' => '25 Mei 2019 - 25 Mei 2023'],
-    ['no' => 23, 'mitra' => 'Fakultas Hukum UGM',                      'level' => 'Nasional',      'judul' => 'Pendidikan & Penelitian',             'waktu' => '17 Feb 2020 - 17 Feb 2025'],
-    ['no' => 24, 'mitra' => 'UNS & Univ. Wijayakusuma',                'level' => 'Nasional',      'judul' => 'Joint Publication (ICGLOW)',          'waktu' => '28 Juni 2019 - 31 Des 2019']
-];
+// --- KONFIGURASI DATABASE (SESUAIKAN DISINI) ---
+$host = "localhost";
+$user = "root";      // Username database (default XAMPP: root)
+$pass = "";          // Password database (default XAMPP: kosong)
+$db   = "nama_database_kamu"; // Ganti dengan nama database kamu
 
-// DATA 2: PENGABDIAN
-$communityData = [
-    ['no' => 1,  'mitra' => 'University of Limpopo, South Africa',     'level' => 'Internasional', 'judul' => 'MOU Pengabdian Masyarakat',           'waktu' => '12 Sep 2018 - 12 Sep 2023'],
-    ['no' => 2,  'mitra' => 'Universiti Sains Islam Malaysia (USIM)',  'level' => 'Internasional', 'judul' => 'Community Service Cooperation',       'waktu' => '8 Juli 2019 - 8 Juli 2020'],
-    ['no' => 3,  'mitra' => 'Global Alliance Against Drugs and Crime', 'level' => 'Internasional', 'judul' => 'Community Service Cooperation',       'waktu' => '10 Sep 2019 - 10 Sep 2020'],
-    ['no' => 4,  'mitra' => 'Lembaga Perlindungan Saksi & Korban',     'level' => 'Nasional',      'judul' => 'Mitra Pengajuan Perlindungan',        'waktu' => '12 Sep 2013 - 12 Sep 2018'],
-    ['no' => 5,  'mitra' => 'Universitas Djuanda Bogor',               'level' => 'Nasional',      'judul' => 'Kerjasama Perguruan Tinggi',          'waktu' => '17 Okt 2014 - 17 Okt 2019'],
-    ['no' => 6,  'mitra' => 'IAIN Purwokerto',                         'level' => 'Lokal',         'judul' => 'Pelaksanaan Tri Dharma',              'waktu' => '5 Juni 2015 - Sekarang'],
-    ['no' => 7,  'mitra' => 'Mahkamah Konstitusi',                     'level' => 'Nasional',      'judul' => 'Diseminasi Putusan MK',               'waktu' => '2014 - 2019'],
-    ['no' => 8,  'mitra' => 'Paguyuban Seruni',                        'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '11 Apr 2018 - 11 Apr 2023'],
-    ['no' => 9,  'mitra' => 'Ditjen Pemasyarakatan Kemenkumham',       'level' => 'Nasional',      'judul' => 'Pengembangan Hukum & HAM',            'waktu' => '2 Juli 2018 - 2 Juli 2020'],
-    ['no' => 10, 'mitra' => 'SMP Negeri 1 Baturraden',                 'level' => 'Lokal',         'judul' => 'Pengembangan Ilmu Pengetahuan',       'waktu' => '28 Agust 2018 - 28 Agust 2023'],
-    ['no' => 11, 'mitra' => 'BNN Kabupaten Banyumas',                  'level' => 'Lokal',         'judul' => 'Peningkatan Pelaksanaan Tri Dharma',  'waktu' => '28 Agust 2018 - 28 Agust 2023'],
-    ['no' => 12, 'mitra' => 'Ikatan Notaris Indonesia (Banyumas)',     'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '6 Mar 2019 - 6 Mar 2024'],
-    ['no' => 13, 'mitra' => 'Majelis Pengawas Daerah Notaris',         'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '6 Mar 2019 - 6 Mar 2024'],
-    ['no' => 14, 'mitra' => 'IPPAT Wilayah Banyumas',                  'level' => 'Lokal',         'judul' => 'Implementasi Tri Dharma',             'waktu' => '8 Mar 2019 - 8 Mar 2024'],
-    ['no' => 15, 'mitra' => 'Universitas Khairun Ternate',             'level' => 'Nasional',      'judul' => 'Peningkatan Kualitas Tri Dharma',     'waktu' => '10 Apr 2019 - 10 Apr 2024'],
-    ['no' => 16, 'mitra' => 'Ditjen Pemasyarakatan Kemenkumham',       'level' => 'Nasional',      'judul' => 'Pengabdian Kepada Masyarakat',        'waktu' => '22 Apr 2019 - 22 Apr 2022'],
-    ['no' => 17, 'mitra' => 'Pemerintah Desa Kab. Banyumas',           'level' => 'Lokal',         'judul' => 'Mitra Pengabdian Masyarakat',         'waktu' => '25 Mei 2019 - 25 Mei 2023'],
-    ['no' => 18, 'mitra' => 'Fakultas Hukum UGM',                      'level' => 'Nasional',      'judul' => 'Kerjasama Pengabdian Masyarakat',     'waktu' => '17 Feb 2020 - 17 Feb 2025'],
-    ['no' => 19, 'mitra' => 'Dinas Penanaman Modal Wonosobo',          'level' => 'Nasional',      'judul' => 'Kajian Penanaman Modal',              'waktu' => '15 Agust 2019 - 13 Okt 2019'],
-    ['no' => 20, 'mitra' => 'Sekretariat DPRD Wonosobo',               'level' => 'Nasional',      'judul' => 'Penyusunan Naskah Akademik',          'waktu' => '3 Okt 2019 - 18 Des 2019']
-];
+// Buat koneksi
+$conn = new mysqli("localhost", "root", "","unsoed_db");
 
-// DATA 3: PENDIDIKAN (KOSONG - AKAN MENAMPILKAN PLACEHOLDER DI TABEL)
-$educationData = [];
+// Cek error koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error . " (Pastikan config database benar)");
+}
 
+// Fungsi bantu ambil data
+function getKerjasama($conn, $kategori) {
+    $data = [];
+    $kategori = $conn->real_escape_string($kategori);
+    // Order by ID agar urutannya sama seperti saat diinput
+    $sql = "SELECT * FROM data_kerjasama WHERE kategori = '$kategori' ORDER BY id ASC";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        $no = 1;
+        while($row = $result->fetch_assoc()) {
+            $data[] = [
+                'no'    => $no++, // Generate nomor urut otomatis (1, 2, 3...)
+                'mitra' => $row['mitra'],
+                'level' => $row['level'],
+                'judul' => $row['judul'],
+                'waktu' => $row['waktu']
+            ];
+        }
+    }
+    return $data;
+}
+
+// Ambil data ke variabel
+$researchData  = getKerjasama($conn, 'penelitian');
+$communityData = getKerjasama($conn, 'pengabdian');
+$educationData = getKerjasama($conn, 'pendidikan'); // Array kosong jika belum ada data
+
+// Tutup koneksi
+$conn->close();
+
+// =========================================================================
+// 2. TAMPILAN PAGE (TIDAK ADA PERUBAHAN TAMPILAN)
+// =========================================================================
 
 $page_title = 'Kerjasama';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
@@ -66,7 +59,7 @@ require __DIR__ . '/../ui/PageHeader.php';
 
 <div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen ">
 
-    <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-20 py-16 md:py-24 space-y-12">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-20 py-16 space-y-12">
 
         <div class="w-full">
             <h2 class="text-3xl font-bold text-[#002b54] mb-6 border-b-2 border-yellow-400 pb-3 inline-block">Komitmen Kerjasama Fakultas Hukum UNSOED</h2>
@@ -246,6 +239,7 @@ require __DIR__ . '/../ui/PageHeader.php';
 </div>
 
 <script>
+    // Data sekarang dinamis dari PHP Database
     window.UNSOED_DATA = {
         research: <?php echo json_encode($researchData); ?>,
         community: <?php echo json_encode($communityData); ?>,

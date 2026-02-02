@@ -91,7 +91,7 @@ $page_bg    = '/unsoed_profile/public/assets/img/home.jpg';
 require __DIR__ . '/../ui/PageHeader.php'; 
 ?>
 
-<div class="bg-gray-50 min-h-screen font-sans text-gray-800 pb-20 pt-10 scroll-smooth">
+<div class="bg-gray-50 min-h-screen font-sans text-gray-800 py-16  scroll-smooth">
     <div class="container mx-auto px-4 md:px-8 max-w-7xl">
 
         <div class="mb-10 border-b border-gray-200 pb-6">

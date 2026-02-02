@@ -1,119 +1,62 @@
 <?php
-$prodiData = [
-    [
-        'no' => 1,
-        'nama' => 'Ilmu Hukum',
-        'info' => 'Reguler & Internasional',
-        'strata' => 'S1 (S.H)',
-        'peringkat' => 'UNGGUL',
-        'sub_badge' => 'Internasional',
-        'files' => [
-            [
-                'sk' => '6626/SK/BAN-PT/Ak-PPJ/S/X/2020',
-                'periode' => '20 September 2025',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2020/09/SSertifikat-S1-HUkum.pdf', 
-                'btn_label' => 'SK 6626'
-            ],
-            [
-                'sk' => '7886/SK/BAN-PT/Ak.Ppj/S/X/2025',
-                'periode' => '21 Sep 2025 - 21 Sep 2030',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2025/10/sertifikat-S1-akred-2025-2030-1.pdf',
-                'btn_label' => 'SK 7886'
-            ],
-            [
-                'sk' => '8473/SK/BAN-PT/Ak.KP/S/XII/2025',
-                'periode' => '2 Des 2025 – 21 Sep 2030',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2025/12/SSertifikat-91783-S1-hukum-2025.pdf',
-                'btn_label' => 'SK 8473'
-            ],
-            [
-                'sk' => 'FIBAA International Accreditation',
-                'periode' => '19 Sep 2028',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2024/02/Urk_Law-LL.B.pdf',
-                'btn_label' => 'FIBBA',
-                'is_special' => true
-            ]
-        ]
-    ],
-    [
-        'no' => 2,
-        'nama' => 'Magister Hukum',
-        'info' => '',
-        'strata' => 'S2 (M.H)',
-        'peringkat' => 'UNGGUL',
-        'sub_badge' => '',
-        'files' => [
-            [
-                'sk' => '685/SK/BAN-PT/Ak.Ppj/M/III/2023',
-                'periode' => '07 Maret 2028',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2023/08/S2-Hukum-SSertifikat-46464-cb8b5122422372f16fec18decbb8605c.pdf',
-                'btn_label' => 'Lihat SK'
-            ]
-        ]
-    ],
-    [
-        'no' => 3,
-        'nama' => 'Magister Kenotariatan',
-        'info' => '',
-        'strata' => 'S2 (M.Kn)',
-        'peringkat' => 'UNGGUL',
-        'sub_badge' => 'Riwayat: B',
-        'files' => [
-            [
-                'sk' => '4051/SK/BAN-PT/Ak/M/V/2024',
-                'periode' => '07 Mei 2029',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2024/05/SSertifikat-73866-S2-Kenotariatan.pdf',
-                'btn_label' => 'SK 2024'
-            ],
-            [
-                'sk' => '791/SK/BAN-PT/Akred/M/IV/2019',
-                'periode' => 'April 2024',
-                'link' => '#',
-                'btn_label' => 'SK 2019'
-            ],
-            [
-                'sk' => '003/SK/BAN-PT/Akred/M/I/2014',
-                'periode' => '10 Januari 2019',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2024/05/SSK-73866-S2-kenotariatan.pdf',
-                'btn_label' => 'SK 2014'
-            ]
-        ]
-    ],
-    [
-        'no' => 4,
-        'nama' => 'Program Doktor',
-        'info' => '',
-        'strata' => 'S3 (Dr.)',
-        'peringkat' => 'UNGGUL',
-        'sub_badge' => 'Baik Sekali',
-        'files' => [
-            [
-                'sk' => '7100/SK/BAN-PT/Ak/D/VIII/2025',
-                'periode' => '05 Agt 2025 - 05 Agt 2030',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2025/12/SSertifikat-86703-S3-Hukum.pdf',
-                'btn_label' => 'SK 2025'
-            ],
-            [
-                'sk' => '1320/SK/BAN-PT/Akred/D/III/2022',
-                'periode' => '1 Maret 2027',
-                'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2022/03/SSertifikat-34536-S3-hukum.pdf',
-                'btn_label' => 'SK 2022'
-            ]
-        ]
-    ]
-];
+// 1. KONEKSI DATABASE
+$conn = new mysqli("localhost", "root", "", "unsoed_db");
+if ($conn->connect_error) { die("Koneksi gagal: " . $conn->connect_error); }
 
-$arsipLain = [
-    ['label' => 'Akreditasi 2000–2005', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2020/09/Sertifikat-Akreditasi-2000.pdf'],
-    ['label' => 'Akreditasi 2006–2011', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2019/11/AKREDITASI-FH-2006-2011.pdf'],
-    ['label' => 'Akreditasi 2010–2015', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2024/09/akreditasi-s1-2010-2015.pdf'],
-    ['label' => 'Akreditasi 2015–2020', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2024/08/sertifikat-akred-2015-2020.pdf'],
-    ['label' => 'Akreditasi MIH 2016-2021', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2019/06/Sertifikat-Akreditasi-MIH.pdf'],
-    ['label' => 'Akreditasi BAN-PT No. 1119', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2022/09/SSertifikat-22665-S1-Hukum2020.pdf'],
-    ['label' => 'Akreditasi BAN-PT No. 7886', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2025/10/sertifikat-S1-akred-2025-2030.pdf'],
-    ['label' => 'Akreditasi BAN-PT No. 8473', 'link' => 'https://fh.unsoed.ac.id/wp-content/uploads/2025/12/SSertifikat-91783-S1-hukum-2025.pdf'],
-];
+// 2. AMBIL DATA UTAMA (PRODI)
+$sqlProdi = "SELECT * FROM akreditasi_prodi ORDER BY no_urut ASC";
+$resultProdi = $conn->query($sqlProdi);
 
+$prodiData = []; // Array penampung untuk Loop HTML nanti
+
+if ($resultProdi->num_rows > 0) {
+    while($row = $resultProdi->fetch_assoc()) {
+        $prodiId = $row['id'];
+        
+        // Ambil File SK berdasarkan Prodi ID
+        $sqlFiles = "SELECT * FROM akreditasi_files WHERE prodi_id = $prodiId";
+        $resultFiles = $conn->query($sqlFiles);
+        $files = [];
+        
+        while($file = $resultFiles->fetch_assoc()) {
+            $files[] = [
+                'sk' => $file['sk'],
+                'periode' => $file['periode'],
+                'link' => $file['link'],
+                'btn_label' => $file['btn_label'],
+                // Cek jika is_special bernilai 1 (true)
+                'is_special' => ($file['is_special'] == 1) ? true : false
+            ];
+        }
+
+        // Susun data agar formatnya sama persis dengan array manual sebelumnya
+        $prodiData[] = [
+            'no' => $row['no_urut'],
+            'nama' => $row['nama'],
+            'info' => $row['info'],
+            'strata' => $row['strata'],
+            'peringkat' => $row['peringkat'],
+            'sub_badge' => $row['sub_badge'],
+            'files' => $files // Array files dimasukkan ke sini
+        ];
+    }
+}
+
+// 3. AMBIL DATA ARSIP LAINNYA
+$sqlArsip = "SELECT * FROM akreditasi_arsip";
+$resultArsip = $conn->query($sqlArsip);
+$arsipLain = [];
+
+if ($resultArsip->num_rows > 0) {
+    while($row = $resultArsip->fetch_assoc()) {
+        $arsipLain[] = [
+            'label' => $row['label'],
+            'link' => $row['link']
+        ];
+    }
+}
+
+// SETUP HALAMAN
 $page_title = 'Akreditasi';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/PageHeader.php'; 
@@ -163,7 +106,7 @@ require __DIR__ . '/../ui/PageHeader.php';
                                     <div class="space-y-3">
                                         <?php foreach ($data['files'] as $file): ?>
                                             <div class="flex items-center min-h-8">
-                                                <span class="font-mono text-xs <?= isset($file['is_special']) ? 'font-bold text-[#002b54]' : 'text-gray-600' ?>">
+                                                <span class="font-mono text-xs <?= isset($file['is_special']) && $file['is_special'] ? 'font-bold text-[#002b54]' : 'text-gray-600' ?>">
                                                     <?= $file['sk'] ?>
                                                 </span>
                                             </div>
@@ -175,7 +118,7 @@ require __DIR__ . '/../ui/PageHeader.php';
                                     <div class="space-y-3">
                                         <?php foreach ($data['files'] as $file): ?>
                                             <div class="flex items-center min-h-8">
-                                                <span class="text-xs whitespace-nowrap <?= isset($file['is_special']) ? 'font-bold text-[#002b54]' : 'text-gray-500' ?>">
+                                                <span class="text-xs whitespace-nowrap <?= isset($file['is_special']) && $file['is_special'] ? 'font-bold text-[#002b54]' : 'text-gray-500' ?>">
                                                     <?= $file['periode'] ?>
                                                 </span>
                                             </div>
@@ -201,7 +144,7 @@ require __DIR__ . '/../ui/PageHeader.php';
                                         <?php foreach ($data['files'] as $file): ?>
                                             <div class="flex items-center justify-center min-h-8">
                                                 <?php 
-                                                    $btnColor = isset($file['is_special']) 
+                                                    $btnColor = (isset($file['is_special']) && $file['is_special']) 
                                                         ? 'bg-[#004080] hover:bg-[#002b54] border-[#003366]' 
                                                         : 'bg-yellow-500 hover:bg-yellow-600 border-yellow-600';
                                                 ?>

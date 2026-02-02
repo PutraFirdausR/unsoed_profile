@@ -69,7 +69,7 @@ require __DIR__ . '/../ui/PageHeader.php';
 
 <div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen">
 
-    <section class="py-16 md:py-24 bg-white">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">
             
             <div class="mb-12 text-center">
