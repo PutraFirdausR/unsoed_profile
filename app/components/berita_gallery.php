@@ -32,7 +32,7 @@ try {
                     $img_src = empty($nama_file) ? 'https://via.placeholder.com/600x400?text=News' : $folder_gambar . $nama_file;
                 ?>
 
-                <a href="#" class="block group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 cursor-pointer">
+                <a href="/unsoed_profile/public/detail_berita?id=<?= $item['id'] ?>" class="block group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 cursor-pointer">
                     
                     <div class="relative overflow-hidden aspect-video">
                         <img src="<?= e($img_src) ?>" 
@@ -67,12 +67,6 @@ try {
             </div>
 
         <?php endif; ?>
-
-        <div class="text-center mt-12">
-            <a href="/berita" class="inline-block px-8 py-3 border-2 border-[#002b54] text-[#002b54] font-bold rounded-full hover:bg-[#002b54] hover:text-white transition-all duration-300">
-                Lihat Semua Berita
-            </a>
-        </div>
 
     </div>
 </section>

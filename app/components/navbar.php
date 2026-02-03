@@ -16,7 +16,6 @@ $menus = [
     ],
     'SDM' => [
         ['text' => 'Guru Besar', 'url' => '/unsoed_profile/public/guru_besar'],
-        ['text' => 'Dosen', 'url' => '#'],
         ['text' => 'Staf Pendidik', 'url' => '#'],
         ['text' => 'Staf Kependidikan', 'url' => '#'],
     ],

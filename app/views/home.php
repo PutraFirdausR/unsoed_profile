@@ -13,11 +13,8 @@
             Mewujudkan sarjana hukum yang berintegritas, profesional, dan berdaya saing global dengan nilai-nilai kearifan lokal.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#prodi" class="px-8 py-3 bg-yellow-500 text-[#002b54] font-bold rounded-full hover:bg-yellow-400 transition transform hover:-translate-y-1 shadow-lg text-center">
-                Program Studi
-            </a>
-            <a href="#berita" class="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-[#002b54] transition transform hover:-translate-y-1 shadow-lg text-center">
-                Berita Terbaru
+            <a href="tentang-kami" class="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-[#002b54] transition transform hover:-translate-y-1 shadow-lg text-center">
+                Tentang Kami
             </a>
         </div>
     </div>
