@@ -1,4 +1,6 @@
 <?php
+// FILE: app/components/informasi.php
+
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
@@ -7,17 +9,17 @@ $agendas = [];
 $announcements = [];
 
 try {
-    // 1. Ambil Jadwal (Tetap 4)
+    // 1. Ambil Jadwal Kuliah (Tetap 4 biar genap/rapi)
     $stmt = $pdo->prepare("SELECT id, course_name, day, time, room FROM lecture_schedules ORDER BY id DESC LIMIT 4");
     $stmt->execute();
     $schedules = $stmt->fetchAll();
     
-    // 2. Ambil Agenda (Tetap 4)
-    $stmt = $pdo->prepare("SELECT id, title, event_date FROM agendas ORDER BY event_date DESC LIMIT 4");
+    // 2. Ambil Agenda (SETTING JADI 3)
+    $stmt = $pdo->prepare("SELECT id, title, event_date FROM agendas ORDER BY event_date DESC LIMIT 3");
     $stmt->execute();
     $agendas = $stmt->fetchAll();
 
-    // 3. Ambil Pengumuman (Tetap 3)
+    // 3. Ambil Pengumuman (SETTING JADI 3)
     $stmt = $pdo->prepare("SELECT id, title, date, content FROM announcements ORDER BY date DESC LIMIT 3");
     $stmt->execute();
     $announcements = $stmt->fetchAll();

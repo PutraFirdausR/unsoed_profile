@@ -3,14 +3,14 @@
 // 1. KONEKSI & LOAD DATA DARI DATABASE
 // =========================================================================
 
-// --- KONFIGURASI DATABASE (SESUAIKAN DISINI) ---
+// --- KONFIGURASI DATABASE ---
 $host = "localhost";
-$user = "root";      // Username database (default XAMPP: root)
-$pass = "";          // Password database (default XAMPP: kosong)
-$db   = "nama_database_kamu"; // Ganti dengan nama database kamu
+$user = "root";
+$pass = "";
+$db   = "unsoed_db"; 
 
 // Buat koneksi
-$conn = new mysqli("localhost", "root", "","unsoed_db");
+$conn = new mysqli($host, $user, $pass, $db);
 
 // Cek error koneksi
 if ($conn->connect_error) {
@@ -21,7 +21,6 @@ if ($conn->connect_error) {
 function getKerjasama($conn, $kategori) {
     $data = [];
     $kategori = $conn->real_escape_string($kategori);
-    // Order by ID agar urutannya sama seperti saat diinput
     $sql = "SELECT * FROM data_kerjasama WHERE kategori = '$kategori' ORDER BY id ASC";
     $result = $conn->query($sql);
 
@@ -29,11 +28,14 @@ function getKerjasama($conn, $kategori) {
         $no = 1;
         while($row = $result->fetch_assoc()) {
             $data[] = [
-                'no'    => $no++, // Generate nomor urut otomatis (1, 2, 3...)
+                'no'    => $no++, 
                 'mitra' => $row['mitra'],
-                'level' => $row['level'],
+                'level' => $row['level'], // Pastikan kolom level ada di DB
                 'judul' => $row['judul'],
-                'waktu' => $row['waktu']
+                // PERBAIKAN PENTING:
+                // Database pakai 'periode', tapi JS Abang mintanya 'waktu'.
+                // Jadi kita ubah disini biar match & gak error.
+                'waktu' => $row['periode'] 
             ];
         }
     }
@@ -43,13 +45,13 @@ function getKerjasama($conn, $kategori) {
 // Ambil data ke variabel
 $researchData  = getKerjasama($conn, 'penelitian');
 $communityData = getKerjasama($conn, 'pengabdian');
-$educationData = getKerjasama($conn, 'pendidikan'); // Array kosong jika belum ada data
+$educationData = getKerjasama($conn, 'pendidikan');
 
 // Tutup koneksi
 $conn->close();
 
 // =========================================================================
-// 2. TAMPILAN PAGE (TIDAK ADA PERUBAHAN TAMPILAN)
+// 2. TAMPILAN PAGE (DESAIN TETAP ORIGINAL)
 // =========================================================================
 
 $page_title = 'Kerjasama';

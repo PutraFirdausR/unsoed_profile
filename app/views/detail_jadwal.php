@@ -47,7 +47,7 @@ require __DIR__ . '/../ui/PageHeader.php';
             </div>
 
             <div class="flex items-center gap-5 p-4 bg-green-50 rounded-xl border border-green-100 hover:bg-green-100 transition">
-                <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-xl shadow-md">R</div>
+                <div class="w-12 h-12 bg-green-600 text-black rounded-full flex items-center justify-center font-bold text-xl shadow-md">R</div>
                 <div>
                     <p class="text-xs text-gray-500 uppercase font-bold tracking-wide">Ruangan</p>
                     <p class="font-bold text-xl text-gray-800">R. <?= e($data['room']) ?></p>

@@ -67,7 +67,7 @@ $page_bg    = '/unsoed_profile/public/assets/img/home.jpg';
 require __DIR__ . '/../ui/PageHeader.php';
 ?>
 
-<div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen">
+<div class=" font-sans text-gray-800 w-full min-h-screen">
 
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">

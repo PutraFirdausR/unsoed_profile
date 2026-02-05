@@ -15,7 +15,7 @@ $menus = [
         ['text' => 'Magister Hukum', 'url' => '#'],
     ],
     'SDM' => [
-        ['text' => 'Guru Besar', 'url' => '/unsoed_profile/public/guru_besar'],
+        ['text' => 'Guru Besar', 'url' => '#'],
         ['text' => 'Staf Pendidik', 'url' => '#'],
         ['text' => 'Staf Kependidikan', 'url' => '#'],
     ],
