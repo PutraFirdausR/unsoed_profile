@@ -52,7 +52,7 @@ $sasaran_items = [
 
         <div class="mb-16">
             <div class="flex items-center gap-4 mb-8">
-                <span class="w-10 h-[2px] bg-[#002b54]"></span>
+                <span class="w-10 h-0.5 bg-[#002b54]"></span>
                 <h3 class="text-xl font-bold text-[#002b54]">Misi Strategis</h3>
             </div>
             
