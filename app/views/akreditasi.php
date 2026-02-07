@@ -1,170 +1,263 @@
 <?php
-// 1. KONEKSI DATABASE
-$conn = new mysqli("localhost", "root", "", "unsoed_db");
-if ($conn->connect_error) { die("Koneksi gagal: " . $conn->connect_error); }
+// FILE: app/views/akreditasi.php
 
-// 2. AMBIL DATA UTAMA (PRODI)
-$sqlProdi = "SELECT * FROM akreditasi_prodi ORDER BY no_urut ASC";
-$resultProdi = $conn->query($sqlProdi);
-
-$prodiData = [];
-
-if ($resultProdi->num_rows > 0) {
-    while($row = $resultProdi->fetch_assoc()) {
-        $prodiId = $row['id'];
-        
-        // Ambil File SK
-        $sqlFiles = "SELECT * FROM akreditasi_files WHERE prodi_id = $prodiId";
-        $resultFiles = $conn->query($sqlFiles);
-        $files = [];
-        
-        while($file = $resultFiles->fetch_assoc()) {
-            $files[] = [
-                'sk' => $file['sk'],
-                'periode' => $file['periode'],
-                'link' => $file['link'],
-                'btn_label' => $file['btn_label'],
-                'is_special' => ($file['is_special'] == 1) ? true : false
-            ];
-        }
-
-        // Masukkan ke array utama
-        $prodiData[] = [
-            'nama' => $row['nama'],
-            'info' => $row['info'],
-            'strata' => $row['strata'],
-            'peringkat' => $row['peringkat'],
-            'sub_badge' => $row['sub_badge'],
-            'files' => $files
-        ];
-    }
-}
-
-// 3. AMBIL DATA ARSIP LAINNYA
-$sqlArsip = "SELECT * FROM akreditasi_arsip ORDER BY id ASC";
-$resultArsip = $conn->query($sqlArsip);
-$arsipLain = [];
-while($row = $resultArsip->fetch_assoc()) {
-    $arsipLain[] = $row;
-}
-
-$page_title = 'Akreditasi';
+$page_title = 'Akreditasi & Sertifikasi';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
-require __DIR__ . '/../ui/PageHeader.php';
+require __DIR__ . '/../ui/PageHeader.php'; 
+
+// ==============================================================================
+// DATA CENTER: AKREDITASI UTAMA (S1, S2, S3)
+// ==============================================================================
+$akreditasiData = [
+    'S1' => [
+        'title' => 'Sarjana (S1)',
+        'desc'  => 'Program Studi Ilmu Hukum & Kelas Internasional',
+        'items' => [
+            [
+                'label'     => 'INTERNASIONAL',
+                'sub'       => 'FIBAA',
+                'prodi'     => 'Intl. Undergraduate Program (LLB)',
+                'sk'        => 'Foundation for Intl. Business Administration Accreditation',
+                'date'      => 'Berlaku s.d. 19 Sep 2028',
+                'file'      => 'FIBBA.pdf',
+                'theme'     => 'gold' 
+            ],
+            [
+                'label'     => 'NASIONAL',
+                'sub'       => 'Peringkat A',
+                'prodi'     => 'Ilmu Hukum',
+                'sk'        => '6626/SK/BAN-PT/Ak-PPJ/S/X/2020 ',
+                'date'      => 'Berlaku s.d. 20 Sep 2025',
+                'file'      => 'No. 6626.pdf',
+                'theme'     => 'blue' 
+            ],
+            [
+                'label'     => 'NASIONAL',
+                'sub'       => 'Peringkat A',
+                'prodi'     => 'Ilmu Hukum',
+                'sk'        => '7886/SK/BAN-PT/Ak.Ppj/S/X/2025',
+                'date'      => '21 Sep 2025 - 21 Sep 2030',
+                'file'      => 'No. 7886.pdf',
+                'theme'     => 'blue'
+            ],
+            [
+                'label'     => 'NASIONAL',
+                'sub'       => 'Peringkat A',
+                'prodi'     => 'Ilmu Hukum',
+                'sk'        => '8473/SK/BAN-PT/Ak.KP/S/XII/2025',
+                'date'      => '2 Des 2025 – 21 Sep 2030',
+                'file'      => 'No. 8473.pdf',
+                'theme'     => 'blue'
+            ],
+        ]
+    ],
+    'S2' => [
+        'title' => 'Magister (S2)',
+        'desc'  => 'Program Magister Hukum & Kenotariatan',
+        'items' => [
+            [
+                'label'     => 'Nasional',
+                'sub'       => 'Unggul',
+                'prodi'     => 'Magister Hukum',
+                'sk'        => 'BAN-PT No. 685/SK/BAN-PT/Ak.Ppj/M/III/2023',
+                'date'      => 'Berlaku s.d. 7 Mar 2028',
+                'file'      => 'No. 685.pdf',
+                'theme'     => 'blue'
+            ],
+            [
+                'label'     => 'Nasional',
+                'sub'       => 'Unggul',
+                'prodi'     => 'Magister Kenotariatan',
+                'sk'        => 'BAN-PT No. 4051/SK/BAN-PT/Ak/M/V/202',
+                'date'      => 'Berlaku s.d. 07 Mei 2029',
+                'file'      => 'No. 4051.pdf',
+                'theme'     => 'blue'
+            ],
+            [
+                'label'     => 'Nasional',
+                'sub'       => 'SK',
+                'prodi'     => 'Magister Kenotariatan',
+                'sk'        => 'SK Akreditasi',
+                'date'      => '-',
+                'file'      => 'SK Akreditasi.pdf',
+                'theme'     => 'blue'
+            ]
+        ]
+    ],
+    'S3' => [
+        'title' => 'Doktor (S3)',
+        'desc'  => 'Program Studi Doktor Ilmu Hukum',
+        'items' => [
+            [
+                'label'     => 'Nasional',
+                'sub'       => 'Baik Sekali',
+                'prodi'     => 'Doktor Ilmu Hukum',
+                'sk'        => 'No. 1320/SK/BAN-PT/Akred/D/III/2022',
+                'date'      => 'Berlaku s.d. 1 Mar 2027',
+                'file'      => 'No. 1320.pdf',
+                'theme'     => 'blue'
+            ],
+            [
+                'label'     => 'Nasional',
+                'sub'       => 'UNGGUL',
+                'prodi'     => 'Doktor Ilmu Hukum',
+                'sk'        => 'No. 7100/SK/BAN-PT/Ak/D/VIII/2025',
+                'date'      => '5 Agus 2025 – 5 Agus 2030',
+                'file'      => 'No. 7100.pdf',
+                'theme'     => 'blue'
+            ]
+        ]
+    ]
+];
+
+// ==============================================================================
+// DATA CENTER: ARSIP (Data Arsip Dipisah di Sini)
+// ==============================================================================
+$arsipData = [
+    [
+        'title' => 'Arsip Akreditasi 2000 - 2005',
+        'file'  => '2000 – 2005.pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi 2006 – 2011 ',
+        'file'  => '2006 – 2011 .pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi 2010 – 2015',
+        'file'  => '2010 – 2015.pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi  2015 – 2020',
+        'file'  => '2015 – 2020.pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi MIH 2016 - 2021 ',
+        'file'  => '2016 – 2021.pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi 19 September 2020',
+        'file'  => '19 September 2020.pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi 21 September 2025 – 21 September 2030',
+        'file'  => '21 September 2025 – 21 September 2030.pdf'
+    ],
+    [
+        'title' => 'Arsip Akreditasi 2 Desember 2025 – 21 September 2030',
+        'file'  => '2 Desember 2025 – 21 September 2030.pdf'
+    ],
+];
 ?>
 
-<div class="container mx-auto px-4 py-12 mb-20 animate-fade-in-up">
+<style>
+    .custom-scroll::-webkit-scrollbar { width: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     
-    <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-[#002b54] mb-4">Status Akreditasi</h2>
-        <div class="h-1.5 w-24 bg-yellow-400 mx-auto rounded-full mb-6"></div>
-        <p class="text-gray-600 leading-relaxed text-lg">
-            Berikut adalah status akreditasi Program Studi di lingkungan Fakultas Hukum Universitas Jenderal Soedirman.
-        </p>
+    .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+</style>
+
+<div class="bg-gray-50 min-h-screen font-sans text-gray-800 py-16">
+    <div class="text-center mb-12">
+                <span class="text-yellow-600 font-bold tracking-widest uppercase text-sm">OFFICIAL DOCUMENTATION</span>
+                <h2 class="text-3xl font-bold text-[#002b54] mt-2 mb-4">Pusat Akreditasi</h2>
+                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Transparansi dan penjaminan mutu Fakultas Hukum Universitas Jenderal Soedirman.
+                </p>
     </div>
 
-    <div class="space-y-12">
-        <?php foreach($prodiData as $prodi): ?>
-        <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+    <div class="container mx-auto max-w-7xl px-4 md:px-6 -mt-20 relative z-20">
+
+        <?php foreach ($akreditasiData as $key => $section): ?>
             
-            <div class="bg-linear-to-r from-[#002b54] to-[#004080] p-6 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center font-bold text-2xl border border-white/20 shadow-inner">
-                        <?= $prodi['strata'] ?>
-                    </div>
+            <div class="mb-16">
+                <div class="flex items-end gap-4 mb-8 pl-2 border-l-4 border-yellow-500">
                     <div>
-                        <h3 class="text-2xl font-bold tracking-tight"><?= $prodi['nama'] ?></h3>
-                        <p class="text-blue-100 text-sm font-medium opacity-90"><?= $prodi['info'] ?></p>
+                        <h2 class="text-3xl font-bold text-[#002b54] leading-none"><?= $section['title'] ?></h2>
+                        <p class="text-gray-500 mt-2 text-sm uppercase tracking-wide"><?= $section['desc'] ?></p>
                     </div>
                 </div>
 
-                <div class="flex flex-col items-end gap-1">
-                    <div class="px-5 py-2 bg-yellow-400 text-[#002b54] text-sm font-bold rounded-full shadow-lg transform hover:scale-105 transition-transform">
-                        TERAKREDITASI <?= strtoupper($prodi['peringkat']) ?>
-                    </div>
-                    <?php if($prodi['sub_badge']): ?>
-                    <div class="px-3 py-1 bg-white/20 text-xs font-semibold rounded-md border border-white/30 backdrop-blur-sm">
-                        <?= $prodi['sub_badge'] ?>
-                    </div>
-                    <?php endif; ?>
-                </div>
-            </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <?php foreach ($section['items'] as $item): 
+                        $theme = $item['theme'];
+                        $colors = [
+                            'emerald' => ['bg' => 'bg-emerald-50', 'text' => 'text-emerald-700', 'border' => 'border-emerald-500', 'btn' => 'hover:bg-emerald-600'],
+                            'gold'    => ['bg' => 'bg-yellow-50',   'text' => 'text-yellow-700',  'border' => 'border-yellow-500',  'btn' => 'hover:bg-yellow-600'],
+                            'blue'    => ['bg' => 'bg-blue-50',     'text' => 'text-blue-700',    'border' => 'border-blue-500',    'btn' => 'hover:bg-blue-600'],
+                            'slate'   => ['bg' => 'bg-gray-50',     'text' => 'text-gray-600',    'border' => 'border-gray-400',    'btn' => 'hover:bg-gray-600'],
+                        ];
+                        $c = $colors[$theme];
+                    ?>
+                        <div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full">
+                            
+                            <div class="h-1.5 w-full <?= $c['bg'] ?> <?= $c['border'] ?> border-t-4"></div>
 
-            <div class="p-6 bg-gray-50">
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    <?php foreach($prodi['files'] as $f): ?>
-                    
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-blue-400 hover:shadow-md transition-all group flex flex-col h-full">
-                        
-                        <div class="mb-3 flex items-start justify-between">
-                            <?php if($f['is_special']): ?>
-                                <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">International</span>
-                            <?php else: ?>
-                                <span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Nasional</span>
-                            <?php endif; ?>
-                            <svg class="w-5 h-5 text-gray-300 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        </div>
-                        
-                        <div class="space-y-2 mb-4 grow">
-                            <p class="text-sm font-bold text-gray-800 wrap-break-word leading-snug">
-                                <?= $f['sk'] ?>
-                            </p>
-                            <p class="text-xs text-gray-500 font-medium flex items-center gap-1">
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                <?= $f['periode'] ?>
-                            </p>
-                        </div>
+                            <div class="p-6 flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-wider <?= $c['bg'] ?> <?= $c['text'] ?>">
+                                        <?= $item['label'] ?>
+                                    </span>
+                                    <?php if($theme == 'gold'): ?>
+                                        <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>    
+                                    <?php elseif($theme == 'emerald'): ?>
+                                        <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <?php else: ?>
+                                        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                    <?php endif; ?>
+                                </div>
 
-                        <div class="mt-auto">
-                            <?php if($f['link'] && $f['link'] != '#'): ?>
-                                <a href="<?= $f['link'] ?>" target="_blank" class="block w-full text-center py-2.5 rounded-lg text-sm font-bold transition-all border-2
-                                    <?= $f['is_special'] 
-                                        ? 'bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:border-blue-700' 
-                                        : 'bg-white hover:border-yellow-400 hover:text-[#002b54] hover:bg-yellow-50' 
-                                    ?>">
-                                    <?= $f['btn_label'] ?>
+                                <div class="mb-4">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-1"><?= $item['sub'] ?></h3>
+                                    <p class="text-sm font-medium text-gray-500"><?= $item['prodi'] ?></p>
+                                </div>
+
+                                <div class="space-y-3 mb-6 grow">
+                                    <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 group-hover:border-gray-200 transition-colors">
+                                        <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">Nomor SK</p>
+                                        <p class="text-xs font-mono text-gray-600 wrap-break-word leading-tight">
+                                            <?= $item['sk'] ?>
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                        <?= $item['date'] ?>
+                                    </div>
+                                </div>
+
+                                <a href="/unsoed_profile/public/assets/akreditasi/<?= $item['file'] ?>" target="_blank"
+                                   class="w-full mt-auto inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#002b54] text-white text-sm font-bold shadow-lg shadow-blue-900/10 transition-all duration-300 <?= $c['btn'] ?> group-hover:shadow-xl">
+                                    <span>Lihat Sertifikat</span>
+                                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
-                            <?php else: ?>
-                                <button disabled class="block w-full text-center py-2.5 rounded-lg text-sm font-bold bg-gray-100 text-gray-400 cursor-not-allowed border border-gray-200">
-                                    Belum Tersedia
-                                </button>
-                            <?php endif; ?>
+
+                            </div>
                         </div>
-                    </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </div>
         <?php endforeach; ?>
-    </div>
 
-    <?php if(!empty($arsipLain)): ?>
-    <div class="mt-20 pt-10 border-t border-gray-200">
-        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-            <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
-                Arsip Akreditasi Lainnya
+        <div class="mt-20 border-t border-gray-200 pt-10">
+            <h3 class="text-xl font-bold text-gray-400 mb-6 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                Arsip & Dokumen Lama
             </h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <?php foreach($arsipLain as $arsip): ?>
-                <a href="<?= $arsip['link'] ?>" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:border-yellow-400 transition-all group h-full">
-                    <div class="w-8 h-8 bg-red-50 text-red-500 rounded flex items-center justify-center shrink-0 mt-1">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-700 leading-tight group-hover:text-[#002b54]">
-                            <?= $arsip['label'] ?>
-                        </p>
-                    </div>
-                    <div class="text-gray-300 group-hover:text-yellow-500 shrink-0 mt-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <?php foreach ($arsipData as $arsip): ?>
+                <a href="/unsoed_profile/public/assets/akreditasi/<?= $arsip['file'] ?>" target="_blank" class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-[#002b54] hover:border-[#002b54] transition cursor-pointer">
+                    <span class="text-sm font-medium"><?= $arsip['title'] ?></span>
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">PDF</span>
                 </a>
                 <?php endforeach; ?>
             </div>
         </div>
-    </div>
-    <?php endif; ?>
 
+    </div>
 </div>

@@ -1,5 +1,13 @@
 <?php
 
+if (!function_exists('base_url')) {
+    function base_url($path = '') {
+        // Ganti '/unsoed_profile/public' sesuai folder projectmu di htdocs
+        $root = '/unsoed_profile/public'; 
+        return $root . '/' . ltrim($path, '/');
+    }
+}
+
 if (!function_exists('e')) {
     function e($string) {
         return htmlspecialchars($string ?? '', ENT_QUOTES, 'UTF-8');

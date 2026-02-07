@@ -1,8 +1,11 @@
 <?php
-if (file_exists('../app/helpers.php')) {
-    require_once '../app/helpers.php';
-}
+session_start(); // Penting untuk fitur bahasa atau login nanti
 
+// 1. Muat Helper & Koneksi Database
+if (file_exists('../app/helpers.php')) require_once '../app/helpers.php';
+if (file_exists('../app/config/database.php')) require_once '../app/config/database.php';
+
+// 2. Proses URL
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $scriptDir  = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
 $requestUri = str_replace('\\', '/', $requestUri);
@@ -12,13 +15,18 @@ if ($scriptDir !== '/' && strpos($requestUri, $scriptDir) === 0) {
 } else {
     $path = $requestUri;
 }
-
 $path = trim($path, '/');
+
+// 3. Logika Routing (Membaca web.php)
+$routes = require '../app/routes/web.php'; // Pastikan path ini benar
 
 if (empty($path)) {
     $page = 'home';
+} elseif (array_key_exists('/' . $path, $routes)) {
+    // Cek apakah URL ada di daftar web.php
+    $page = $routes['/' . $path];
 } else {
-    
+    // Fallback: Cek file fisik jika tidak ada di web.php
     $cleanPath = $path;
     $pathUnderscore = str_replace('-', '_', $cleanPath);
 
@@ -27,37 +35,16 @@ if (empty($path)) {
     } elseif (file_exists("../app/views/{$pathUnderscore}.php")) {
         $page = $pathUnderscore;
     } else {
+        // Tampilkan 404
         http_response_code(404);
-        echo "<!DOCTYPE html>
-        <html lang='id'>
-        <head>
-            <meta charset='UTF-8'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>404 - Halaman Tidak Ditemukan</title>
-            <link rel='stylesheet' href='/unsoed_profile/public/assets/css/output.css'>
-        </head>
-        <body class='bg-gray-50'>
-            <div class='min-h-screen flex items-center justify-center'>
-                <div class='text-center p-8 bg-white rounded-xl shadow-lg max-w-md'>
-                    <h1 class='text-6xl font-bold text-[#002b54] mb-4'>404</h1>
-                    <h2 class='text-2xl font-semibold text-gray-700 mb-2'>Halaman Tidak Ditemukan</h2>
-                    <p class='text-gray-500 mb-6'>Halaman yang Anda cari tidak ada atau telah dipindahkan.</p>
-                    <p class='text-xs text-gray-400 mb-6'>Path: /{$path}</p>
-                    <a href='/unsoed_profile/' class='inline-block px-6 py-3 bg-[#002b54] text-white rounded-lg hover:bg-[#004080] transition'>
-                        ← Kembali ke Beranda
-                    </a>
-                </div>
-            </div>
-        </body>
-        </html>";
+        require '../app/views/404.php'; // Bikin file 404.php biar rapi
         exit;
     }
 }
 
+// 4. Render Halaman Utama
 if (file_exists('../app/layouts/main.php')) {
     require '../app/layouts/main.php';
-} elseif (file_exists('../app/main.php')) {
-    require '../app/main.php';
 } else {
-    die("Error: File main.php tidak ditemukan!");
+    die("Error: File layout main.php tidak ditemukan!");
 }

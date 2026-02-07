@@ -1,17 +1,18 @@
 <?php
+// Data Menu
 $menus = [
     'Profil' => [
-        ['text' => 'Tentang Kami', 'url' => '/unsoed_profile/public/tentang-kami'],
-        ['text' => 'Visi Misi', 'url' => '/unsoed_profile/public/visi-misi'],
-        ['text' => 'Struktur Organisasi', 'url' => '/unsoed_profile/public/struktur-organisasi'],
-        ['text' => 'Akreditasi', 'url' => '/unsoed_profile/public/akreditasi'],
-        ['text' => 'Fasilitas', 'url' => '/unsoed_profile/public/fasilitas'],
-        ['text' => 'Kerjasama', 'url' => '/unsoed_profile/public/kerjasama'],
-        ['text' => 'Renstra', 'url' => '/unsoed_profile/public/renstra'],
+        ['text' => 'Tentang Kami', 'url' => base_url('tentang-kami')],
+        ['text' => 'Visi Misi', 'url' => base_url('visi-misi')],
+        ['text' => 'Struktur Organisasi', 'url' => base_url('struktur-organisasi')],
+        ['text' => 'Akreditasi', 'url' => base_url('akreditasi')],
+        ['text' => 'Fasilitas', 'url' => base_url('fasilitas')],
+        ['text' => 'Kerjasama', 'url' => base_url('kerjasama')],
+        ['text' => 'Renstra', 'url' => base_url('renstra')],
     ],
     'Program Studi' => [
-        ['text' => 'Program Doktor', 'url' => '/unsoed_profile/public/program-doktor'],
-        ['text' => 'Kenotariatan', 'url' => '/unsoed_profile/public/magister-kenotariatan'],
+        ['text' => 'Program Doktor', 'url' => base_url('program-doktor')],
+        ['text' => 'Kenotariatan', 'url' => base_url('magister-kenotariatan')],
         ['text' => 'Magister Hukum', 'url' => '#'],
     ],
     'SDM' => [
@@ -20,12 +21,11 @@ $menus = [
         ['text' => 'Staf Kependidikan', 'url' => '#'],
     ],
     'Layanan' => [
-        ['text' => 'Kurikulum IUP', 'url' => '#'],
-        ['text' => 'Magang', 'url' => '#'],
-        ['text' => 'Sistem Informasi', 'url' => '#'],
+        ['text' => 'Kurikulum IUP', 'url' => base_url('layanan-kurikulum-iup')],
+        ['text' => 'Magang', 'url' =>  base_url('magang')],
     ],
     'PPID' => [
-        ['text' => 'Informasi Berkala', 'url' => '#'],
+        ['text' => 'Informasi Berkala', 'url' => base_url('informasi-berkala')],
         ['text' => 'Informasi Setiap Saat', 'url' => '#'],
         ['text' => 'Regulasi KIP', 'url' => '#'],
         ['text' => 'Permohonan Informasi', 'url' => '#'],
