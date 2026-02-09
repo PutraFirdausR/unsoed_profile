@@ -26,14 +26,14 @@ $menus = [
     ],
     'PPID' => [
         ['text' => 'Informasi Berkala', 'url' => base_url('informasi-berkala')],
-        ['text' => 'Informasi Setiap Saat', 'url' => '#'],
+        ['text' => 'Informasi Setiap Saat', 'url' => base_url('informasi-setiap-saat')],
         ['text' => 'Regulasi KIP', 'url' => '#'],
-        ['text' => 'Permohonan Informasi', 'url' => '#'],
+        ['text' => 'Permohonan Informasi', 'url' => base_url('permohonan-informasi')],
     ],
     'Alumni' => [
-        ['text' => 'Keluarga Alumni', 'url' => '#'],
-        ['text' => 'Register Alumni', 'url' => '#'],
-        ['text' => 'Alumni Terkemuka', 'url' => '#'],
+        ['text' => 'Keluarga Alumni', 'url' => 'https://kafhunsoed.com/'],
+        ['text' => 'Register Alumni', 'url' => 'https://docs.google.com/forms/d/e/1FAIpQLSfymbQK6gJEWW9C6T5nnsxC5NcM-STp6RskBdvnxQmDxOR6nQ/viewform?pli=1'],
+        ['text' => 'Alumni Terkemuka', 'url' => base_url('alumni-terkemuka')],
     ]
 ];
 ?>
