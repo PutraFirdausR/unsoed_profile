@@ -1,5 +1,7 @@
 <?php
-session_start(); // Penting untuk fitur bahasa atau login nanti
+// FILE: public/index.php
+
+session_start(); 
 
 // 1. Muat Helper & Koneksi Database
 if (file_exists('../app/helpers.php')) require_once '../app/helpers.php';
@@ -17,16 +19,15 @@ if ($scriptDir !== '/' && strpos($requestUri, $scriptDir) === 0) {
 }
 $path = trim($path, '/');
 
-// 3. Logika Routing (Membaca web.php)
-$routes = require '../app/routes/web.php'; // Pastikan path ini benar
+// 3. Logika Routing
+$routes = require '../app/routes/web.php'; 
 
 if (empty($path)) {
     $page = 'home';
 } elseif (array_key_exists('/' . $path, $routes)) {
-    // Cek apakah URL ada di daftar web.php
     $page = $routes['/' . $path];
 } else {
-    // Fallback: Cek file fisik jika tidak ada di web.php
+    // Fallback: Cek file fisik
     $cleanPath = $path;
     $pathUnderscore = str_replace('-', '_', $cleanPath);
 
@@ -35,10 +36,11 @@ if (empty($path)) {
     } elseif (file_exists("../app/views/{$pathUnderscore}.php")) {
         $page = $pathUnderscore;
     } else {
-        // Tampilkan 404
+        // --- PERUBAHAN DI SINI ---
+        // Jangan langsung require dan exit.
+        // Set http code, lalu set $page jadi '404' agar diload oleh main.php di bawah
         http_response_code(404);
-        require '../app/views/404.php'; // Bikin file 404.php biar rapi
-        exit;
+        $page = '404'; 
     }
 }
 
@@ -48,3 +50,4 @@ if (file_exists('../app/layouts/main.php')) {
 } else {
     die("Error: File layout main.php tidak ditemukan!");
 }
+?>

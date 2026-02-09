@@ -19,10 +19,15 @@
             if (file_exists($fileView)) {
                 require $fileView;
             } else {
-                echo "<div class='container mx-auto mt-20 text-center text-red-500'>";
-                echo "<h1>Error: File view tidak ditemukan!</h1>";
-                echo "<p>Mencari file: $fileView</p>";
-                echo "</div>";
+                // Jika file view fisik benar-benar tidak ada (misal $page='home' tapi home.php hilang)
+                // Kita load view 404 sebagai cadangan
+                if(file_exists(__DIR__ . '/../views/404.php')) {
+                    require __DIR__ . '/../views/404.php';
+                } else {
+                    echo "<div class='container mx-auto mt-20 text-center text-red-500'>";
+                    echo "<h1>Error Fatal: File view tidak ditemukan!</h1>";
+                    echo "</div>";
+                }
             }
         ?>
     </main>
