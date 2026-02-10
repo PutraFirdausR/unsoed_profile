@@ -17,9 +17,9 @@ try {
     <div class="container mx-auto px-4 md:px-8">
         
         <?php 
-            if(file_exists(__DIR__ . '/../ui/SectionTitle.php')) {
+            if(file_exists(__DIR__ . '/../ui/section_title.php')) {
                 $title = "Berita & Kabar Fakultas";
-                include __DIR__ . '/../ui/SectionTitle.php';
+                include __DIR__ . '/../ui/section_title.php';
             } else {
                 echo '<h2 class="text-3xl font-bold text-[#002b54] mb-8 border-l-4 border-yellow-500 pl-4">Berita & Kabar Fakultas</h2>';
             }
@@ -72,10 +72,10 @@ try {
             </div>
 
             <div class="mt-12 text-center">
-                <a href="/unsoed_profile/public/berita" class="inline-flex items-center gap-2 px-8 py-3 bg-[#002b54] text-white font-bold rounded-full hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Lihat Semua Berita
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </a>
+               <a href="#" class="inline-flex items-center gap-2 px-8 py-3 bg-[#002b54] text-white font-bold rounded-full hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 Lihat Semua Berita
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+               </a>
             </div>
 
         <?php endif; ?>

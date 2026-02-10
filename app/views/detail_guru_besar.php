@@ -20,7 +20,7 @@ if(!$prof) {
 
 $page_title = 'Profil Guru Besar';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
-require __DIR__ . '/../ui/PageHeader.php'; 
+require __DIR__ . '/../ui/page_header.php'; 
 ?>
 
 <div class="bg-gray-50 min-h-screen font-sans text-gray-800 pb-20">

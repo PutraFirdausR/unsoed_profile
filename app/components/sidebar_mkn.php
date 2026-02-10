@@ -1,4 +1,4 @@
-<div class="top-24 space-y-6">
+<div class="top-24 space-y-6 sticky">
     <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
         <div class="bg-[#8B0000] px-5 py-4">
             <h3 class="font-bold text-white text-lg">Navigasi Program</h3>

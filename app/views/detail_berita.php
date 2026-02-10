@@ -14,7 +14,7 @@ if(!$data) {
 
 $page_title = 'Berita';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
-require __DIR__ . '/../ui/PageHeader.php';
+require __DIR__ . '/../ui/page_header.php';
 ?>
 
 <div class="container mx-auto px-4 py-16 max-w-4xl animate-fade-in-up">

@@ -1,37 +1,24 @@
 <?php
 // FILE: app/views/staf_kependidikan.php
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../helpers.php';
 
-// Konfigurasi Path Project
+// 1. Setup Dasar
 $base_url = '/unsoed_profile'; 
+require_once __DIR__ . '/../helpers.php'; // Jika ada helper global
 
-// Ambil data staf dari database
-try {
-    $stmt = $pdo->query("SELECT * FROM staff ORDER BY department ASC, name ASC");
-    $all_staff = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// 2. Load Data dari Model
+$data = require __DIR__ . '/../data/kependidikan_data.php';
+$grouped_staff = $data['grouped_staff'];
+$departments   = $data['departments'];
 
-    // Kelompokkan data per bagian
-    $grouped_staff = [];
-    foreach ($all_staff as $staf) {
-        $grouped_staff[$staf['department']][] = $staf;
-    }
-
-    $departments = array_keys($grouped_staff);
-
-} catch (PDOException $e) {
-    $grouped_staff = [];
-    $departments = [];
-}
-
+// 3. Header Halaman
 $page_title = 'Staf Kependidikan';
 $page_bg    = $base_url . '/public/assets/img/home.jpg'; 
-require __DIR__ . '/../ui/PageHeader.php';
+require __DIR__ . '/../ui/page_header.php';
 ?>
 
-<div class="bg-slate-50 min-h-screen font-sans text-[#002b54] py-16">
+<div class=" min-h-screen font-sans text-[#002b54] py-16">
     
-    <div class="bg-white pt-16 pb-8 border-b border-gray-100">
+    <div class="pt-16 pb-8 mb-12">
         <div class="container mx-auto px-4 text-center">
             <span class="text-[#002b54] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
                 Sumber Daya Manusia
@@ -56,7 +43,7 @@ require __DIR__ . '/../ui/PageHeader.php';
                 <?php foreach($departments as $dept): ?>
                 <button onclick="filterStaff('<?= md5($dept) ?>', this)" 
                         class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-sm border
-                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] "
+                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] hover:text-[#002b54]"
                         data-target="<?= md5($dept) ?>">
                     <?= htmlspecialchars($dept) ?>
                 </button>
@@ -65,11 +52,12 @@ require __DIR__ . '/../ui/PageHeader.php';
         </div>
     </div>
 
-    <div class="container mx-auto px-4 md:px-8 py-12 min-h-150">
+    <div class="container mx-auto px-4 md:px-8 min-h-125">
         
         <?php if(empty($grouped_staff)): ?>
             <div class="text-center py-20 bg-white rounded-xl border border-dashed border-gray-300">
-                <p class="text-gray-400">Data belum tersedia.</p>
+                <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <p class="text-gray-500">Data staf belum tersedia saat ini.</p>
             </div>
         <?php else: ?>
 
@@ -85,36 +73,10 @@ require __DIR__ . '/../ui/PageHeader.php';
                         <div class="h-px bg-gray-200 grow"></div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        <?php foreach($staff_list as $person): 
-                            // Setup Path Gambar
-                            $img_file = $person['image'];
-                            $popup_path = $base_url . "/public/assets/img/profil_kependidikan/" . $img_file;
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <?php foreach($staff_list as $person): ?>
                             
-                            // Avatar Fallback
-                            if(empty($img_file)) {
-                                $popup_path = 'https://ui-avatars.com/api/?name=' . urlencode($person['name']) . '&background=002b54&color=fff&size=400';
-                            }
-                        ?>
-                        
-                        <div class="group bg-white rounded-lg border border-gray-200 hover:border-[#002b54] transition-all duration-300 p-5 hover:shadow-md cursor-pointer h-full flex flex-col justify-between"
-                             onclick="openStaffModal('<?= $popup_path ?>', '<?= htmlspecialchars($person['name']) ?>', '<?= htmlspecialchars($person['department']) ?>')">
-                            
-                            <div>
-                                <h3 class="text-base font-bold text-[#002b54] leading-snug group-hover:text-blue-700 mb-2">
-                                    <?= htmlspecialchars($person['name']) ?>
-                                </h3>
-                                <div class="w-8 h-0.5 bg-yellow-500 opacity-50 mb-2"></div>
-                                <p class="text-xs text-gray-500 uppercase tracking-wide">
-                                    Staf Kependidikan
-                                </p>
-                            </div>
-
-                            <div class="mt-4 flex items-center text-xs text-yellow-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                                Lihat Profil
-                            </div>
-                        </div>
+                            <?php include __DIR__ . '/../components/kependidikan_card.php'; ?>
 
                         <?php endforeach; ?>
                     </div>
@@ -123,86 +85,73 @@ require __DIR__ . '/../ui/PageHeader.php';
             <?php endforeach; ?>
 
         <?php endif; ?>
-        
     </div>
-    
-    
 </div>
 
-<div id="staffModal" class="relative z-9999 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  
-  <div class="fixed inset-0 bg-black/90 transition-opacity backdrop-blur-sm"></div>
-
-  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-    <div class="flex min-h-full items-start justify-center p-4 text-center sm:p-0 py-10" onclick="closeStaffModal()">
-      
-      <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl" onclick="event.stopPropagation()">
-        
-        <div class="bg-gray-50 px-4 py-3 flex justify-between items-center border-b border-gray-100">
-            <h3 class="text-sm font-bold text-[#002b54] uppercase tracking-wider">Detail Data</h3>
-            <button type="button" class="rounded-md bg-white text-gray-400 hover:text-red-500 focus:outline-none ring-1 ring-gray-200 p-1" onclick="closeStaffModal()">
-              <span class="sr-only">Close</span>
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-        </div>
-
-        <div class="bg-white p-1 md:p-4 flex justify-center">
-            <img id="modalImage" src="" alt="Staff Profile" 
-                 class="w-auto h-auto max-h-[75vh] max-w-full object-contain rounded border border-gray-100 shadow-sm">
-        </div>
-        
-        <div class="bg-gray-50 px-4 py-3 sm:px-6 border-t border-gray-100 text-center">
-             <p id="modalName" class="text-base font-bold text-[#002b54]"></p>
-             <p id="modalDept" class="text-xs text-gray-500"></p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
+<?php include __DIR__ . '/../components/kependidikan_modal.php'; ?>
 
 <script>
-// Logic Filter
+/**
+ * Logic Filter Bagian
+ */
 function filterStaff(targetId, btnElement) {
+    // 1. Reset Style Tombol
     const allButtons = document.querySelectorAll('.filter-btn');
     allButtons.forEach(btn => {
-        btn.classList.remove('bg-[#002b54]', 'text-white', 'border-[#002b54]', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
+        btn.classList.remove('bg-[#002b54]', 'text-white', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
         btn.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
     });
 
+    // 2. Set Active Style Tombol Klik
     if (btnElement) {
         btnElement.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
         btnElement.classList.add('bg-[#002b54]', 'text-white', 'border-[#002b54]', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
     }
 
+    // 3. Filter Section
     const sections = document.querySelectorAll('.department-section');
     sections.forEach(sec => {
         if (targetId === 'all') {
-            sec.style.display = 'block';
-            setTimeout(() => sec.style.opacity = '1', 50);
+            showSection(sec);
         } else {
             if (sec.id === targetId) {
-                sec.style.display = 'block';
-                setTimeout(() => sec.style.opacity = '1', 50);
+                showSection(sec);
             } else {
-                sec.style.opacity = '0';
-                setTimeout(() => sec.style.display = 'none', 300); 
+                hideSection(sec);
             }
         }
     });
 }
 
-// Logic Popup
+function showSection(el) {
+    el.style.display = 'block';
+    // Timeout kecil agar transisi opacity jalan
+    requestAnimationFrame(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    });
+}
+
+function hideSection(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+        el.style.display = 'none';
+    }, 300);
+}
+
+/**
+ * Logic Modal Popup
+ */
 function openStaffModal(imageSrc, name, dept) {
     const modal = document.getElementById('staffModal');
     const modalImg = document.getElementById('modalImage');
     const modalName = document.getElementById('modalName');
     const modalDept = document.getElementById('modalDept');
 
+    // Set Data
     modalImg.src = imageSrc;
-    // Error handling
+    // Error handling gambar jika 404
     modalImg.onerror = function() {
         this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=002b54&color=fff&size=500';
     };
@@ -210,7 +159,9 @@ function openStaffModal(imageSrc, name, dept) {
     modalName.textContent = name;
     modalDept.textContent = dept;
 
+    // Show Modal
     modal.classList.remove('hidden');
+    // Mencegah scroll body background
     document.body.style.overflow = 'hidden';
 }
 
@@ -220,20 +171,21 @@ function closeStaffModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Close on ESC key
 document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
         closeStaffModal();
     }
 });
-
-const style = document.createElement('style');
-style.textContent = `
-    .department-section { transition: opacity 0.3s ease-in-out; }
-    @keyframes zoomIn {
-        from { transform: scale(0.95); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
-    }
-    .animate-zoom-in { animation: zoomIn 0.3s ease-out forwards; }
-`;
-document.head.appendChild(style);
 </script>
+
+<style>
+    .department-section { 
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+        transform: translateY(0);
+    }
+    .bg-pattern {
+        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+</style>

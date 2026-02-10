@@ -6,7 +6,7 @@ $page_title = 'Akreditasi & Sertifikasi';
 $base_url_asset = '/unsoed_profile/public/assets'; 
 $page_bg = $base_url_asset . '/img/home.jpg'; 
 
-require __DIR__ . '/../ui/PageHeader.php'; 
+require __DIR__ . '/../ui/page_header.php'; 
 
 // 1. LOAD DATA
 require __DIR__ . '/../data/akreditasi_data.php';
@@ -41,7 +41,7 @@ require __DIR__ . '/../data/akreditasi_data.php';
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                     <?php foreach ($section['items'] as $item): ?>
-                        <?php require __DIR__ . '/../components/AkreditasiCard.php'; ?>
+                        <?php require __DIR__ . '/../components/akreditasi_card.php'; ?>
                     <?php endforeach; ?>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+<?php
+?>
 <div class="relative group h-full flex items-center">
     <button class="flex items-center text-white font-medium hover:text-yellow-600 transition px-1 cursor-pointer">
         <span><?php echo $label; ?></span>

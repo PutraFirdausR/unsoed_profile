@@ -21,7 +21,7 @@ return [
     '/informasi-berkala' => 'informasi_berkala',
     '/informasi-setiap-saat' => 'informasi_setiap_saat',
     '/permohonan-informasi' => 'permohonan_informasi',
-    '/alumni-terkemuka' => 'alumni_terkemuka',
+    '/alumni' => 'alumni',
 
     '/detail_berita'    => 'detail_berita',
     '/detail_jadwal'    => 'detail_jadwal',

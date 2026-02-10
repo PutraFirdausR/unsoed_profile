@@ -4,7 +4,7 @@
 $page_title = 'Program Magang Mahasiswa';
 // Pastikan path gambar background benar
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
-require __DIR__ . '/../ui/PageHeader.php'; 
+require __DIR__ . '/../ui/page_header.php'; 
 ?>
 
 <div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen relative flex items-center">

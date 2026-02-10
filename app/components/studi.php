@@ -4,7 +4,7 @@
         <?php 
         $title = 'Program Studi';
         $align = 'center';
-        require __DIR__ . '/../ui/SectionTitle.php'; 
+        require __DIR__ . '/../ui/section_title.php'; 
         ?>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -22,7 +22,7 @@
                 $link  = $item['link'];
                 
                 echo "<div>";
-                require __DIR__ . '/../ui/CardDegree.php';
+                require __DIR__ . '/../ui/card_degree.php';
                 echo "</div>";
             }
             ?>

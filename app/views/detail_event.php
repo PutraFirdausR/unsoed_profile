@@ -19,7 +19,7 @@ if(!$data) {
 
 $page_title = 'Detail Agenda';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
-require __DIR__ . '/../ui/PageHeader.php'; 
+require __DIR__ . '/../ui/page_header.php'; 
 ?>
 
 <div class="bg-slate-50 min-h-screen py-12 font-sans">

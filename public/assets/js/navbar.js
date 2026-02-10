@@ -1,3 +1,5 @@
+// FILE: public/assets/js/navbar.js
+
 function toggleLangDropdown(event) {
     event.stopPropagation(); 
     const content = document.getElementById('lang-dropdown-content');
@@ -12,6 +14,7 @@ function toggleLangDropdown(event) {
     }
 }
 
+// Tutup dropdown jika klik di luar
 window.addEventListener('click', function(e) {
     const langDrop = document.getElementById('lang-dropdown-content');
     const langIcon = document.getElementById('lang-icon');
