@@ -129,7 +129,7 @@ require __DIR__ . '/../ui/PageHeader.php';
     
 </div>
 
-<div id="staffModal" class="relative z-[9999] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+<div id="staffModal" class="relative z-9999 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
   
   <div class="fixed inset-0 bg-black/90 transition-opacity backdrop-blur-sm"></div>
 
