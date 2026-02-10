@@ -1,8 +1,4 @@
 <?php
-// FILE: app/views/informasi_setiap_saat.php
-
-// 1. DEFINISI BASE URL
-// Sesuaikan dengan nama folder project Anda di htdocs
 $base_url = '/UNSOED_PROFILE'; 
 
 $page_title = 'Informasi Setiap Saat';
@@ -10,7 +6,6 @@ $page_bg    = $base_url . '/public/assets/img/home.jpg';
 
 require __DIR__ . '/../ui/PageHeader.php'; 
 
-// 2. DATA INFORMASI SETIAP SAAT (Sesuai File TXT)
 $data_setiap_saat = [
     [
         'category' => '1. Profil & Kelembagaan',

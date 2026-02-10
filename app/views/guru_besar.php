@@ -1,9 +1,7 @@
 <?php
-// FILE: app/views/guru_besar.php
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
-// Ambil semua data profesor
 $stmt = $pdo->query("SELECT * FROM professors ORDER BY id ASC");
 $professors = $stmt->fetchAll();
 

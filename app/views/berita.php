@@ -1,16 +1,13 @@
 <?php
-// FILE: app/views/berita.php
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
-// Setup Header Halaman
 $page_title = 'Arsip Berita';
-$page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; // Pastikan gambar header ada
+$page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/PageHeader.php'; 
 
 try {
-    // QUERY SEMUA BERITA (TANPA LIMIT)
     $stmt = $pdo->prepare("SELECT id, title, date, image, content FROM news ORDER BY date DESC");
     $stmt->execute();
     $all_news = $stmt->fetchAll();
@@ -41,7 +38,6 @@ try {
                     $nama_file = $item['image'];
                     $img_src = empty($nama_file) ? 'https://via.placeholder.com/600x400?text=News' : $folder_gambar . $nama_file;
                     
-                    // Cuplikan isi berita (opsional, jika ada kolom content)
                     $excerpt = isset($item['content']) ? substr(strip_tags($item['content']), 0, 100) . '...' : '';
                 ?>
                 

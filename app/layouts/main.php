@@ -13,14 +13,11 @@
     
     <main class="pt-20 min-h-screen">
         <?php 
-            // Cek apakah file view yang diminta benar-benar ada?
             $fileView = __DIR__ . '/../views/' . $page . '.php';
             
             if (file_exists($fileView)) {
                 require $fileView;
             } else {
-                // Jika file view fisik benar-benar tidak ada (misal $page='home' tapi home.php hilang)
-                // Kita load view 404 sebagai cadangan
                 if(file_exists(__DIR__ . '/../views/404.php')) {
                     require __DIR__ . '/../views/404.php';
                 } else {

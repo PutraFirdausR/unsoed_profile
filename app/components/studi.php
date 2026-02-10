@@ -17,13 +17,11 @@
             ];
 
             foreach ($degrees as $item) {
-                // Setup variabel yang dibutuhkan oleh CardDegree.php
                 $title = $item['title'];
                 $code  = $item['code'];
                 $link  = $item['link'];
                 
-                // Panggil Component
-                echo "<div>"; // Wrapper agar grid layout tetap rapi
+                echo "<div>";
                 require __DIR__ . '/../ui/CardDegree.php';
                 echo "</div>";
             }

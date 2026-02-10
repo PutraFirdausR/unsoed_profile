@@ -1,5 +1,4 @@
 <?php
-// FILE: app/components/informasi.php
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
@@ -9,17 +8,14 @@ $agendas = [];
 $announcements = [];
 
 try {
-    // 1. Ambil Data Kegiatan (TABEL: activities) - LIMIT 4
     $stmt = $pdo->prepare("SELECT id, title, date, location FROM activities ORDER BY date DESC LIMIT 4");
     $stmt->execute();
     $activities = $stmt->fetchAll();
     
-    // 2. Ambil Agenda (LIMIT 4)
     $stmt = $pdo->prepare("SELECT id, title, event_date FROM agendas ORDER BY event_date DESC LIMIT 4");
     $stmt->execute();
     $agendas = $stmt->fetchAll();
 
-    // 3. Ambil Pengumuman (LIMIT 3)
     $stmt = $pdo->prepare("SELECT id, title, date, content FROM announcements ORDER BY date DESC LIMIT 3");
     $stmt->execute();
     $announcements = $stmt->fetchAll();

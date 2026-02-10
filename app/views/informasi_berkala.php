@@ -1,8 +1,4 @@
 <?php
-// FILE: app/views/informasi_berkala.php
-
-// 1. DEFINISI BASE URL
-// Sesuaikan dengan nama folder project Anda di htdocs
 $base_url = '/UNSOED_PROFILE'; 
 
 $page_title = 'Informasi Berkala';
@@ -10,7 +6,6 @@ $page_bg    = $base_url . '/public/assets/img/home.jpg';
 
 require __DIR__ . '/../ui/PageHeader.php'; 
 
-// 2. DATA INFORMASI BERKALA (Isi Data Tetap Sama)
 $data_berkala = [
     [
         'category' => '1. Informasi Profil Fakultas',
@@ -28,7 +23,6 @@ $data_berkala = [
                 'type'  => 'internal',
                 'note'  => 'Lihat Bagan'
             ],
-            // --- PROFIL PEJABAT ---
             [
                 'title' => 'Profil Dekan', 
                 'link'  => $base_url . '/public/assets/img/profil_dosen/Prof.-Dr.-Riris-Ardhanariswari-S.H.-M.H.jpg', 
@@ -53,7 +47,6 @@ $data_berkala = [
                 'type'  => 'image',
                 'note'  => 'Lihat Foto'
             ],
-            // --- LHKPN ---
             [
                 'title' => 'LHKPN Dekan', 
                 'link'  => $base_url . '/public/assets/docs/KekayaanDekan.pdf', 

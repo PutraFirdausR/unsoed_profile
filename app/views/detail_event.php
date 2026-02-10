@@ -1,18 +1,14 @@
 <?php
-// FILE: app/views/detail_agenda.php
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
-// 1. Ambil ID
 $id = $_GET['id'] ?? null;
 
-// 2. Query Data
 $stmt = $pdo->prepare("SELECT * FROM agendas WHERE id = ?");
 $stmt->execute([$id]);
 $data = $stmt->fetch();
 
-// 3. Cek Data
 if(!$data) {
     echo "<div class='container mx-auto py-20 text-center text-gray-500'>
             <h2 class='text-2xl font-bold mb-2'>Agenda tidak ditemukan</h2>
@@ -21,7 +17,6 @@ if(!$data) {
     return;
 }
 
-// 4. Setup Header
 $page_title = 'Detail Agenda';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/PageHeader.php'; 
@@ -80,8 +75,6 @@ require __DIR__ . '/../ui/PageHeader.php';
 
                 <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed">
                     <?php 
-                        // Menampilkan deskripsi dari database
-                        // Jika kosong, tampilkan teks default
                         $desc = $data['description'];
                         if(empty($desc)) {
                             $desc = "Belum ada deskripsi detail untuk agenda ini.";

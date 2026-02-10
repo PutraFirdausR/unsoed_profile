@@ -1,17 +1,14 @@
 <?php
-// FILE: app/views/detail_guru_besar.php
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
 $id = $_GET['id'] ?? null;
 
-// 1. Ambil Data Profil
 $stmt = $pdo->prepare("SELECT * FROM professors WHERE id = ?");
 $stmt->execute([$id]);
 $prof = $stmt->fetch();
 
-// 2. Ambil Data Publikasi
 $stmt_pub = $pdo->prepare("SELECT * FROM publications WHERE professor_id = ? ORDER BY year DESC");
 $stmt_pub->execute([$id]);
 $publications = $stmt_pub->fetchAll();

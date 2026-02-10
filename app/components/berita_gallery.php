@@ -1,11 +1,9 @@
 <?php
-// FILE: app/components/berita_section.php (atau nama file komponen Anda)
 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
 try {
-    // TAMPILKAN HANYA 3 BERITA TERBARU DI HALAMAN DEPAN
     $stmt = $pdo->prepare("SELECT id, title, date, image FROM news ORDER BY date DESC LIMIT 3");
     $stmt->execute();
     $gallery_news = $stmt->fetchAll();
@@ -19,7 +17,6 @@ try {
     <div class="container mx-auto px-4 md:px-8">
         
         <?php 
-            // Judul Section
             if(file_exists(__DIR__ . '/../ui/SectionTitle.php')) {
                 $title = "Berita & Kabar Fakultas";
                 include __DIR__ . '/../ui/SectionTitle.php';

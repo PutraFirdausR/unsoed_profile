@@ -1,12 +1,10 @@
 <?php
-// FILE: app/views/alumni_terkemuka.php
 
 $base_url = '/UNSOED_PROFILE'; 
 $page_title = 'Alumni Terkemuka';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/PageHeader.php'; 
 
-// DATA ALUMNI (Nama file disesuaikan dengan folder Anda)
 $data_alumni = [
     [
         "nama" => "Hasyim Asy'ari, S.H., M.Si., Ph.D.",
