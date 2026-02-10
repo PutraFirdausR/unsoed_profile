@@ -12,6 +12,10 @@ return [
     '/program-doktor' => 'program_doktor',
     '/magister-kenotariatans' => 'magister_kenotariatans',
     '/magister_hukum' => 'magister_hukum',
+    '/guru-besar' => 'guru_besar',
+    '/staf-pendidik' => 'staf_pendidik',
+    '/staf-kependidikan' => 'staf_kependidikan',
+    
 
     '/layanan-kurikulum-iup' => 'layanan_kurikulum_iup',
     '/magang' => 'magang',

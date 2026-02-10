@@ -69,13 +69,7 @@ try {
                         </div>
                     <?php endif; ?>
                     
-                    <div class="mt-6 pt-4 border-t border-gray-100">
-                        <a href="#" class="text-base font-bold text-[#002b54] hover:text-yellow-600 flex items-center gap-2 transition-colors">
-                            Lihat Arsip Kegiatan
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
                     </div>
-                </div>
             </div>
 
             <div class="bg-[#002b54] p-8 text-white relative overflow-hidden flex flex-col justify-between" 

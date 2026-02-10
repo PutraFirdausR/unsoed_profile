@@ -16,9 +16,9 @@ $menus = [
         ['text' => 'Magister Hukum', 'url' => '#'],
     ],
     'SDM' => [
-        ['text' => 'Guru Besar', 'url' => '#'],
-        ['text' => 'Staf Pendidik', 'url' => '#'],
-        ['text' => 'Staf Kependidikan', 'url' => '#'],
+        ['text' => 'Guru Besar', 'url' => base_url('guru-besar')],
+        ['text' => 'Staf Pendidik', 'url' => base_url('staf-pendidik')],
+        ['text' => 'Staf Kependidikan', 'url' => base_url('staf-kependidikan')],
     ],
     'Layanan' => [
         ['text' => 'Kurikulum IUP', 'url' => base_url('layanan-kurikulum-iup')],
