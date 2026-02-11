@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../helpers.php';
 
@@ -16,20 +15,24 @@ try {
 <section class="py-12 bg-white">
     <div class="container mx-auto px-4 md:px-8">
         
-        <?php 
-            if(file_exists(__DIR__ . '/../ui/section_title.php')) {
-                $title = "Berita & Kabar Fakultas";
-                include __DIR__ . '/../ui/section_title.php';
-            } else {
-                echo '<h2 class="text-3xl font-bold text-[#002b54] mb-8 border-l-4 border-yellow-500 pl-4">Berita & Kabar Fakultas</h2>';
-            }
-        ?>
+        <div class="text-center mb-10"
+        data-aos="zoom-in">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#002b54] uppercase tracking-wider">
+                Berita & Kabar Fakultass Hukum
+            </h2>
+            <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 rounded-full"
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="300"
+                 data-aos-offset="0">
+             </div>
+        </div>
 
         <?php if(empty($gallery_news)): ?>
             <p class="text-center text-gray-400 mt-8 italic">Belum ada berita yang diunggah.</p>
         <?php else: ?>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"  data-aos="fade-up">
                 
                 <?php foreach($gallery_news as $item): 
                     $folder_gambar = '/unsoed_profile/public/assets/img/';
@@ -71,7 +74,8 @@ try {
 
             </div>
 
-            <div class="mt-12 text-center">
+            <div class="mt-12 text-center"
+                 data-aos="zoom-in">
                <a href="/unsoed_profile/public/semua-berita" class="inline-flex items-center gap-2 px-8 py-3 bg-[#002b54] text-white font-bold rounded-full hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                  Lihat Semua Berita
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -79,6 +83,5 @@ try {
             </div>
 
         <?php endif; ?>
-
     </div>
 </section>

@@ -1,9 +1,7 @@
 Options -MultiViews
 RewriteEngine On
 
-# Jika file atau folder fisik ada (seperti gambar/css), buka langsung
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
-# Selain itu, alihkan semua permintaan ke index.php
 RewriteRule ^ index.php [L]

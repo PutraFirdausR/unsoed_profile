@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Fakultas</title>
     <link rel="stylesheet" href="/unsoed_profile/public/assets/css/output.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -36,5 +38,13 @@
     </footer>
     
     <script src="/unsoed_profile/public/assets/js/app.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // Kecepatan animasi (800ms)
+        once: false,    // Animasi cuma jalan sekali saat scroll ke bawah
+      });
+    </script>
 </body>
 </html>

@@ -2,8 +2,9 @@
         style="background-image: url('/unsoed_profile/public/assets/img/home.jpg');">
     <div class="absolute inset-0 bg-linear-to-r from-[#002b54]/90 to-[#002b54]/40"></div>
     
-    <div class="relative z-10 container mx-auto px-6 md:px-12 text-white">
-        <span class="block text-yellow-400 font-bold tracking-widest uppercase mb-4 animate-fade-in-down">
+    <div class="relative z-10 container mx-auto px-6 md:px-12 text-white "
+         data-aos="fade-right">
+        <span class="block text-yellow-400 font-bold tracking-widest uppercase mb-4 animate-fade-in-down" >
             Selamat Datang di
         </span>
         <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 max-w-3xl">

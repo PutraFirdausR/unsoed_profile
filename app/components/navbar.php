@@ -4,7 +4,7 @@ require __DIR__ . '/../data/navbar_data.php';
 $asset_path = '/unsoed_profile/public/assets';
 ?>
 
-<nav class="fixed top-0 left-0 w-full z-50 shadow-md font-sans">
+<nav class="fixed top-0 left-0 w-full z-50 shadow-md font-sans ">
     
     <div class="bg-yellow-500 text-sm py-2 px-4 hidden md:block">
         <div class="container mx-auto flex justify-end items-center space-x-6">

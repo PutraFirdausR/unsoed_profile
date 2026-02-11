@@ -1,13 +1,22 @@
 <section class="py-12 bg-white"> 
-    <div class="container mx-auto px-4 md:px-8">
+    <div class="container mx-auto px-4 md:px-8"
+    >
         
-        <?php 
-        $title = 'Program Studi';
-        $align = 'center';
-        require __DIR__ . '/../ui/section_title.php'; 
-        ?>
+        <div class="text-center mb-10"
+        data-aos="zoom-in">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#002b54] uppercase tracking-wider">
+                Program Studi
+            </h2>
+            <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 rounded-full" 
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="300"
+                 data-aos-offset="0">
+            </div>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        data-aos="fade-up">
             <?php
             $degrees = [
                 ['title' => 'Sarjana Hukum',       'code' => '(S1)', 'link' => base_url('prodi-s1')],
