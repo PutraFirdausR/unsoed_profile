@@ -1,8 +1,5 @@
-// FILE: public/assets/js/kerjasama.js
-
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Fungsi Generic untuk Inisialisasi Tabel
     function initTable(data, tableBodyId, searchInputId, infoId, prevBtnId, nextBtnId) {
         let currentPage = 1;
         const rowsPerPage = 5;
@@ -14,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevBtn = document.getElementById(prevBtnId);
         const nextBtn = document.getElementById(nextBtnId);
 
-        if(!tableBody) return; // Guard clause
+        if(!tableBody) return; 
 
         function renderTable() {
             tableBody.innerHTML = '';
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             paginatedItems.forEach(item => {
-                // Style badge level (Nasional/Internasional)
                 let levelBadge = `<span class="px-2 py-1 text-xs font-semibold rounded-md bg-gray-100 text-gray-600">${item.level}</span>`;
                 if(item.level.toLowerCase().includes('internasional')) {
                     levelBadge = `<span class="px-2 py-1 text-xs font-semibold rounded-md bg-blue-100 text-blue-700">Internasional</span>`;
@@ -49,13 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 tableBody.innerHTML += row;
             });
 
-            // Update Info & Button State
             info.innerText = `Menampilkan ${start + 1} - ${Math.min(end, filteredData.length)} dari ${filteredData.length} data`;
             prevBtn.disabled = currentPage === 1;
             nextBtn.disabled = end >= filteredData.length;
         }
 
-        // Search Logic
         searchInput.addEventListener('keyup', (e) => {
             const term = e.target.value.toLowerCase();
             filteredData = data.filter(item => 
@@ -66,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             renderTable();
         });
 
-        // Pagination Logic
         prevBtn.addEventListener('click', () => {
             if(currentPage > 1) {
                 currentPage--;
@@ -81,11 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Initial Render
         renderTable();
     }
 
-    // Inisialisasi 3 Tabel (Jika data tersedia di window object)
     if(window.UNSOED_DATA) {
         initTable(window.UNSOED_DATA.research, 'tableBodyResearch', 'searchResearch', 'infoResearch', 'prevResearch', 'nextResearch');
         initTable(window.UNSOED_DATA.community, 'tableBodyCommunity', 'searchCommunity', 'infoCommunity', 'prevCommunity', 'nextCommunity');

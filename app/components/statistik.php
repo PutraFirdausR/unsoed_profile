@@ -1,10 +1,6 @@
 <?php
-// FILE: app/views/statistik.php
-
-// 1. Load Data
 require __DIR__ . '/../data/stats_data.php';
 
-// Asset Path Helper
 $asset_path = '/unsoed_profile/public/assets';
 ?>
 

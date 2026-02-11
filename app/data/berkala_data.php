@@ -1,6 +1,4 @@
 <?php
-// FILE: app/data/berkala_data.php
-
 $base_url = '/UNSOED_PROFILE'; 
 
 $data_berkala = [

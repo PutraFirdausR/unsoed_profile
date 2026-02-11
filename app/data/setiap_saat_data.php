@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/setiap_saat_data.php
 
 $base_url = '/UNSOED_PROFILE'; 
 

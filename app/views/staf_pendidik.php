@@ -1,16 +1,11 @@
 <?php
-// FILE: app/views/staf_pendidik.php
-
-// 1. Setup Dasar
 $base_url = '/unsoed_profile'; 
 require_once __DIR__ . '/../helpers.php'; 
 
-// 2. Load Data (Logic DB & Sorting ada di sini)
 $data = require __DIR__ . '/../data/pendidik_data.php';
 $grouped_lecturers = $data['grouped_lecturers'];
 $departments       = $data['departments'];
 
-// 3. Header Halaman
 $page_title = 'Staf Pendidik';
 $page_bg    = $base_url . '/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php';
@@ -18,7 +13,7 @@ require __DIR__ . '/../ui/page_header.php';
 
 <div class="bg-slate-50 min-h-screen font-sans text-[#002b54] py-16">
     
-    <div class="bg-white pt-16 pb-8 border-b border-gray-100 shadow-sm mb-12">
+    <div class="bg-white pt-16 pb-8 mb-12">
         <div class="container mx-auto px-4 text-center">
             <span class="text-[#002b54] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
                 Sumber Daya Manusia
@@ -43,7 +38,7 @@ require __DIR__ . '/../ui/page_header.php';
                 <?php foreach($departments as $dept): ?>
                 <button onclick="filterLecturers('<?= md5($dept) ?>', this)" 
                         class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-sm border
-                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] hover:text-[#002b54]"
+                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] hover:text-yellow-400"
                         data-target="<?= md5($dept) ?>">
                     <?= htmlspecialchars($dept) ?>
                 </button>
@@ -91,24 +86,18 @@ require __DIR__ . '/../ui/page_header.php';
 <?php include __DIR__ . '/../components/pendidik_modal.php'; ?>
 
 <script>
-/**
- * Logic Filter
- */
 function filterLecturers(targetId, btnElement) {
-    // Reset tombol
     const allButtons = document.querySelectorAll('.filter-btn');
     allButtons.forEach(btn => {
         btn.classList.remove('bg-[#002b54]', 'text-white', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
         btn.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
     });
 
-    // Aktifkan tombol yang diklik
     if (btnElement) {
         btnElement.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
         btnElement.classList.add('bg-[#002b54]', 'text-white', 'border-[#002b54]', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
     }
 
-    // Toggle Section
     const sections = document.querySelectorAll('.department-section');
     sections.forEach(sec => {
         if (targetId === 'all') {
@@ -137,31 +126,23 @@ function hideSection(el) {
     }, 300);
 }
 
-/**
- * Logic Modal Popup dengan Fallback Bertingkat
- * Flow: Load Primary (Staf) -> Error? -> Load Backup (Dosen) -> Error? -> Load Avatar
- */
 function openProfileModal(primarySrc, backupSrc, name) {
     const modal = document.getElementById('profileModal');
     const modalImg = document.getElementById('modalImage');
     const modalName = document.getElementById('modalName');
 
-    // Reset dan Set awal
     modalImg.src = primarySrc;
     modalName.textContent = name;
 
-    // Handler Error Gambar
     modalImg.onerror = function() {
         if (this.src !== backupSrc) {
             console.log('Gambar resolusi tinggi tidak ditemukan, menggunakan thumbnail...');
             this.src = backupSrc;
         } else {
-            // Jika backup juga gagal, gunakan avatar
             this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=002b54&color=fff&size=500';
         }
     };
 
-    // Tampilkan Modal
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }

@@ -1,9 +1,7 @@
 <?php
-// FILE: app/data/visi_misi_data.php
 
 return [
     'visi' => [
-        // Kita izinkan tag HTML <span> untuk pewarnaan kata kunci
         'content' => '"Pada tahun 2025 menjadi Fakultas Hukum yang <span class="text-yellow-400">unggul</span> di tingkat nasional, berbasis pada <span class="text-yellow-400">nilai moral & kearifan lokal</span> serta berdaya saing <span class="text-yellow-400">global</span>."'
     ],
     'misi' => [

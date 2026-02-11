@@ -1,16 +1,11 @@
 <?php
-// FILE: app/views/informasi_setiap_saat.php
 
 $base_url = '/UNSOED_PROFILE'; 
 $page_title = 'Informasi Setiap Saat';
 $page_bg    = $base_url . '/public/assets/img/home.jpg'; 
 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 1. Load Data
 require __DIR__ . '/../data/setiap_saat_data.php';
-
-// Asset Helper
 $asset_path = '/unsoed_profile/public/assets';
 ?>
 

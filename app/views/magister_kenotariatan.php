@@ -1,15 +1,9 @@
 <?php
-// FILE: app/views/magister_kenotariatan.php
-
-// 1. Setup Halaman
 $page_title = 'Magister Kenotariatan';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 2. Load Data
 require __DIR__ . '/../data/mkn_data.php';
 
-// Helper Function Judul Section (Bisa dipindah ke helper global jika mau)
 function renderSectionTitle($title) {
     echo '<div class="flex items-center gap-3 mb-6">';
     echo '<div class="w-1.5 h-8 bg-yellow-400 rounded-full"></div>';

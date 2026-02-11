@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/organisasi_data.php
 
 return [
     'dekan' => [

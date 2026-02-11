@@ -1,6 +1,3 @@
-<?php
-// FILE: app/components/berkala_card.php
-?>
 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 card-item flex flex-col h-full border-t-4 border-t-[#002b54] overflow-hidden group">
     
     <div class="p-6 pb-2">

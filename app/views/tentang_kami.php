@@ -1,5 +1,4 @@
 <?php 
-// Load Data
 $about_data = require __DIR__ . '/../data/tentangkami_data.php';
 
 $page_title = 'Tentang Kami';

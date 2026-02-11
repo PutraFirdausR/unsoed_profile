@@ -1,7 +1,4 @@
 <?php
-// FILE: app/data/alumni_data.php
-
-// Base URL helper (jika belum didefinisikan secara global)
 $base_url_img = '/unsoed_profile/public/assets/img/profil_dosen'; 
 
 $data_alumni = [

@@ -1,11 +1,7 @@
 <?php
-// FILE: app/views/struktur_organisasi.php
-
-// 1. Load Helper & Data
-require_once __DIR__ . '/../helpers.php'; // Asumsi ada helper
+require_once __DIR__ . '/../helpers.php'; 
 $org_data = require __DIR__ . '/../data/organisasi_data.php';
 
-// 2. Setup Page
 $page_title = 'Struktur Organisasi';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php'; 

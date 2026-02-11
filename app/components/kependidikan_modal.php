@@ -1,6 +1,3 @@
-<?php
-// FILE: app/components/kependidikan_modal.php
-?>
 <div id="staffModal" class="relative z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div class="fixed inset-0 bg-black/80 transition-opacity backdrop-blur-sm" onclick="closeStaffModal()"></div>
 

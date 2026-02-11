@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/mkn_data.php
 
 $visi = "Menjadi Program Studi MKn yang unggul di tingkat nasional dalam penyelenggaraan pendidikan dan pengembangan ilmu hukum kenotariatan yang berbasis moral dan kearifan lokal serta berdaya saing global.";
 

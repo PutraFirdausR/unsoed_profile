@@ -1,6 +1,3 @@
-<?php
-// FILE: app/components/pendidik_modal.php
-?>
 <div id="profileModal" class="fixed inset-0 z-50 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     
     <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeProfileModal()"></div>

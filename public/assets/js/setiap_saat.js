@@ -1,5 +1,3 @@
-// FILE: public/assets/js/setiap_saat.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.card-item');
@@ -17,13 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItems = card.querySelectorAll('.item-link');
                 let matchInCard = false;
 
-                // Cek apakah kategori cocok
                 if(category.includes(term)) {
                     matchInCard = true;
-                    // Tampilkan semua item jika kategori cocok
                     listItems.forEach(li => li.classList.remove('hidden'));
                 } else {
-                    // Cek per item
                     listItems.forEach(li => {
                         const textEl = li.querySelector('.item-text');
                         const text = textEl ? textEl.innerText.toLowerCase() : '';
@@ -37,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
 
-                // Toggle Kartu
                 if(matchInCard) {
                     card.classList.remove('hidden');
                     hasVisible = true;
@@ -46,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Toggle Pesan No Result
             if(hasVisible) {
                 noResults.classList.add('hidden');
             } else {

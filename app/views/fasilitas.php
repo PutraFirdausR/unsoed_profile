@@ -1,12 +1,9 @@
 <?php
-// FILE: app/views/fasilitas.php
 
 $page_title = 'Fasilitas';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 1. Load Data
 require __DIR__ . '/../data/fasilitas_data.php';
 ?>
 

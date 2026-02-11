@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/stats_data.php
 
 $stats = [
     [

@@ -1,16 +1,11 @@
 <?php
-// FILE: app/views/staf_kependidikan.php
-
-// 1. Setup Dasar
 $base_url = '/unsoed_profile'; 
-require_once __DIR__ . '/../helpers.php'; // Jika ada helper global
+require_once __DIR__ . '/../helpers.php'; 
 
-// 2. Load Data dari Model
 $data = require __DIR__ . '/../data/kependidikan_data.php';
 $grouped_staff = $data['grouped_staff'];
 $departments   = $data['departments'];
 
-// 3. Header Halaman
 $page_title = 'Staf Kependidikan';
 $page_bg    = $base_url . '/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php';
@@ -43,7 +38,7 @@ require __DIR__ . '/../ui/page_header.php';
                 <?php foreach($departments as $dept): ?>
                 <button onclick="filterStaff('<?= md5($dept) ?>', this)" 
                         class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-sm border
-                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] hover:text-[#002b54]"
+                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] hover:text-yellow-400"
                         data-target="<?= md5($dept) ?>">
                     <?= htmlspecialchars($dept) ?>
                 </button>
@@ -91,24 +86,18 @@ require __DIR__ . '/../ui/page_header.php';
 <?php include __DIR__ . '/../components/kependidikan_modal.php'; ?>
 
 <script>
-/**
- * Logic Filter Bagian
- */
 function filterStaff(targetId, btnElement) {
-    // 1. Reset Style Tombol
     const allButtons = document.querySelectorAll('.filter-btn');
     allButtons.forEach(btn => {
         btn.classList.remove('bg-[#002b54]', 'text-white', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
         btn.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
     });
 
-    // 2. Set Active Style Tombol Klik
     if (btnElement) {
         btnElement.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
         btnElement.classList.add('bg-[#002b54]', 'text-white', 'border-[#002b54]', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
     }
 
-    // 3. Filter Section
     const sections = document.querySelectorAll('.department-section');
     sections.forEach(sec => {
         if (targetId === 'all') {
@@ -125,7 +114,6 @@ function filterStaff(targetId, btnElement) {
 
 function showSection(el) {
     el.style.display = 'block';
-    // Timeout kecil agar transisi opacity jalan
     requestAnimationFrame(() => {
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
@@ -140,18 +128,13 @@ function hideSection(el) {
     }, 300);
 }
 
-/**
- * Logic Modal Popup
- */
 function openStaffModal(imageSrc, name, dept) {
     const modal = document.getElementById('staffModal');
     const modalImg = document.getElementById('modalImage');
     const modalName = document.getElementById('modalName');
     const modalDept = document.getElementById('modalDept');
 
-    // Set Data
     modalImg.src = imageSrc;
-    // Error handling gambar jika 404
     modalImg.onerror = function() {
         this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=002b54&color=fff&size=500';
     };
@@ -159,9 +142,7 @@ function openStaffModal(imageSrc, name, dept) {
     modalName.textContent = name;
     modalDept.textContent = dept;
 
-    // Show Modal
     modal.classList.remove('hidden');
-    // Mencegah scroll body background
     document.body.style.overflow = 'hidden';
 }
 
@@ -171,7 +152,6 @@ function closeStaffModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Close on ESC key
 document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
         closeStaffModal();

@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/navbar_data.php
 
 $menus = [
     'Profil' => [

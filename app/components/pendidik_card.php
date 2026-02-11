@@ -1,17 +1,11 @@
 <?php
-// FILE: app/components/pendidik_card.php
-// Variable: $dosen (array), $base_url (string)
 
-// --- LOGIKA PATH GAMBAR ---
-// 1. Thumbnail (Tampilan Kartu)
 $thumbnail_file = $dosen['image'];
 $thumbnail_path = $base_url . "/public/assets/img/profil_dosen/" . $thumbnail_file;
 
-// 2. Popup (Tampilan Modal) - Prioritaskan 'image_staf', fallback ke 'image'
 $popup_file = !empty($dosen['image_staf']) ? $dosen['image_staf'] : $dosen['image'];
 $popup_path = $base_url . "/public/assets/img/profil_staf/" . $popup_file;
 
-// Encode data untuk JS
 $jsName = htmlspecialchars($dosen['name'], ENT_QUOTES);
 ?>
 

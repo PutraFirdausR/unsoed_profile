@@ -1,5 +1,3 @@
-// FILE: public/assets/js/berkala.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.card-item');
@@ -16,13 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItems = card.querySelectorAll('.item-link');
                 let matchInCard = false;
 
-                // 1. Cek apakah Judul Kategori cocok
                 if(category.includes(term)) {
                     matchInCard = true;
-                    // Jika kategori cocok, tampilkan semua isinya
                     listItems.forEach(li => li.classList.remove('hidden'));
                 } else {
-                    // 2. Jika kategori tidak cocok, cek per item di dalamnya
                     listItems.forEach(li => {
                         const textEl = li.querySelector('.item-text');
                         const text = textEl ? textEl.innerText.toLowerCase() : '';
@@ -36,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
 
-                // 3. Toggle visibilitas kartu utama
                 if(matchInCard) {
                     card.classList.remove('hidden');
                     hasVisible = true;
@@ -45,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // 4. Tampilkan pesan "Tidak Ditemukan"
             if(hasVisible) {
                 noResults.classList.add('hidden');
             } else {
@@ -55,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Fungsi Modal (Global Scope)
 window.openModal = function(imageSrc, title) {
     const modal = document.getElementById('imageModal');
     const img = document.getElementById('modal-image');
@@ -75,7 +67,7 @@ window.openModal = function(imageSrc, title) {
         };
 
         modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Disable scroll background
+        document.body.style.overflow = 'hidden'; 
     }
 }
 
@@ -84,7 +76,7 @@ window.closeModal = function() {
     if(modal) {
         modal.classList.add('hidden');
         const img = document.getElementById('modal-image');
-        if(img) img.src = ''; // Clear source
-        document.body.style.overflow = 'auto'; // Enable scroll
+        if(img) img.src = '';
+        document.body.style.overflow = 'auto'; 
     }
 }

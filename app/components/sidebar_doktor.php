@@ -1,6 +1,3 @@
-<?php
-// FILE: app/components/sidebar_doktor.php
-?>
 <div class="sticky top-24 space-y-6">
     <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
         <div class="bg-[#002b54] px-5 py-4">

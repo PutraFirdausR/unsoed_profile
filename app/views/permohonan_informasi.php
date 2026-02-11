@@ -1,14 +1,10 @@
 <?php
-// FILE: app/views/permohonan_informasi.php
 
-// 1. Setup Halaman
 $base_url = '/UNSOED_PROFILE'; 
 $page_title = 'Permohonan Informasi Publik';
 $page_bg    = $base_url . '/public/assets/img/home.jpg'; 
 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 2. Load Data
 require __DIR__ . '/../data/permohonan_data.php';
 ?>
 

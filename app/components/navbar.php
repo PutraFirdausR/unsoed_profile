@@ -1,10 +1,6 @@
 <?php
-// FILE: app/components/navbar.php
-
-// 1. Load Data Menu (Pastikan path sesuai struktur folder Anda)
 require __DIR__ . '/../data/navbar_data.php';
 
-// Helper asset path
 $asset_path = '/unsoed_profile/public/assets';
 ?>
 
@@ -49,7 +45,6 @@ $asset_path = '/unsoed_profile/public/assets';
                 <div class="hidden md:flex space-x-6 lg:space-x-8 items-center h-full">
                     <a href="/unsoed_profile/public/" class="text-white font-medium hover:text-yellow-400 transition h-full flex items-center px-1 tracking-wide">Beranda</a>
                     <?php 
-                    // Loop Menu Desktop -> Memanggil UI Component NavDropdown
                     foreach ($menus as $label => $items) {
                         include __DIR__ . '/../ui/nav_dropdown.php';
                     }

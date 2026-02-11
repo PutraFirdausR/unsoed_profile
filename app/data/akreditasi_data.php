@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/akreditasi_data.php
 
 $akreditasiData = [
     'S1' => [

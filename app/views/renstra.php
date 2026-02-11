@@ -1,17 +1,14 @@
 <?php
-// FILE: app/views/renstra.php
 
-// 1. Setup Halaman
 $page_title = 'Rencana Strategis';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php'; 
 
-// 2. Load Data
 $renstraList = require __DIR__ . '/../data/renstra_data.php';
 ?>
 
-<div class="bg-gray-50 font-sans text-gray-800 min-h-screen py-20">
-    <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+<div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen py-16">
+    <div class="container mx-auto px-4 md:px-8 max-w-7xl">
 
         <div class="mb-10 animate-fade-in-up">
             <h2 class="text-3xl font-bold text-[#002b54] mb-6 flex items-center gap-3">

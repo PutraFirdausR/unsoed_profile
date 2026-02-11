@@ -1,7 +1,5 @@
 <?php
-// FILE: app/components/AccreditationCard.php
 
-// 1. Logika Warna (Business Logic Component)
 $theme = $item['theme'] ?? 'slate';
 $colors = [
     'emerald' => ['bg' => 'bg-emerald-50', 'text' => 'text-emerald-700', 'border' => 'border-emerald-500', 'btn' => 'hover:bg-emerald-600'],

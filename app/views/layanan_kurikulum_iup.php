@@ -1,12 +1,7 @@
 <?php
-// FILE: app/views/layanan_kurikulum_iup.php
-
-// 1. Setup Halaman
 $page_title = 'Layanan Kurikulum IUP';
 $page_bg    = base_url('assets/img/home.jpg'); 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 2. Load Data
 require __DIR__ . '/../data/iup_data.php';
 ?>
 

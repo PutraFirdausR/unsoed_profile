@@ -1,14 +1,10 @@
 <?php
-// FILE: app/components/KerjasamaTable.php
-
-// Definisi warna sekarang mencakup style untuk Pagination ('pag_active')
 $colors = [
     'blue'   => [
         'bg'   => 'bg-blue-50', 
         'text' => 'text-blue-600', 
         'btn'  => 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500/30 shadow-blue-600/20', 
         'ring' => 'focus:ring-blue-500',
-        // Hover Style: Background Biru, Text Putih, Border Biru
         'pag_hover' => 'hover:bg-blue-600 hover:text-white hover:border-blue-600'
     ],
     'teal'   => [
@@ -16,7 +12,6 @@ $colors = [
         'text' => 'text-teal-600', 
         'btn'  => 'bg-teal-600 hover:bg-teal-700 focus:ring-teal-500/30 shadow-teal-600/20', 
         'ring' => 'focus:ring-teal-500',
-        // Hover Style: Background Teal, Text Putih, Border Teal
         'pag_hover' => 'hover:bg-teal-600 hover:text-white hover:border-teal-600'
     ],
     'indigo' => [
@@ -24,12 +19,10 @@ $colors = [
         'text' => 'text-indigo-600', 
         'btn'  => 'bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500/30 shadow-indigo-600/20', 
         'ring' => 'focus:ring-indigo-500',
-        // Hover Style: Background Indigo, Text Putih, Border Indigo
         'pag_hover' => 'hover:bg-indigo-600 hover:text-white hover:border-indigo-600'
     ],
 ];
 
-// Fallback ke blue jika warna tidak ditemukan
 $c = $colors[$iconColor] ?? $colors['blue'];
 ?>
 

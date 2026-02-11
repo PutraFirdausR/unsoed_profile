@@ -1,13 +1,9 @@
 <?php
-// FILE: app/data/kerjasama_data.php
-
-// --- KONFIGURASI DATABASE ---
 $host = "localhost";
 $user = "root";
 $pass = "";
 $db   = "unsoed_db"; 
 
-// Buat koneksi (Menggunakan Try-Catch untuk error handling yang lebih baik)
 try {
     $conn = new mysqli($host, $user, $pass, $db);
     
@@ -15,11 +11,9 @@ try {
         throw new Exception("Koneksi gagal: " . $conn->connect_error);
     }
 } catch (Exception $e) {
-    // Pada production, jangan tampilkan error detail ke user
     die("Maaf, terjadi kesalahan koneksi database.");
 }
 
-// Fungsi bantu ambil data
 function getKerjasama($conn, $kategori) {
     $data = [];
     $kategori = $conn->real_escape_string($kategori);
@@ -32,7 +26,7 @@ function getKerjasama($conn, $kategori) {
             $data[] = [
                 'no'    => $no++, 
                 'mitra' => $row['mitra'],
-                'level' => $row['level'] ?? '-', // Fallback jika kolom kosong
+                'level' => $row['level'] ?? '-',
                 'judul' => $row['judul'],
                 'waktu' => $row['periode'] 
             ];
@@ -41,11 +35,9 @@ function getKerjasama($conn, $kategori) {
     return $data;
 }
 
-// Ambil data ke variabel
 $researchData  = getKerjasama($conn, 'penelitian');
 $communityData = getKerjasama($conn, 'pengabdian');
 $educationData = getKerjasama($conn, 'pendidikan');
 
-// Tutup koneksi
 $conn->close();
 ?>

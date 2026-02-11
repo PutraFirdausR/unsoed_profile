@@ -1,17 +1,11 @@
 <?php
-// FILE: app/views/program_doktor.php
-
-// 1. Setup Halaman
 $base_url = '/UNSOED_PROFILE'; 
 $page_title = 'Program Doktor';
 $page_bg    = $base_url . '/public/assets/img/home.jpg'; 
 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 2. Load Data
 $data = require __DIR__ . '/../data/doktor_data.php';
 
-// Helper Function Judul (Jika belum ada di global helper)
 function renderDoktorTitle($title) {
     echo '<div class="flex items-center gap-3 mb-6">';
     echo '<div class="w-1.5 h-8 bg-yellow-400 rounded-full"></div>';

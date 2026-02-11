@@ -1,14 +1,10 @@
 <?php
-// FILE: app/views/akreditasi.php
 
 $page_title = 'Akreditasi & Sertifikasi';
-// Path helper jika perlu, atau sesuaikan path asset
 $base_url_asset = '/unsoed_profile/public/assets'; 
 $page_bg = $base_url_asset . '/img/home.jpg'; 
 
 require __DIR__ . '/../ui/page_header.php'; 
-
-// 1. LOAD DATA
 require __DIR__ . '/../data/akreditasi_data.php';
 ?>
 

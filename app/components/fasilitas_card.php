@@ -1,8 +1,3 @@
-<?php
-// FILE: app/components/fasilitas_card.php
-// Variable $item diterima dari loop di file utama
-?>
-
 <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full relative overflow-hidden">
     
     <div class="h-2 w-full bg-[#002b54] group-hover:bg-yellow-500 transition-colors"></div>

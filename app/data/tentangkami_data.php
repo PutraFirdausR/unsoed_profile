@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/tentangkami_data.php
 
 return [
     'sejarah' => [

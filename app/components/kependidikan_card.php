@@ -1,13 +1,7 @@
 <?php
-// FILE: app/components/kependidikan_card.php
-// Variable yang dibutuhkan: $person (array), $base_url (string)
-
-// Logic Path Gambar
 $img_file = $person['image'];
-// Path default (lokal)
 $display_img = $base_url . "/public/assets/img/profil_kependidikan/" . $img_file;
 
-// Jika database kosong atau file tidak ada (opsional check file_exists), pakai UI Avatars
 if(empty($img_file)) {
     $display_img = 'https://ui-avatars.com/api/?name=' . urlencode($person['name']) . '&background=002b54&color=fff&size=400';
 }

@@ -1,7 +1,4 @@
 <?php
-// FILE: app/views/kerjasama.php
-
-// 1. Load Logic Database
 require __DIR__ . '/../data/kerjasama_data.php';
 
 $page_title = 'Kerjasama';
@@ -68,7 +65,6 @@ require __DIR__ . '/../ui/page_header.php';
             $infoId = 'infoEducation';
             $prevBtnId = 'prevEducation';
             $nextBtnId = 'nextEducation';
-            // PDF Link dihapus karena di kode asli tidak ada
             $pdfLink = null; 
             
             include __DIR__ . '/../components/kerjasama_table.php'; 

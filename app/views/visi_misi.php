@@ -1,5 +1,4 @@
 <?php 
-// Load Data
 $vm_data = require __DIR__ . '/../data/visi_misi_data.php';
 
 $page_title = 'Visi Misi';

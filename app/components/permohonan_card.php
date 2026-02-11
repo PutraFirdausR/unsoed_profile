@@ -1,8 +1,3 @@
-<?php
-// FILE: app/components/permohonan_card.php
-// Variable: $step (array)
-?>
-
 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
     
     <div class="bg-[#002b54] p-5 flex items-center gap-4">
@@ -20,7 +15,7 @@
         <?php if($step['content_type'] == 'grid_boxes'): ?>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <?php foreach($step['boxes'] as $box): 
-                    $c = $box['color']; // green / yellow
+                    $c = $box['color'];
                     $bg = "bg-{$c}-50";
                     $border = "border-{$c}-200";
                     $text = "text-{$c}-800";
@@ -73,7 +68,7 @@
         <?php elseif($step['content_type'] == 'status_list'): ?>
             <div class="space-y-4">
                 <?php foreach($step['statuses'] as $stat): 
-                    $c = $stat['color']; // green, yellow, red
+                    $c = $stat['color']; 
                     $bg = "bg-{$c}-50";
                     $border = "border-{$c}-100";
                     $badgeBg = "bg-{$c}-100";

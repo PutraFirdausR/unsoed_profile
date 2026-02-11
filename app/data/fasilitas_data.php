@@ -1,5 +1,4 @@
 <?php
-// FILE: app/data/fasilitas_data.php
 
 $fasilitas = [
     [

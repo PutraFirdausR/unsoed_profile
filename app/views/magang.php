@@ -1,21 +1,26 @@
 <?php
-// FILE: app/views/magang.php
-
 $page_title = 'Program Magang Mahasiswa';
-// Pastikan path gambar background benar
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php'; 
 ?>
 
-<div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen relative flex items-center">
+<div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen relative">
     
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-[20%] -right-[10%] w-200 h-200blue-100/40 rounded-full blur-3xl opacity-60"></div>
-        <div class="absolute bottom-[10%] left-[10%] w-100 h-100 bg-gray-200/50 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-10 left-10 w-64 h-64 bg-gray-200/50 rounded-full blur-3xl opacity-50"></div>
     </div>
 
-    <div class="container mx-auto px-4 md:px-8 relative z-10 max-w-5xl py-12">
+    <div class="container mx-auto px-4 md:px-8 relative z-10 max-w-5xl py-20">
         
+        <div class="text-center mb-12">
+                <span class="text-yellow-600 font-bold tracking-widest uppercase text-sm">Program Magang</span>
+                <h2 class="text-3xl font-bold text-[#002b54] mt-2 mb-4">Layanan Magang Mahasiswa</h2>
+                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Portal resmi untuk memfasilitasi pengembangan kompetensi praktis dan perluasan jejaring profesional mahasiswa Fakultas Hukum.                </p>
+            </div>
+
         <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 overflow-hidden border border-white flex flex-col md:flex-row">
             
             <div class="w-full md:w-1/2 bg-[#002b54] p-10 md:p-14 text-white flex flex-col justify-center relative overflow-hidden">

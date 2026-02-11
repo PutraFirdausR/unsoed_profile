@@ -1,12 +1,11 @@
 <?php
-// FILE: app/data/permohonan_data.php
 
 $steps = [
     [
         'number' => 1,
         'title'  => 'Pengajuan & Identifikasi',
         'desc'   => 'Pemohon mengajukan permintaan kepada PPID melalui petugas layanan. Petugas melakukan <strong>identifikasi jenis informasi</strong> yang dimohonkan:',
-        'content_type' => 'grid_boxes', // Custom type untuk render konten khusus
+        'content_type' => 'grid_boxes', 
         'boxes' => [
             [
                 'title' => 'Langsung Diberikan',

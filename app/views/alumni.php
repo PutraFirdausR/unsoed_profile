@@ -1,5 +1,4 @@
 <?php
-// FILE: app/views/alumni.php
 
 $base_url = '/UNSOED_PROFILE'; 
 $page_title = 'Alumni Terkemuka';
@@ -7,7 +6,6 @@ $page_bg    = '/unsoed_profile/public/assets/img/home.jpg';
 
 require __DIR__ . '/../ui/page_header.php'; 
 
-// 1. Load Data
 require __DIR__ . '/../data/alumni_data.php';
 ?>
 
