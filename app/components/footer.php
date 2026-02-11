@@ -92,10 +92,6 @@
 
         <div class="mt-12 pt-8 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
             <p>&copy; <?php echo date("Y"); ?> Fakultas Hukum Universitas Jenderal Soedirman. All rights reserved.</p>
-            <div class="mt-4 md:mt-0 flex space-x-6">
-                <a href="#" class="hover:text-yellow-500 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-yellow-500 transition-colors">Terms of Service</a>
-            </div>
         </div>
     </div>
 </footer>

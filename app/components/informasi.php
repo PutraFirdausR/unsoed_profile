@@ -26,12 +26,11 @@ try {
 ?>
 
 <section class="py-12">
-    <div class="container mx-auto px-4 md:px-8">
-        
+    <div class="container mx-auto px-4 md:px-8">        
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 shadow-xl rounded-xl overflow-hidden border border-gray-100">
-
             <div class="bg-white p-8 border-r border-gray-100 flex flex-col justify-between">
                 <div>
+                    
                     <h2 class="text-2xl font-bold mb-6 relative z-10 flex items-center gap-2">
                         <span class="w-1.5 h-8 bg-yellow-500 rounded-full block"></span>
                         Kegiatan Terbaru
@@ -63,9 +62,8 @@ try {
                             </a>
                             <?php endforeach; ?>
                         </div>
-                    <?php endif; ?>
-                    
-                    </div>
+                    <?php endif; ?>                   
+                </div>
             </div>
 
             <div class="bg-[#002b54] p-8 text-white relative overflow-hidden flex flex-col justify-between" 
