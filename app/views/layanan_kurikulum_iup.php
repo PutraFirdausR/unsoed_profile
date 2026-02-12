@@ -10,16 +10,21 @@ require __DIR__ . '/../data/iup_data.php';
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 md:px-8 max-w-5xl">
             
-            <div class="text-center mb-12">
+            <div class="text-center mb-12"  data-aos="zoom-in">
                 <span class="text-yellow-600 font-bold tracking-widest uppercase text-sm">Dokumen Akademik</span>
                 <h2 class="text-3xl font-bold text-[#002b54] mt-2 mb-4">Dokumen IUP</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"></div>
+                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"
+                     data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="100"
+                     data-aos-offset="0">
+                </div>
                 <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     Berikut adalah dokumen resmi yang dapat digunakan sebagai acuan akademik bagi mahasiswa International Undergraduate Program (IUP).
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" >
                 <?php foreach($documents as $doc): ?>
                     
                     <?php include __DIR__ . '/../components/iup_card.php'; ?>
@@ -27,7 +32,7 @@ require __DIR__ . '/../data/iup_data.php';
                 <?php endforeach; ?>
             </div>
 
-            <div class="mt-12 text-center">
+            <div class="mt-12 text-center"  data-aos="zoom-in">
                 <p class="text-sm text-gray-500 bg-gray-50 inline-block px-6 py-3 rounded-full border border-gray-200 shadow-sm">
                     <span class="font-bold text-[#002b54]">Catatan:</span> Pastikan browser Anda mendukung tampilan PDF atau file akan terunduh otomatis.
                 </p>

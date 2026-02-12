@@ -7,13 +7,18 @@ $asset_path = '/unsoed_profile/public/assets';
 <section class="py-12">
     <div class="container mx-auto px-4 md:px-8">
         
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="zoom-in">
             <h2 class="text-3xl md:text-4xl font-bold text-[#002b54] mb-2">FH UNSOED Dalam Angka</h2>
             <p class="text-gray-500 text-sm font-medium">Data Statistik Tahun Akademik 2024/2025</p>
-            <div class="h-1 w-20 bg-yellow-500 mt-2 rounded-full mx-auto"></div>
+            <div class="h-1 w-20 bg-yellow-500 mt-2 rounded-full mx-auto"
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="100"
+                 data-aos-offse>
+            </div>
         </div>
 
-        <div class="relative bg-[#002b54] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-500">
+        <div class="relative bg-[#002b54] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-500" data-aos="fade-up">
             
             <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-yellow-500 rounded-full opacity-20 blur-2xl"></div>
             <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-blue-400 rounded-full opacity-20 blur-2xl"></div>

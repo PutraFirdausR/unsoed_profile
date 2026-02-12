@@ -13,7 +13,7 @@ require __DIR__ . '/../ui/page_header.php';
 
 <div class=" min-h-screen font-sans text-[#002b54] py-16">
     
-    <div class="pt-16 pb-8 mb-12">
+    <div class="pt-16 pb-8 mb-12" data-aos="zoom-in">
         <div class="container mx-auto px-4 text-center">
             <span class="text-[#002b54] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
                 Sumber Daya Manusia
@@ -21,7 +21,12 @@ require __DIR__ . '/../ui/page_header.php';
             <h1 class="text-3xl md:text-5xl font-extrabold text-[#002b54] mb-6">
                 Tenaga Kependidikan
             </h1>
-            <div class="w-24 h-1.5 bg-yellow-500 mx-auto rounded-full mb-8"></div>
+            <div class="w-24 h-1.5 bg-yellow-500 mx-auto rounded-full mb-8" 
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="100"
+                 data-aos-offset="0">
+            </div>
             
             <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light mb-10">
                 Pilih sub bagian di bawah ini untuk melihat daftar staf.
@@ -58,7 +63,7 @@ require __DIR__ . '/../ui/page_header.php';
 
             <?php foreach($grouped_staff as $deptName => $staff_list): ?>
                 
-                <div id="<?= md5($deptName) ?>" class="department-section mb-16 animate-fade-in">
+                <div id="<?= md5($deptName) ?>" class="department-section mb-16 "  >
                     
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-1.5 h-8 bg-yellow-500 rounded-full"></div>
@@ -160,10 +165,6 @@ document.addEventListener('keydown', function(event) {
 </script>
 
 <style>
-    .department-section { 
-        transition: opacity 0.3s ease, transform 0.3s ease; 
-        transform: translateY(0);
-    }
     .bg-pattern {
         background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
         background-size: 20px 20px;

@@ -10,8 +10,8 @@ require __DIR__ . '/../ui/page_header.php';
 
     <div class="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-20 py-16 space-y-12">
 
-        <div class="w-full">
-            <h2 class="text-3xl font-bold text-[#002b54] mb-6 border-b-2 border-yellow-400 pb-3 inline-block">Komitmen Kerjasama Fakultas Hukum UNSOED</h2>
+        <div class="w-full" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-[#002b54] mb-6 border-b-2 border-yellow-400 pb-3 inline-block" >Komitmen Kerjasama Fakultas Hukum UNSOED</h2>
             <div class="text-slate-600 text-lg leading-relaxed space-y-4 text-justify">
                 <p>
                     Dalam rangka mendukung visi dan misi dari <strong>Fakultas Hukum UNSOED</strong>, maka diperlukan peningkatan kualitas pendidikan, penelitian, maupun pengabdian kepada masyarakat. Untuk mendukung hal tersebut diperlukan sebuah komitmen untuk memperluas jaringan dan komunikasi kepada berbagai macam lembaga yang ada di Indonesia.

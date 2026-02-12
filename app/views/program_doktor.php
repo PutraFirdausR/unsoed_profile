@@ -17,7 +17,7 @@ function renderDoktorTitle($title) {
 <div class="bg-gray-50 min-h-screen font-sans text-gray-800 py-16 scroll-smooth">
     <div class="container mx-auto px-4 md:px-8 max-w-7xl">
 
-        <div class="mb-10 border-b border-gray-200 pb-6">
+        <div class="mb-10 border-b border-gray-200 pb-6" data-aos="zoom-in">
             <h1 class="text-3xl md:text-5xl font-extrabold text-[#002b54] mb-4">
                 Program Doktor Ilmu Hukum
             </h1>
@@ -25,11 +25,11 @@ function renderDoktorTitle($title) {
                 Menghasilkan lulusan Doktor Hukum yang bermoral, berdaya saing global, dan berbasis kearifan lokal.
             </p>
             <div class="mt-4 inline-block bg-blue-100 border border-blue-300 text-blue-800 text-sm font-bold px-4 py-1.5 rounded-full">
-                Terakreditasi "B" BAN-PT
+                Terakreditasi BAN-PT
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 md:gap-12 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 md:gap-12 relative" >
             
             <aside class="hidden lg:block lg:col-span-1">
                 <?php 
@@ -42,13 +42,13 @@ function renderDoktorTitle($title) {
                 ?>
             </aside>
 
-            <main class="lg:col-span-3 space-y-16">
+            <main class="lg:col-span-3 space-y-16" >
                 
-                <section id="visi-misi" class="scroll-mt-28">
+                <section id="visi-misi" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderDoktorTitle("Visi, Misi & Tujuan"); ?>
                     
-                    <div class="space-y-6">
-                        <div class="bg-[#002b54] text-white rounded-xl p-8 shadow-md relative overflow-hidden">
+                    <div class="space-y-6" >
+                        <div class="bg-[#002b54] text-white rounded-xl p-8 shadow-md relative overflow-hidden" data-aos="fade-up">
                             <div class="absolute top-0 right-0 p-4 opacity-10">
                                 <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm1 14.55C10.61 16.1 8.89 15.65 7.5 15.65c-3.15 0-5.5 2.05-5.5 5.35C2 22.95 4.5 24 7.5 24c3.55 0 6.5-1.9 6.5-5.1 0-2.3-1.6-3.8-3.45-4.55l1.45-2.2c2.75 1.55 4.5 4.05 4.5 6.75h2c0-3.5-2.25-6.55-5.5-8.35l-1 1.6z"/></svg>
                             </div>
@@ -56,7 +56,7 @@ function renderDoktorTitle($title) {
                             <p class="text-lg leading-relaxed font-light italic">"<?= $data['visi'] ?>"</p>
                         </div>
 
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6" data-aos="fade-up">
                             <h3 class="text-xl font-bold text-[#002b54] mb-4 flex items-center gap-2">
                                 <span class="w-2 h-6 bg-[#002b54] rounded"></span> Misi
                             </h3>
@@ -70,11 +70,11 @@ function renderDoktorTitle($title) {
                             </ul>
                         </div>
 
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                            <h3 class="text-xl font-bold text-[#002b54] mb-4 flex items-center gap-2">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6"data-aos="fade-up">
+                            <h3 class="text-xl font-bold text-[#002b54] mb-4 flex items-center gap-2" >
                                 <span class="w-2 h-6 bg-[#002b54] rounded"></span> Tujuan & Sasaran
                             </h3>
-                            <ul class="space-y-3">
+                            <ul class="space-y-3" >
                                 <?php foreach($data['tujuan'] as $item): ?>
                                 <li class="flex items-start gap-3 text-gray-700">
                                     <svg class="w-5 h-5 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -86,9 +86,9 @@ function renderDoktorTitle($title) {
                     </div>
                 </section>
 
-                <section id="strategi" class="scroll-mt-28">
+                <section id="strategi" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderDoktorTitle("Strategi"); ?>
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8" data-aos="fade-up">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <?php foreach($data['strategi'] as $index => $item): ?>
                             <div class="flex items-start gap-3 p-3 bg-gray-50 rounded hover:bg-yellow-50 transition">
@@ -100,11 +100,11 @@ function renderDoktorTitle($title) {
                     </div>
                 </section>
 
-                <section id="syarat" class="scroll-mt-28">
+                <section id="syarat" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderDoktorTitle("Syarat & Instrumen Seleksi"); ?>
                     
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="grid grid-cols-1 gap-6" >
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
                             <div class="bg-blue-50 px-6 py-4 border-b border-blue-100">
                                 <h3 class="font-bold text-[#002b54]">Syarat Pendaftaran</h3>
                             </div>
@@ -117,7 +117,7 @@ function renderDoktorTitle($title) {
                             </div>
                         </div>
 
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
                             <div class="bg-yellow-50 px-6 py-4 border-b border-yellow-100">
                                 <h3 class="font-bold text-[#002b54]">Instrumen Seleksi</h3>
                             </div>
@@ -135,9 +135,9 @@ function renderDoktorTitle($title) {
                     </div>
                 </section>
 
-                <section id="alur" class="scroll-mt-28">
+                <section id="alur" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderDoktorTitle("Alur Pendaftaran"); ?>
-                    <div class="relative border-l-4 border-gray-200 ml-4 space-y-8">
+                    <div class="relative border-l-4 border-gray-200 ml-4 space-y-8" data-aos="fade-up">
                         <?php foreach($data['alur'] as $index => $alur): ?>
                         <div class="relative pl-8">
                             <div class="absolute -left-3 top-0 w-6 h-6 bg-[#002b54] rounded-full border-4 border-white shadow"></div>
@@ -150,9 +150,9 @@ function renderDoktorTitle($title) {
                     </div>
                 </section>
 
-                <section id="dosen" class="scroll-mt-28">
+                <section id="dosen" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderDoktorTitle("Dosen Pengajar"); ?>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up">
                         <?php foreach($data['dosen'] as $idx => $dosen): ?>
                         <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition group">
                             <div class="w-10 h-10 rounded-full bg-blue-50 text-[#002b54] flex items-center justify-center font-bold text-sm border border-blue-100 group-hover:bg-[#002b54] group-hover:text-white transition">
@@ -167,7 +167,7 @@ function renderDoktorTitle($title) {
                     </div>
                 </section>
 
-                <section id="struktur" class="scroll-mt-28">
+                <section id="struktur" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderDoktorTitle("Struktur Organisasi"); ?>
                     <div class="flex flex-col md:flex-row justify-center gap-6">
                         <?php foreach($data['pimpinan'] as $p): 

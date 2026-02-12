@@ -3,14 +3,14 @@
     >
         
         <div class="text-center mb-10"
-        data-aos="zoom-in">
-            <h2 class="text-2xl md:text-3xl font-bold text-[#002b54] uppercase tracking-wider">
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-[#002b54] uppercase tracking-wider" data-aos="zoom-in">
                 Program Studi
             </h2>
             <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 rounded-full" 
                  data-aos="fade-zoom-in"
                  data-aos-easing="ease-in-back"
-                 data-aos-delay="300"
+                 data-aos-delay="100"
                  data-aos-offset="0">
             </div>
         </div>

@@ -26,10 +26,10 @@ try {
 ?>
 
 <section class="py-12">
-    <div class="container mx-auto px-4 md:px-8">        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 shadow-xl rounded-xl overflow-hidden border border-gray-100">
-            <div class="bg-white p-8 border-r border-gray-100 flex flex-col justify-between">
-                <div>
+    <div class="container mx-auto px-4 md:px-8" data-aos="fade-up">        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 shadow-xl rounded-xl overflow-hidden border border-gray-100" >
+            <div class="bg-white p-8 border-r border-gray-100 flex flex-col justify-between" >
+                <div data-aos="zoom-in">
                     
                     <h2 class="text-2xl font-bold mb-6 relative z-10 flex items-center gap-2">
                         <span class="w-1.5 h-8 bg-yellow-500 rounded-full block"></span>
@@ -72,7 +72,7 @@ try {
                 <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-yellow-500 rounded-full opacity-10 blur-2xl"></div>
                 <div class="absolute bottom-0 left-0 -mb-4 -ml-4 w-24 h-24 bg-blue-400 rounded-full opacity-10 blur-xl"></div>
 
-                <div>
+                <div data-aos="zoom-in">
                     <h2 class="text-2xl font-bold mb-8 relative z-10 flex items-center gap-2">
                         <span class="w-1.5 h-8 bg-yellow-500 rounded-full block"></span>
                         Agenda Fakultas
@@ -107,7 +107,7 @@ try {
             </div>
 
             <div class="bg-white p-8 border-l border-gray-100 flex flex-col justify-between">
-                <div>
+                <div data-aos="zoom-in">
                     <h2 class="text-2xl font-bold mb-8 relative z-10 flex items-center gap-2">
                         <span class="w-1.5 h-8 bg-yellow-500 rounded-full block"></span>
                         Pengumuman

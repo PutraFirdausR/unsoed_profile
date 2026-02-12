@@ -9,7 +9,7 @@ $popup_path = $base_url . "/public/assets/img/profil_staf/" . $popup_file;
 $jsName = htmlspecialchars($dosen['name'], ENT_QUOTES);
 ?>
 
-<div class="group bg-white rounded-xl border border-gray-200 hover:border-[#002b54] transition-all duration-300 flex flex-col overflow-hidden hover:shadow-xl hover:shadow-blue-900/10 h-full">
+<div class="group bg-white rounded-xl border border-gray-200 hover:border-[#002b54] transition-all duration-300 flex flex-col overflow-hidden hover:shadow-xl hover:shadow-blue-900/10 h-full" data-aos="fade-up">
     
     <div class="aspect-4/5 w-full overflow-hidden bg-slate-100 relative cursor-zoom-in"
          onclick="openProfileModal('<?= $popup_path ?>', '<?= $thumbnail_path ?>', '<?= $jsName ?>')">

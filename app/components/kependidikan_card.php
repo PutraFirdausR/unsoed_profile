@@ -8,7 +8,7 @@ if(empty($img_file)) {
 ?>
 
 <div class="group bg-white rounded-lg border border-gray-200 hover:border-[#002b54] transition-all duration-300 p-5 hover:shadow-md cursor-pointer h-full flex flex-col justify-between"
-     onclick="openStaffModal('<?= $display_img ?>', '<?= htmlspecialchars($person['name'], ENT_QUOTES) ?>', '<?= htmlspecialchars($person['department'], ENT_QUOTES) ?>')">
+     onclick="openStaffModal('<?= $display_img ?>', '<?= htmlspecialchars($person['name'], ENT_QUOTES) ?>', '<?= htmlspecialchars($person['department'], ENT_QUOTES) ?>')" data-aos="fade-up">
     
     <div>
         <h3 class="text-base font-bold text-[#002b54] leading-snug group-hover:text-blue-700 mb-2">

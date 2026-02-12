@@ -13,7 +13,7 @@ require __DIR__ . '/../ui/page_header.php';
 
 <div class="bg-slate-50 min-h-screen font-sans text-[#002b54] py-16">
     
-    <div class="bg-white pt-16 pb-8 mb-12">
+    <div class="bg-white pt-16 pb-8 mb-12" data-aos="zoom-in">
         <div class="container mx-auto px-4 text-center">
             <span class="text-[#002b54] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
                 Sumber Daya Manusia
@@ -21,7 +21,12 @@ require __DIR__ . '/../ui/page_header.php';
             <h1 class="text-3xl md:text-5xl font-extrabold text-[#002b54] mb-6">
                 Staf Pendidik
             </h1>
-            <div class="w-24 h-1.5 bg-yellow-500 mx-auto rounded-full mb-8"></div>
+            <div class="w-24 h-1.5 bg-yellow-500 mx-auto rounded-full mb-8"
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="100"
+                 data-aos-offset="0">
+            </div>
             
             <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light mb-10">
                 Pilih kategori bagian di bawah ini untuk menyaring daftar dosen.
@@ -47,7 +52,7 @@ require __DIR__ . '/../ui/page_header.php';
         </div>
     </div>
 
-    <div class="container mx-auto px-4 md:px-8 min-h-125">
+    <div class="container mx-auto px-4 md:px-8 min-h-125" >
         
         <?php if(empty($grouped_lecturers)): ?>
             <div class="text-center py-20 bg-white rounded-xl border border-dashed border-gray-300">
@@ -57,7 +62,7 @@ require __DIR__ . '/../ui/page_header.php';
 
             <?php foreach($grouped_lecturers as $deptName => $lecturers): ?>
                 
-                <div id="<?= md5($deptName) ?>" class="department-section mb-16 animate-fade-in">
+                <div id="<?= md5($deptName) ?>" class="department-section mb-16 " >
                     
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-1.5 h-8 bg-yellow-500 rounded-full"></div>

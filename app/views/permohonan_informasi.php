@@ -11,7 +11,7 @@ require __DIR__ . '/../data/permohonan_data.php';
 <div class="bg-slate-50 font-sans text-slate-800 min-h-screen py-16">
     <div class="container mx-auto px-4 md:px-8 max-w-5xl">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-16" data-aos="zoom-in">
             <span class="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-[#002b54] text-xs font-bold tracking-widest uppercase mb-4">
                 Standar Operasional Prosedur
             </span>
@@ -27,9 +27,9 @@ require __DIR__ . '/../data/permohonan_data.php';
 
         <?php endforeach; ?>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12" >
             
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8" data-aos="fade-up">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="bg-orange-100 p-2 rounded-lg text-orange-600">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
@@ -42,7 +42,7 @@ require __DIR__ . '/../data/permohonan_data.php';
                 </ol>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8" data-aos="fade-up">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="bg-blue-100 p-2 rounded-lg text-blue-600">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -55,7 +55,7 @@ require __DIR__ . '/../data/permohonan_data.php';
             </div>
         </div>
 
-        <div class="bg-[#002b54] rounded-3xl p-10 md:p-12 text-center relative overflow-hidden shadow-2xl">
+        <div class="bg-[#002b54] rounded-3xl p-10 md:p-12 text-center relative overflow-hidden shadow-2xl" data-aos="fade-up">
             <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
             <div class="absolute bottom-0 left-0 w-32 h-32 bg-yellow-400 opacity-10 rounded-full -ml-10 -mb-10"></div>
 

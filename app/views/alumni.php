@@ -12,7 +12,7 @@ require __DIR__ . '/../data/alumni_data.php';
 <div class="bg-slate-50 min-h-screen py-16 font-sans text-slate-800">
     <div class="container mx-auto px-4 max-w-6xl">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-16" data-aos="zoom-in">
             <h2 class="text-3xl font-bold text-[#002b54] mb-3">Alumni Terkemuka</h2>
             <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
             <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
@@ -28,7 +28,7 @@ require __DIR__ . '/../data/alumni_data.php';
             <?php endforeach; ?>
         </div>
 
-        <div class="mt-20 text-center border-t border-slate-200 pt-10">
+        <div class="mt-20 text-center  pt-10" data-aos="zoom-in">
             <p class="text-slate-500 text-sm mb-4">Apakah Anda bagian dari alumni?</p>
             <a href="https://kafhunsoed.com/" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#002b54] text-white text-sm font-semibold rounded hover:bg-blue-900 transition-colors shadow-lg shadow-blue-900/20">
                 <span>Kunjungi Website Alumni</span>

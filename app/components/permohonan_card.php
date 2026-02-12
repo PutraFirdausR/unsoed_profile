@@ -1,4 +1,4 @@
-<div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
+<div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8" data-aos="fade-up">
     
     <div class="bg-[#002b54] p-5 flex items-center gap-4">
         <div class="w-10 h-10 rounded-full bg-yellow-400 text-[#002b54] flex items-center justify-center font-bold text-xl shadow-md">

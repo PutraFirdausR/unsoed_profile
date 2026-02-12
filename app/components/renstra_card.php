@@ -1,4 +1,4 @@
-<div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all duration-300 group overflow-hidden mb-4">
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all duration-300 group overflow-hidden mb-4" data-aos="fade-up">
     <div class="flex flex-col md:flex-row items-start md:items-center p-6 gap-6">
         
         <div class="shrink-0">

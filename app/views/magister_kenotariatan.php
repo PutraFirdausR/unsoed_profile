@@ -15,7 +15,7 @@ function renderSectionTitle($title) {
 <div class="bg-gray-50 min-h-screen font-sans text-gray-800 py-16 scroll-smooth">
     <div class="container mx-auto px-4 md:px-8 max-w-7xl">
 
-        <div class="mb-10 border-b border-gray-200 pb-6">
+        <div class="mb-10 border-b border-gray-200 pb-6" data-aos="zoom-in">
             <h1 class="text-3xl md:text-5xl font-extrabold text-[#8B0000] mb-4">
                 Magister Kenotariatan (M.Kn)
             </h1>
@@ -23,7 +23,7 @@ function renderSectionTitle($title) {
                 Mencetak lulusan ahli hukum kenotariatan yang profesional, bermoral, dan menguasai formulasi akta hukum berbasis kearifan lokal.
             </p>
             <div class="mt-4 inline-block bg-yellow-100 border border-yellow-300 text-yellow-800 text-sm font-bold px-4 py-1.5 rounded-full">
-                Terakreditasi "B" BAN-PT
+                Terakreditasi BAN-PT
             </div>
         </div>
 
@@ -35,11 +35,11 @@ function renderSectionTitle($title) {
 
             <main class="lg:col-span-3 space-y-16">
                 
-                <section id="visi-misi" class="scroll-mt-28">
+                <section id="visi-misi" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderSectionTitle("Visi & Misi"); ?>
                     
                     <div class="space-y-6">
-                        <div class="bg-[#8B0000] text-white rounded-xl p-8 shadow-md relative overflow-hidden">
+                        <div class="bg-[#8B0000] text-white rounded-xl p-8 shadow-md relative overflow-hidden" data-aos="fade-up">
                             <div class="absolute top-0 right-0 p-4 opacity-10">
                                 <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm1 14.55C10.61 16.1 8.89 15.65 7.5 15.65c-3.15 0-5.5 2.05-5.5 5.35C2 22.95 4.5 24 7.5 24c3.55 0 6.5-1.9 6.5-5.1 0-2.3-1.6-3.8-3.45-4.55l1.45-2.2c2.75 1.55 4.5 4.05 4.5 6.75h2c0-3.5-2.25-6.55-5.5-8.35l-1 1.6z"/></svg>
                             </div>
@@ -49,7 +49,7 @@ function renderSectionTitle($title) {
                             </p>
                         </div>
 
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6" data-aos="fade-up">
                             <h3 class="text-xl font-bold text-[#8B0000] mb-4 flex items-center gap-2">
                                 <span class="w-2 h-6 bg-[#8B0000] rounded"></span> Misi
                             </h3>
@@ -65,11 +65,11 @@ function renderSectionTitle($title) {
                     </div>
                 </section>
 
-                <section id="seleksi" class="scroll-mt-28">
+                <section id="seleksi" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderSectionTitle("Informasi Akademik"); ?>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-full">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-full" data-aos="fade-up">
                             <h3 class="font-bold text-[#8B0000] mb-4 text-lg border-b border-gray-100 pb-2">Materi Seleksi</h3>
                             <ul class="space-y-4">
                                 <?php foreach($materi_seleksi as $idx => $materi): ?>
@@ -83,7 +83,7 @@ function renderSectionTitle($title) {
                             </ul>
                         </div>
 
-                        <div class="bg-[#fdfaf0] rounded-xl shadow-sm border border-yellow-100 p-6 h-full relative overflow-hidden group">
+                        <div class="bg-[#fdfaf0] rounded-xl shadow-sm border border-yellow-100 p-6 h-full relative overflow-hidden group" data-aos="fade-up">
                             <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-200 rounded-bl-full -mr-12 -mt-12 opacity-40 group-hover:scale-110 transition"></div>
                             
                             <h3 class="font-bold text-[#8B0000] mb-5 text-lg border-b border-yellow-200 pb-2 relative z-10">
@@ -120,9 +120,9 @@ function renderSectionTitle($title) {
                     </div>
                 </section>
 
-                <section id="dosen" class="scroll-mt-28">
+                <section id="dosen" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderSectionTitle("Dosen Pengajar"); ?>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up">
                         <?php foreach($dosen_tetap as $idx => $dosen): ?>
                         <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition group">
                             <div class="w-10 h-10 rounded-full bg-red-50 text-[#8B0000] flex items-center justify-center font-bold text-sm border border-red-100 group-hover:bg-[#8B0000] group-hover:text-white transition">
@@ -138,9 +138,9 @@ function renderSectionTitle($title) {
                     </div>
                 </section>
 
-                <section id="struktur" class="scroll-mt-28">
+                <section id="struktur" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderSectionTitle("Struktur Organisasi"); ?>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up">
                         
                         <div class="bg-white rounded-xl shadow border-t-4 border-[#8B0000] p-6 text-center">
                             <div class="w-16 h-16 mx-auto rounded-full bg-gray-200 mb-3 flex items-center justify-center text-2xl">🏛️</div>
@@ -163,9 +163,9 @@ function renderSectionTitle($title) {
                     </div>
                 </section>
 
-                <section id="sekretariat" class="scroll-mt-28">
+                <section id="sekretariat" class="scroll-mt-28" data-aos="fade-up">
                     <?php renderSectionTitle("Sekretariat"); ?>
-                    <div class="bg-red-50 rounded-xl p-8 border border-red-100 flex flex-col md:flex-row items-center gap-6">
+                    <div class="bg-red-50 rounded-xl p-8 border border-red-100 flex flex-col md:flex-row items-center gap-6" data-aos="fade-up">
                         <div class="w-16 h-16 bg-[#8B0000] rounded-full flex items-center justify-center text-white text-2xl shrink-0">
                             📍
                         </div>

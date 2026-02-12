@@ -1,4 +1,4 @@
-<div class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+<div class="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full" data-aos="fade-up">
     
     <div class="aspect-4/3 w-full bg-slate-100 overflow-hidden relative border-b border-slate-100 group">
         <img src="<?= $alumni['foto'] ?>" 

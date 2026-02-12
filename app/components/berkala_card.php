@@ -1,4 +1,4 @@
-<div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 card-item flex flex-col h-full border-t-4 border-t-[#002b54] overflow-hidden group">
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 card-item flex flex-col h-full border-t-4 border-t-[#002b54] overflow-hidden group" data-aos="fade-up">
     
     <div class="p-6 pb-2">
         <div class="flex items-center gap-4 mb-4">

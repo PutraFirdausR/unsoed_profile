@@ -12,7 +12,7 @@ require __DIR__ . '/../ui/page_header.php';
 
 <div class="bg-slate-50 min-h-screen font-sans py-16">
     
-    <div class="bg-whites  pt-16 pb-12">
+    <div class="bg-whites  pt-16 pb-12" data-aos="zoom-in">
         <div class="container mx-auto px-4 text-center">
             
             <span class="text-yellow-500 font-bold tracking-widest uppercase text-xs mb-3 block">
@@ -22,7 +22,12 @@ require __DIR__ . '/../ui/page_header.php';
             <h1 class="text-3xl md:text-4xl font-extrabold text-[#002b54] mb-8">
                 Guru Besar
             </h1>
-            <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"></div>
+            <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="100"
+                 data-aos-offset="0">
+            </div>
             <div class="max-w-4xl mx-auto bg-blue-50/50 rounded-2xl p-6 md:p-8 border border-blue-100">
                 <p class="text-gray-600 text-lg leading-relaxed font-medium">
                     "Selamat datang di direktori Guru Besar. Halaman ini memuat profil para akademisi tertinggi di lingkungan Fakultas Hukum Unsoed yang berdedikasi dalam pengembangan keilmuan hukum, penelitian, serta pengabdian kepada masyarakat."
@@ -32,12 +37,12 @@ require __DIR__ . '/../ui/page_header.php';
         </div>
     </div>
 
-    <div class="container mx-auto px-4 md:px-8 py-16">
+    <div class="container mx-auto px-4 md:px-8 py-16" >
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" >
             <?php foreach($professors as $prof): ?>
             
-            <a href="/unsoed_profile/public/detail_guru_besar?id=<?= $prof['id'] ?>" class="group bg-white rounded-lg border border-gray-200 hover:border-[#002b54] transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg">
+            <a href="/unsoed_profile/public/detail_guru_besar?id=<?= $prof['id'] ?>" class="group bg-white rounded-lg border border-gray-200 hover:border-[#002b54] transition-all duration-300 flex flex-col overflow-hidden hover:shadow-lg"  data-aos="fade-up">
                 
                 <div class="aspect-square w-full overflow-hidden bg-gray-100 relative">
                     <img src="/unsoed_profile/public/assets/img/guru_besar/<?= $prof['image'] ?>" 

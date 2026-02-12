@@ -15,7 +15,7 @@ $asset_path = '/unsoed_profile/public/assets';
 
     <div class="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
 
-        <div class="text-center mb-16 max-w-3xl mx-auto">
+        <div class="text-center mb-16 max-w-3xl mx-auto"  data-aos="zoom-in">
             <span class="inline-block py-1.5 px-4 rounded-full bg-yellow-400 text-[#002b54] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
                 PPID Fakultas Hukum
             </span>
@@ -26,7 +26,7 @@ $asset_path = '/unsoed_profile/public/assets';
                 Daftar seluruh informasi publik yang dapat diakses oleh masyarakat kapan saja.
             </p>
 
-            <div class="relative max-w-lg mx-auto group">
+            <div class="relative max-w-lg mx-auto group" data-aos="fade-up">
                 <input type="text" id="searchInput" 
                     class="block w-full pl-12 pr-6 py-4 bg-white border border-gray-200 rounded-full text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-300 shadow-lg shadow-blue-900/5 transition-all" 
                     placeholder="Penelusuran Informasi (contoh: SOP, Skripsi, UKT, Profil)...">
@@ -38,7 +38,7 @@ $asset_path = '/unsoed_profile/public/assets';
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardContainer">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardContainer" >
             <?php foreach($data_setiap_saat as $data): ?>
                 
                 <?php include __DIR__ . '/../components/setiap_saat_card.php'; ?>

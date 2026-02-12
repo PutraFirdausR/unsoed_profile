@@ -26,11 +26,11 @@ $colors = [
 $c = $colors[$iconColor] ?? $colors['blue'];
 ?>
 
-<div class="bg-white rounded-3xl shadow-xl shadow-gray-200/60 border border-white overflow-hidden mb-12">
+<div class="bg-white rounded-3xl shadow-xl shadow-gray-200/60 border border-white overflow-hidden mb-12" data-aos="zoom-in">
     
     <div class="px-8 py-10 border-b border-gray-100 bg-white">
         <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8">
-            <div class="flex items-center gap-5">
+            <div class="flex items-center gap-5" data-aos="zoom-in-right">
                 <div class="w-14 h-14 rounded-2xl <?= $c['bg'] ?> flex items-center justify-center <?= $c['text'] ?> shadow-sm shrink-0">
                     <?= $iconPath ?>
                 </div>
@@ -40,8 +40,8 @@ $c = $colors[$iconColor] ?? $colors['blue'];
                 </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full xl:w-auto mt-4 xl:mt-0">
-                <div class="relative group w-full sm:w-80">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full xl:w-auto mt-4 xl:mt-0" data-aos="zoom-in-left">
+                <div class="relative group w-full sm:w-80" >
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <svg class="h-5 w-5 text-gray-400 group-focus-within:<?= str_replace('text-', '', $c['text']) ?> transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </div>
@@ -49,7 +49,7 @@ $c = $colors[$iconColor] ?? $colors['blue'];
                 </div>
                 
                 <?php if(isset($pdfLink) && $pdfLink): ?>
-                <a href="<?= $pdfLink ?>" target="_blank" class="h-12 inline-flex items-center justify-center px-6 border border-transparent text-sm font-bold rounded-xl text-white <?= $c['btn'] ?> hover:-translate-y-0.5 focus:outline-none focus:ring-4 transition-all duration-200 shadow-lg whitespace-nowrap">
+                <a href="<?= $pdfLink ?>" target="_blank" class="h-12 inline-flex items-center justify-center px-6 border border-transparent text-sm font-bold rounded-xl text-white <?= $c['btn'] ?> hover:-translate-y-0.5 focus:outline-none focus:ring-4 transition-all duration-200 shadow-lg whitespace-nowrap" data-aos="zoom-in-left">
                     <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                     Unduh PDF
                 </a>

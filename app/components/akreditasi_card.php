@@ -10,7 +10,7 @@ $colors = [
 $c = $colors[$theme] ?? $colors['slate'];
 ?>
 
-<div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full card-animation">
+<div class="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full card-animation"  data-aos="fade-up">
     
     <div class="h-1.5 w-full <?= $c['bg'] ?> <?= $c['border'] ?> border-t-4"></div>
 

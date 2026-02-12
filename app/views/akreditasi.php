@@ -15,10 +15,14 @@ require __DIR__ . '/../data/akreditasi_data.php';
 
 <div class="bg-gray-50 min-h-screen font-sans text-gray-800 py-16">
     
-    <div class="text-center mb-12">
+    <div class="text-center mb-12" data-aos="zoom-in">
         <span class="text-yellow-600 font-bold tracking-widest uppercase text-sm">OFFICIAL DOCUMENTATION</span>
         <h2 class="text-3xl font-bold text-[#002b54] mt-2 mb-4">Pusat Akreditasi</h2>
-        <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"></div>
+        <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"
+             data-aos="fade-zoom-in"
+             data-aos-easing="ease-in-back"
+             data-aos-delay="100"
+             data-aos-offset="0"></div>
         <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Transparansi dan penjaminan mutu Fakultas Hukum Universitas Jenderal Soedirman.
         </p>
@@ -27,7 +31,7 @@ require __DIR__ . '/../data/akreditasi_data.php';
     <div class="container mx-auto max-w-7xl px-4 md:px-6 -mt-20 relative z-20">
 
         <?php foreach ($akreditasiData as $key => $section): ?>
-            <div class="mb-16">
+            <div class="mb-16" data-aos="fade-up">
                 <div class="flex items-end gap-4 mb-8 pl-2 border-l-4 border-yellow-500">
                     <div>
                         <h2 class="text-3xl font-bold text-[#002b54] leading-none"><?= $section['title'] ?></h2>
@@ -43,7 +47,7 @@ require __DIR__ . '/../data/akreditasi_data.php';
             </div>
         <?php endforeach; ?>
 
-        <div class="mt-20 border-t border-gray-200 pt-10">
+        <div class="mt-20 border-t border-gray-200 pt-10" data-aos="fade-up">
             <h3 class="text-xl font-bold text-gray-400 mb-6 flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                 Arsip & Dokumen Lama

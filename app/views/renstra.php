@@ -8,9 +8,9 @@ $renstraList = require __DIR__ . '/../data/renstra_data.php';
 ?>
 
 <div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen py-16">
-    <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+    <div class="container mx-auto px-4 md:px-8 max-w-7xl" >
 
-        <div class="mb-10 animate-fade-in-up">
+        <div class="mb-10 animate-fade-in-up" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-[#002b54] mb-6 flex items-center gap-3">
                 <span class="w-1.5 h-8 bg-yellow-500 rounded-full"></span>
                 Arah Kebijakan Fakultas
@@ -26,7 +26,7 @@ $renstraList = require __DIR__ . '/../data/renstra_data.php';
             </div>
         </div>
 
-        <div class="animate-fade-in-up delay-100">
+        <div class="animate-fade-in-up delay-100" >
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 ml-1">Dokumen Lampiran</h3>
             
             <?php foreach($renstraList as $item): ?>

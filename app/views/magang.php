@@ -5,29 +5,29 @@ require __DIR__ . '/../ui/page_header.php';
 ?>
 
 <div class="bg-gray-50 font-sans text-gray-800 w-full min-h-screen relative">
-    
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-20 -right-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl opacity-60"></div>
-        <div class="absolute bottom-10 left-10 w-64 h-64 bg-gray-200/50 rounded-full blur-3xl opacity-50"></div>
-    </div>
 
     <div class="container mx-auto px-4 md:px-8 relative z-10 max-w-5xl py-20">
         
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="zoom-in">
                 <span class="text-yellow-600 font-bold tracking-widest uppercase text-sm">Program Magang</span>
                 <h2 class="text-3xl font-bold text-[#002b54] mt-2 mb-4">Layanan Magang Mahasiswa</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"></div>
+                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-6"
+                     data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="100"
+                     data-aos-offset="0">
+                </div>
                 <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     Portal resmi untuk memfasilitasi pengembangan kompetensi praktis dan perluasan jejaring profesional mahasiswa Fakultas Hukum.                </p>
             </div>
 
         <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 overflow-hidden border border-white flex flex-col md:flex-row">
             
-            <div class="w-full md:w-1/2 bg-[#002b54] p-10 md:p-14 text-white flex flex-col justify-center relative overflow-hidden">
+            <div class="w-full md:w-1/2 bg-[#002b54] p-10 md:p-14 text-white flex flex-col justify-center relative overflow-hidden" data-aos="fade-right">
                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
                 <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-20 translate-x-1/2 translate-y-1/2"></div>
                 
-                <div class="relative z-10">
+                <div class="relative z-10" >
                     <span class="inline-block py-1.5 px-4 rounded-lg bg-blue-500/20 border border-blue-400/20 text-blue-200 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
                         Layanan Akademik
                     </span>
@@ -48,7 +48,7 @@ require __DIR__ . '/../ui/page_header.php';
                 </div>
             </div>
 
-            <div class="w-full md:w-1/2 bg-white p-10 md:p-14 flex flex-col justify-center items-center text-center">
+            <div class="w-full md:w-1/2 bg-white p-10 md:p-14 flex flex-col justify-center items-center text-center" data-aos="fade-left" >
                 
                 <div class="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center text-blue-600 mb-6 shadow-sm transform hover:scale-105 transition-transform duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">

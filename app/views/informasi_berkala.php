@@ -15,7 +15,7 @@ $asset_path = '/unsoed_profile/public/assets';
 
     <div class="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
 
-        <div class="text-center mb-16 max-w-3xl mx-auto">
+        <div class="text-center mb-16 max-w-3xl mx-auto" data-aos="zoom-in">
             <span class="inline-block py-1.5 px-4 rounded-full bg-yellow-400 text-[#002b54] text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
                 PPID Fakultas Hukum
             </span>
@@ -26,7 +26,7 @@ $asset_path = '/unsoed_profile/public/assets';
                 Akses transparansi publik, laporan kinerja, dan dokumen resmi fakultas dalam satu pintu.
             </p>
 
-            <div class="relative max-w-lg mx-auto group">
+            <div class="relative max-w-lg mx-auto group" data-aos="fade-up">
                 <input type="text" id="searchInput" 
                     class="block w-full pl-12 pr-6 py-4 bg-white border border-gray-200 rounded-full text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-blue-100 focus:border-blue-300 shadow-lg shadow-blue-900/5 transition-all" 
                     placeholder="Penelusuran dokumen (contoh: Profil, Laporan, Daftar)...">
@@ -38,7 +38,7 @@ $asset_path = '/unsoed_profile/public/assets';
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardContainer">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardContainer" >
             <?php foreach($data_berkala as $data): ?>
                 
                 <?php include __DIR__ . '/../components/berkala_card.php'; ?>
@@ -46,7 +46,7 @@ $asset_path = '/unsoed_profile/public/assets';
             <?php endforeach; ?>
         </div>
         
-        <div id="noResults" class="hidden text-center py-20 animate-fade-in-up">
+        <div id="noResults" class="hidden text-center py-20 animate-fade-in-up" >
             <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6">
                 <svg class="w-10 h-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
@@ -64,21 +64,6 @@ $asset_path = '/unsoed_profile/public/assets';
         <div class="flex min-h-full items-center justify-center p-4 text-center">
             
             <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:w-full sm:max-w-xl scale-100">
-                <div class="bg-white px-6 py-4 border-b border-gray-100 flex justify-between items-center sticky top-0 z-10">
-                    <h3 class="text-lg font-bold text-gray-900" id="modal-title">Pratinjau Gambar</h3>
-                    <button onclick="closeModal()" class="text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full p-1 transition-colors">
-                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                    </button>
-                </div>
-                
-                <div class="bg-gray-50 p-6 flex justify-center items-center">
-                    <img id="modal-image" src="" alt="Preview" class="max-w-full max-h-[70vh] rounded-lg shadow-sm object-contain">
-                    <div id="modal-error" class="hidden text-center">
-                        <svg class="w-12 h-12 text-red-300 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                        <p class="text-red-500 font-medium">Gambar tidak dapat dimuat.</p>
-                    </div>
-                </div>
-
                 <div class="bg-white px-6 py-4 sm:flex sm:flex-row-reverse">
                     <button type="button" class="inline-flex w-full justify-center rounded-xl bg-[#002b54] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-900 sm:w-auto transition-colors" onclick="closeModal()">
                         Tutup Tampilan

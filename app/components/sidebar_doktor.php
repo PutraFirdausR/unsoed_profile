@@ -1,5 +1,5 @@
-<div class="sticky top-24 space-y-6">
-    <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+<div class="sticky top-24 space-y-6"> 
+    <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden" >
         <div class="bg-[#002b54] px-5 py-4">
             <h3 class="font-bold text-white text-lg">Navigasi Program</h3>
         </div>
@@ -25,7 +25,7 @@
         </nav>
     </div>
 
-    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100" >
         <h4 class="font-bold text-[#002b54] mb-2">Informasi Pendaftaran</h4>
         <p class="text-xs text-gray-600 mb-4">Untuk informasi lebih lanjut mengenai pendaftaran mahasiswa baru:</p>
         <a href="https://admisi.unsoed.ac.id/" target="_blank" class="block text-center w-full py-2 bg-[#002b54] text-white text-sm font-bold rounded shadow hover:bg-blue-900 transition">

@@ -12,18 +12,22 @@ require __DIR__ . '/../ui/page_header.php';
     <section class="relative py-20 md:py-32">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">
 
-            <div class="text-center mb-20 md:mb-28 animate-fade-in-up">
+            <div class="text-center mb-20 md:mb-28 animate-fade-in-up" data-aos="zoom-in">
                 <span class="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-[#002b54] text-sm font-bold tracking-widest uppercase mb-4">
                     Fakultas Hukum UNSOED
                 </span>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-[#002b54] tracking-tight">Periode Berjalan</h2>
-                <div class="w-24 h-1.5 bg-yellow-500 mx-auto mt-8 rounded-full"></div>
+                <div class="w-24 h-1.5 bg-yellow-500 mx-auto mt-8 rounded-full"
+                 data-aos="fade-zoom-in"
+                 data-aos-easing="ease-in-back"
+                 data-aos-delay="100"
+                 data-aos-offset="0"></div>
             </div>
 
             <div class="mb-32">
                 <?php $title = 'Pimpinan Fakultas'; include __DIR__ . '/../components//../ui/organisasi_section.php'; ?>
                 
-                <div class="flex justify-center mb-16 animate-fade-in-up delay-200">
+                <div class="flex justify-center mb-16 animate-fade-in-up delay-200" data-aos="zoom-in">
                     <div class="bg-white p-10 md:p-12 rounded-[2.5rem] shadow-2xl shadow-blue-900/10 border-t-8 border-yellow-500 w-full max-w-2xl text-center transform hover:-translate-y-3 transition-all duration-500 relative overflow-hidden group">
                         <div class="absolute top-0 right-0 w-40 h-40 bg-yellow-50 rounded-bl-full -mr-10 -mt-10 z-0 transition-transform duration-700 group-hover:scale-125 group-hover:rotate-12"></div>
                         <div class="relative z-10">
@@ -36,7 +40,7 @@ require __DIR__ . '/../ui/page_header.php';
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10" data-aos="fade-up">
                     <?php foreach($org_data['wakil_dekan'] as $i => $wd): 
                         $delay = ($i + 3) * 100; ?>
                     <div class="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border-b-4 border-[#002b54] hover:shadow-[0_20px_40px_rgba(0,43,84,0.1)] hover:-translate-y-2 transition-all duration-300 group animate-fade-in-up" style="animation-delay: <?= $delay ?>ms">
@@ -58,10 +62,10 @@ require __DIR__ . '/../ui/page_header.php';
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-32">
                 
                 <div class="lg:col-span-8 animate-fade-in-up delay-300">
-                    <div class="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-xl border border-gray-100 h-full relative overflow-hidden">
+                    <div class="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-xl border border-gray-100 h-full relative overflow-hidden" data-aos="zoom-in">
                          <div class="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-[#002b54] to-blue-500"></div>
 
-                        <div class="flex items-center gap-5 mb-10">
+                        <div class="flex items-center gap-5 mb-10" data-aos="fade-up">
                             <div class="p-4 bg-blue-100 rounded-2xl text-[#002b54] shadow-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                             </div>
@@ -69,18 +73,18 @@ require __DIR__ . '/../ui/page_header.php';
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                            <div class="bg-[#002b54] text-white p-8 rounded-3xl relative overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform">
+                            <div class="bg-[#002b54] text-white p-8 rounded-3xl relative overflow-hidden shadow-lg transform hover:scale-[1.02] transition-transform" data-aos="zoom-in-right">
                                 <div class="absolute top-0 right-0 w-24 h-24 bg-white opacity-10 rounded-bl-full -mr-5 -mt-5"></div>
                                 <span class="block text-xs text-yellow-300 uppercase font-bold mb-3 tracking-wider">Ketua</span>
                                 <span class="font-bold text-xl block leading-snug"><?= $org_data['senat']['ketua'] ?></span>
                             </div>
-                            <div class="bg-white text-[#002b54] p-8 rounded-3xl border-2 border-blue-50 shadow-md transform hover:scale-[1.02] transition-transform">
+                            <div class="bg-white text-[#002b54] p-8 rounded-3xl border-2 border-blue-50 shadow-md transform hover:scale-[1.02] transition-transform" data-aos="zoom-in-left">
                                 <span class="block text-xs text-blue-400 uppercase font-bold mb-3 tracking-wider">Sekretaris</span>
                                 <span class="font-bold text-xl block leading-snug"><?= $org_data['senat']['sekretaris'] ?></span>
                             </div>
                         </div>
 
-                        <div>
+                        <div data-aos="fade-up">
                             <span class="block text-sm text-gray-400 uppercase font-bold mb-8 tracking-[0.2em] text-center md:text-left">Anggota Lainnya</span>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-10">
                                 <?php foreach($org_data['senat']['anggota'] as $anggota): ?>
@@ -95,13 +99,13 @@ require __DIR__ . '/../ui/page_header.php';
                 </div>
 
                 <div class="lg:col-span-4 animate-fade-in-up delay-500 py-5">
-                    <div class="bg-linear-to-br from-[#002b54] to-blue-900 text-white p-10 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden h-full flex flex-col justify-center">
+                    <div class="bg-linear-to-br from-[#002b54] to-blue-900 text-white p-10 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden h-full flex flex-col justify-center" data-aos="zoom-in">
                         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-500 rounded-full opacity-20 blur-3xl animate-pulse"></div>
                         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-yellow-500 rounded-full opacity-10 blur-3xl"></div>
 
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold text-yellow-400 mb-12 border-b border-white/10 pb-6">Pimpinan Administrasi</h3>
-                            <ul class="space-y-10">
+                        <div class="relative z-10" >
+                            <h3 class="text-2xl font-bold text-yellow-400 mb-12 border-b border-white/10 pb-6" data-aos="fade-up">Pimpinan Administrasi</h3>
+                            <ul class="space-y-10" data-aos="fade-up">
                                 <?php foreach($org_data['administrasi'] as $admin): ?>
                                 <li class="group">
                                     <span class="block text-xs text-blue-200 uppercase tracking-widest mb-2 group-hover:text-yellow-300 transition-colors"><?= $admin['jabatan'] ?></span>
@@ -117,10 +121,10 @@ require __DIR__ . '/../ui/page_header.php';
             <div class="mb-32 animate-fade-in-up delay-300 py-5">
                 <?php $title = 'Bagian - Bagian'; include __DIR__ . '/../components//../ui/organisasi_section.php'; ?>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" >
                     <?php foreach($org_data['bagian'] as $i => $bag): 
                         $delay = ($i * 100) + 300; ?>
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-yellow-400 hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 p-8 flex flex-col h-full group animate-fade-in-up" style="animation-delay: <?= $delay ?>ms">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 hover:border-yellow-400 hover:shadow-[0_15px_30px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 p-8 flex flex-col h-full group animate-fade-in-up" style="animation-delay: <?= $delay ?>ms" data-aos="fade-up">
                         <div class="mb-8">
                             <div class="w-12 h-1.5 bg-yellow-400 mb-4 group-hover:w-full group-hover:bg-yellow-400 transition-all duration-500 rounded-full"></div>
                             <h4 class="font-black text-[#002b54] text-xl leading-tight min-h-14 flex items-center"><?= $bag[0] ?></h4>
@@ -146,7 +150,7 @@ require __DIR__ . '/../ui/page_header.php';
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <?php foreach($org_data['pusat_kajian'] as $i => $kj): 
                         $delay = ($i * 100) + 500; ?>
-                    <div class="bg-white p-0 rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group animate-fade-in-up" style="animation-delay: <?= $delay ?>ms">
+                    <div class="bg-white p-0 rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group animate-fade-in-up" style="animation-delay: <?= $delay ?>ms" data-aos="fade-up">
                         <div class="bg-[#002b54] p-6 border-b border-blue-900 group-hover:bg-blue-800 transition-colors">
                             <h4 class="font-bold text-white text-lg leading-snug min-h-14 flex items-center"><?= $kj[0] ?></h4>
                         </div>

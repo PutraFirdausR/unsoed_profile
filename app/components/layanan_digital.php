@@ -24,15 +24,14 @@ function get_service_icon($type) {
 <section class="py-16 bg-[#002b54] border-b-2 border-white">
     <div class="container mx-auto px-4 md:px-8">
         
-        <div class="text-center mb-10"
-        data-aos="zoom-in">
-            <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider" data-aos="zoom-in">
                 Layanan Digital & Sistem Informasi
             </h2>
             <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 rounded-full"
                  data-aos="fade-zoom-in"
                  data-aos-easing="ease-in-back"
-                 data-aos-delay="300"
+                 data-aos-delay="100"
                  data-aos-offset="0">
              </div>
         </div>
