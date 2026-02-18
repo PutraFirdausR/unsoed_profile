@@ -1,29 +1,16 @@
 <?php
 $colors = [
-    'blue'   => [
-        'bg'   => 'bg-blue-50', 
-        'text' => 'text-blue-600', 
-        'btn'  => 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500/30 shadow-blue-600/20', 
-        'ring' => 'focus:ring-blue-500',
-        'pag_hover' => 'hover:bg-blue-600 hover:text-white hover:border-blue-600'
-    ],
-    'teal'   => [
-        'bg'   => 'bg-teal-50', 
-        'text' => 'text-teal-600', 
-        'btn'  => 'bg-teal-600 hover:bg-teal-700 focus:ring-teal-500/30 shadow-teal-600/20', 
-        'ring' => 'focus:ring-teal-500',
-        'pag_hover' => 'hover:bg-teal-600 hover:text-white hover:border-teal-600'
-    ],
-    'indigo' => [
-        'bg'   => 'bg-indigo-50', 
-        'text' => 'text-indigo-600', 
-        'btn'  => 'bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500/30 shadow-indigo-600/20', 
-        'ring' => 'focus:ring-indigo-500',
-        'pag_hover' => 'hover:bg-indigo-600 hover:text-white hover:border-indigo-600'
+    'red'   => [
+        'bg'   => 'bg-red-50', 
+        'text' => 'text-red-900', 
+        'btn'  => 'bg-red-950 hover:bg-red-900 focus:ring-red-900/30 shadow-red-950/20', 
+        'ring' => 'focus:ring-red-900',
+        'pag_hover' => 'hover:bg-red-950 hover:text-white hover:border-red-950'
     ],
 ];
 
-$c = $colors[$iconColor] ?? $colors['blue'];
+// Kita paksa semua iconColor menggunakan skema 'red' yang baru
+$c = $colors['red'];
 ?>
 
 <div class="bg-white rounded-3xl shadow-xl shadow-gray-200/60 border border-white overflow-hidden mb-12" data-aos="zoom-in">
@@ -35,7 +22,7 @@ $c = $colors[$iconColor] ?? $colors['blue'];
                     <?= $iconPath ?>
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-slate-800 tracking-tight"><?= $title ?></h2>
+                    <h2 class="text-3xl font-bold text-red-950 tracking-tight"><?= $title ?></h2>
                     <p class="text-slate-500 text-base mt-2"><?= $description ?></p>
                 </div>
             </div>
@@ -43,7 +30,7 @@ $c = $colors[$iconColor] ?? $colors['blue'];
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full xl:w-auto mt-4 xl:mt-0" data-aos="zoom-in-left">
                 <div class="relative group w-full sm:w-80" >
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <svg class="h-5 w-5 text-gray-400 group-focus-within:<?= str_replace('text-', '', $c['text']) ?> transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        <svg class="h-5 w-5 text-gray-400 group-focus-within:text-red-900 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </div>
                     <input type="text" id="<?= $searchId ?>" class="block w-full h-12 pl-12 pr-4 bg-gray-50 border border-gray-300 rounded-xl leading-5 text-gray-900 placeholder-gray-500 focus:outline-none focus:bg-white focus:ring-2 <?= $c['ring'] ?> focus:border-transparent transition-all duration-200 text-sm font-medium shadow-sm" placeholder="Cari judul atau mitra...">
                 </div>

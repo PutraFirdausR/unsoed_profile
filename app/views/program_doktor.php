@@ -9,7 +9,7 @@ $data = require __DIR__ . '/../data/doktor_data.php';
 function renderDoktorTitle($title) {
     echo '<div class="flex items-center gap-3 mb-6">';
     echo '<div class="w-1.5 h-8 bg-yellow-400 rounded-full"></div>';
-    echo '<h2 class="text-2xl md:text-3xl font-bold text-[#002b54]">' . $title . '</h2>';
+    echo '<h2 class="text-2xl md:text-3xl font-bold text-red-950">' . $title . '</h2>';
     echo '</div>';
 }
 ?>
@@ -18,13 +18,13 @@ function renderDoktorTitle($title) {
     <div class="container mx-auto px-4 md:px-8 max-w-7xl">
 
         <div class="mb-10 border-b border-gray-200 pb-6" data-aos="zoom-in">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-[#002b54] mb-4">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-red-950 mb-4">
                 Program Doktor Ilmu Hukum
             </h1>
             <p class="text-gray-500 text-lg max-w-3xl leading-relaxed">
                 Menghasilkan lulusan Doktor Hukum yang bermoral, berdaya saing global, dan berbasis kearifan lokal.
             </p>
-            <div class="mt-4 inline-block bg-blue-100 border border-blue-300 text-blue-800 text-sm font-bold px-4 py-1.5 rounded-full">
+            <div class="mt-4 inline-block bg-red-100 border border-red-200 text-red-900 text-sm font-bold px-4 py-1.5 rounded-full">
                 Terakreditasi BAN-PT
             </div>
         </div>
@@ -36,8 +36,6 @@ function renderDoktorTitle($title) {
                 $sidebar_path = __DIR__ . '/../components/sidebar_doktor.php';
                 if(file_exists($sidebar_path)) {
                     include $sidebar_path;
-                } else {
-                    echo "Sidebar tidak ditemukan.";
                 }
                 ?>
             </aside>
@@ -48,7 +46,7 @@ function renderDoktorTitle($title) {
                     <?php renderDoktorTitle("Visi, Misi & Tujuan"); ?>
                     
                     <div class="space-y-6" >
-                        <div class="bg-[#002b54] text-white rounded-xl p-8 shadow-md relative overflow-hidden" data-aos="fade-up">
+                        <div class="bg-red-950 text-white rounded-xl p-8 shadow-md relative overflow-hidden" data-aos="fade-up">
                             <div class="absolute top-0 right-0 p-4 opacity-10">
                                 <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm1 14.55C10.61 16.1 8.89 15.65 7.5 15.65c-3.15 0-5.5 2.05-5.5 5.35C2 22.95 4.5 24 7.5 24c3.55 0 6.5-1.9 6.5-5.1 0-2.3-1.6-3.8-3.45-4.55l1.45-2.2c2.75 1.55 4.5 4.05 4.5 6.75h2c0-3.5-2.25-6.55-5.5-8.35l-1 1.6z"/></svg>
                             </div>
@@ -57,8 +55,8 @@ function renderDoktorTitle($title) {
                         </div>
 
                         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6" data-aos="fade-up">
-                            <h3 class="text-xl font-bold text-[#002b54] mb-4 flex items-center gap-2">
-                                <span class="w-2 h-6 bg-[#002b54] rounded"></span> Misi
+                            <h3 class="text-xl font-bold text-red-950 mb-4 flex items-center gap-2">
+                                <span class="w-2 h-6 bg-red-950 rounded"></span> Misi
                             </h3>
                             <ul class="space-y-3">
                                 <?php foreach($data['misi'] as $item): ?>
@@ -71,13 +69,13 @@ function renderDoktorTitle($title) {
                         </div>
 
                         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6"data-aos="fade-up">
-                            <h3 class="text-xl font-bold text-[#002b54] mb-4 flex items-center gap-2" >
-                                <span class="w-2 h-6 bg-[#002b54] rounded"></span> Tujuan & Sasaran
+                            <h3 class="text-xl font-bold text-red-950 mb-4 flex items-center gap-2" >
+                                <span class="w-2 h-6 bg-red-950 rounded"></span> Tujuan & Sasaran
                             </h3>
                             <ul class="space-y-3" >
                                 <?php foreach($data['tujuan'] as $item): ?>
                                 <li class="flex items-start gap-3 text-gray-700">
-                                    <svg class="w-5 h-5 text-blue-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <svg class="w-5 h-5 text-red-700 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                     <span class="text-justify"><?= $item ?></span>
                                 </li>
                                 <?php endforeach; ?>
@@ -91,9 +89,9 @@ function renderDoktorTitle($title) {
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8" data-aos="fade-up">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <?php foreach($data['strategi'] as $index => $item): ?>
-                            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded hover:bg-yellow-50 transition">
-                                <span class="shrink-0 w-6 h-6 bg-[#002b54] text-white rounded-full flex items-center justify-center text-xs font-bold mt-0.5"><?= $index + 1 ?></span>
-                                <span class="text-gray-700 text-sm font-medium"><?= $item ?></span>
+                            <div class="flex items-start gap-3 p-3 bg-gray-50 rounded hover:bg-red-50 transition-colors group">
+                                <span class="shrink-0 w-6 h-6 bg-red-950 text-white rounded-full flex items-center justify-center text-xs font-bold mt-0.5"><?= $index + 1 ?></span>
+                                <span class="text-gray-700 text-sm font-medium group-hover:text-red-950 transition-colors"><?= $item ?></span>
                             </div>
                             <?php endforeach; ?>
                         </div>
@@ -105,8 +103,8 @@ function renderDoktorTitle($title) {
                     
                     <div class="grid grid-cols-1 gap-6" >
                         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
-                            <div class="bg-blue-50 px-6 py-4 border-b border-blue-100">
-                                <h3 class="font-bold text-[#002b54]">Syarat Pendaftaran</h3>
+                            <div class="bg-red-50 px-6 py-4 border-b border-red-100">
+                                <h3 class="font-bold text-red-950">Syarat Pendaftaran</h3>
                             </div>
                             <div class="p-6">
                                 <ul class="list-disc list-outside ml-5 space-y-2 text-gray-700">
@@ -119,7 +117,7 @@ function renderDoktorTitle($title) {
 
                         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up">
                             <div class="bg-yellow-50 px-6 py-4 border-b border-yellow-100">
-                                <h3 class="font-bold text-[#002b54]">Instrumen Seleksi</h3>
+                                <h3 class="font-bold text-red-950">Instrumen Seleksi</h3>
                             </div>
                             <div class="p-6">
                                 <ul class="space-y-4">
@@ -140,7 +138,7 @@ function renderDoktorTitle($title) {
                     <div class="relative border-l-4 border-gray-200 ml-4 space-y-8" data-aos="fade-up">
                         <?php foreach($data['alur'] as $index => $alur): ?>
                         <div class="relative pl-8">
-                            <div class="absolute -left-3 top-0 w-6 h-6 bg-[#002b54] rounded-full border-4 border-white shadow"></div>
+                            <div class="absolute -left-3 top-0 w-6 h-6 bg-red-950 rounded-full border-4 border-white shadow"></div>
                             <h4 class="font-bold text-gray-800 mb-1">Langkah <?= $index + 1 ?></h4>
                             <p class="text-gray-600 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
                                 <?= $alur ?>
@@ -155,11 +153,11 @@ function renderDoktorTitle($title) {
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-up">
                         <?php foreach($data['dosen'] as $idx => $dosen): ?>
                         <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition group">
-                            <div class="w-10 h-10 rounded-full bg-blue-50 text-[#002b54] flex items-center justify-center font-bold text-sm border border-blue-100 group-hover:bg-[#002b54] group-hover:text-white transition">
+                            <div class="w-10 h-10 rounded-full bg-red-50 text-red-900 flex items-center justify-center font-bold text-sm border border-red-100 group-hover:bg-red-950 group-hover:text-white transition">
                                 <?= $idx + 1 ?>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800 text-sm md:text-base group-hover:text-blue-700 transition"><?= $dosen ?></h4>
+                                <h4 class="font-bold text-gray-800 text-sm md:text-base group-hover:text-red-900 transition"><?= $dosen ?></h4>
                                 <span class="text-xs text-gray-500">Dosen Tetap</span>
                             </div>
                         </div>
@@ -171,12 +169,12 @@ function renderDoktorTitle($title) {
                     <?php renderDoktorTitle("Struktur Organisasi"); ?>
                     <div class="flex flex-col md:flex-row justify-center gap-6">
                         <?php foreach($data['pimpinan'] as $p): 
-                            $c = $p['color']; // blue or yellow
+                            $c = $p['color']; 
                         ?>
-                        <div class="bg-white rounded-xl shadow-lg border-t-4 <?= ($c == 'yellow' ? 'border-yellow-400' : 'border-[#002b54]') ?> overflow-hidden w-full max-w-sm text-center">
+                        <div class="bg-white rounded-xl shadow-lg border-t-4 <?= ($c == 'yellow' ? 'border-yellow-400' : 'border-red-950') ?> overflow-hidden w-full max-w-sm text-center">
                             <div class="p-6 bg-linear-to-b <?= ($c == 'yellow' ? 'from-yellow-50' : 'from-gray-50') ?> to-white">
                                 <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-4 flex items-center justify-center text-3xl"><?= $p['icon'] ?></div>
-                                <h3 class="text-lg font-bold text-[#002b54] mb-1"><?= $p['nama'] ?></h3>
+                                <h3 class="text-lg font-bold text-red-950 mb-1"><?= $p['nama'] ?></h3>
                                 <p class="text-sm font-medium <?= ($c == 'yellow' ? 'text-yellow-600' : 'text-gray-500') ?> uppercase tracking-wide"><?= $p['jabatan'] ?></p>
                             </div>
                         </div>

@@ -11,31 +11,29 @@ $page_bg    = $base_url . '/public/assets/img/home.jpg';
 require __DIR__ . '/../ui/page_header.php';
 ?>
 
-<div class=" min-h-screen font-sans text-[#002b54] py-16">
+<div class="min-h-screen font-sans text-red-950 py-16 ">
     
-    <div class="pt-16 pb-8 mb-12" data-aos="zoom-in">
+    <div class=" pb-8 mb-12" data-aos="zoom-in" data-aos-duration="800">
         <div class="container mx-auto px-4 text-center">
-            <span class="text-[#002b54] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
+            <span class="text-red-950 font-bold tracking-[0.2em] uppercase text-xs mb-3 block" data-aos="fade-down" data-aos-delay="200">
                 Sumber Daya Manusia
             </span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-[#002b54] mb-6">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-red-950 mb-6">
                 Tenaga Kependidikan
             </h1>
             <div class="w-24 h-1.5 bg-yellow-500 mx-auto rounded-full mb-8" 
-                 data-aos="fade-zoom-in"
-                 data-aos-easing="ease-in-back"
-                 data-aos-delay="100"
-                 data-aos-offset="0">
+                 data-aos="zoom-in-right"
+                 data-aos-delay="400">
             </div>
             
-            <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light mb-10">
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light mb-10" data-aos="fade-up" data-aos-delay="500">
                 Pilih sub bagian di bawah ini untuk melihat daftar staf.
             </p>
 
-            <div class="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="600">
                 <button onclick="filterStaff('all', this)" 
                         class="filter-btn active px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-sm border
-                               bg-[#002b54] text-white border-[#002b54] ring-2 ring-offset-2 ring-[#002b54]/30"
+                               bg-red-950 text-white border-red-950 ring-2 ring-offset-2 ring-red-900/30"
                         data-target="all">
                     Semua Bagian
                 </button>
@@ -43,7 +41,7 @@ require __DIR__ . '/../ui/page_header.php';
                 <?php foreach($departments as $dept): ?>
                 <button onclick="filterStaff('<?= md5($dept) ?>', this)" 
                         class="filter-btn px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 shadow-sm border
-                               bg-white text-gray-500 border-gray-200 hover:border-[#002b54] hover:text-yellow-400"
+                               bg-white text-gray-500 border-gray-200 hover:border-red-950 hover:text-yellow-600"
                         data-target="<?= md5($dept) ?>">
                     <?= htmlspecialchars($dept) ?>
                 </button>
@@ -63,11 +61,11 @@ require __DIR__ . '/../ui/page_header.php';
 
             <?php foreach($grouped_staff as $deptName => $staff_list): ?>
                 
-                <div id="<?= md5($deptName) ?>" class="department-section mb-16 "  >
+                <div id="<?= md5($deptName) ?>" class="department-section mb-16">
                     
-                    <div class="flex items-center gap-4 mb-8">
+                    <div class="flex items-center gap-4 mb-8" data-aos="fade-right">
                         <div class="w-1.5 h-8 bg-yellow-500 rounded-full"></div>
-                        <h2 class="text-2xl font-bold text-[#002b54]">
+                        <h2 class="text-2xl font-bold text-red-950">
                             <?= htmlspecialchars($deptName) ?>
                         </h2>
                         <div class="h-px bg-gray-200 grow"></div>
@@ -75,9 +73,7 @@ require __DIR__ . '/../ui/page_header.php';
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         <?php foreach($staff_list as $person): ?>
-                            
                             <?php include __DIR__ . '/../components/kependidikan_card.php'; ?>
-
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -94,43 +90,30 @@ require __DIR__ . '/../ui/page_header.php';
 function filterStaff(targetId, btnElement) {
     const allButtons = document.querySelectorAll('.filter-btn');
     allButtons.forEach(btn => {
-        btn.classList.remove('bg-[#002b54]', 'text-white', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
+        btn.classList.remove('bg-red-950', 'text-white', 'ring-2', 'ring-offset-2', 'ring-red-900/30', 'border-red-950');
         btn.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
     });
 
     if (btnElement) {
         btnElement.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
-        btnElement.classList.add('bg-[#002b54]', 'text-white', 'border-[#002b54]', 'ring-2', 'ring-offset-2', 'ring-[#002b54]/30');
+        btnElement.classList.add('bg-red-950', 'text-white', 'border-red-950', 'ring-2', 'ring-offset-2', 'ring-red-900/30');
     }
 
     const sections = document.querySelectorAll('.department-section');
     sections.forEach(sec => {
         if (targetId === 'all') {
-            showSection(sec);
+            sec.style.display = 'block';
         } else {
-            if (sec.id === targetId) {
-                showSection(sec);
-            } else {
-                hideSection(sec);
-            }
+            sec.style.display = (sec.id === targetId) ? 'block' : 'none';
         }
     });
-}
 
-function showSection(el) {
-    el.style.display = 'block';
-    requestAnimationFrame(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-    });
-}
-
-function hideSection(el) {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(10px)';
+    // Refresh AOS setelah filter agar kartu yang baru muncul teranimasi
     setTimeout(() => {
-        el.style.display = 'none';
-    }, 300);
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    }, 150);
 }
 
 function openStaffModal(imageSrc, name, dept) {
@@ -141,7 +124,8 @@ function openStaffModal(imageSrc, name, dept) {
 
     modalImg.src = imageSrc;
     modalImg.onerror = function() {
-        this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=002b54&color=fff&size=500';
+        // Menggunakan hex 450a0a untuk red-950
+        this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=450a0a&color=fff&size=500';
     };
 
     modalName.textContent = name;
@@ -169,4 +153,5 @@ document.addEventListener('keydown', function(event) {
         background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
         background-size: 20px 20px;
     }
+    .department-section { transition: all 0.3s ease-in-out; }
 </style>

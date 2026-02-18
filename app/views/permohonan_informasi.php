@@ -12,10 +12,10 @@ require __DIR__ . '/../data/permohonan_data.php';
     <div class="container mx-auto px-4 md:px-8 max-w-5xl">
 
         <div class="text-center mb-16" data-aos="zoom-in">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-[#002b54] text-xs font-bold tracking-widest uppercase mb-4">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-red-100 text-red-950 text-xs font-bold tracking-widest uppercase mb-4">
                 Standar Operasional Prosedur
             </span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-[#002b54] mb-6">Mekanisme Permohonan Informasi</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-red-950 mb-6">Mekanisme Permohonan Informasi</h2>
             <p class="text-slate-600 text-lg max-w-3xl mx-auto">
                 Prosedur pelayanan informasi publik di lingkungan Fakultas Hukum Universitas Jenderal Soedirman sesuai Undang-Undang KIP.
             </p>
@@ -44,7 +44,7 @@ require __DIR__ . '/../data/permohonan_data.php';
 
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8" data-aos="fade-up">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="bg-blue-100 p-2 rounded-lg text-blue-600">
+                    <div class="bg-red-100 p-2 rounded-lg text-red-600">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
                     <h3 class="font-bold text-slate-800 text-lg">Dokumentasi</h3>
@@ -55,17 +55,17 @@ require __DIR__ . '/../data/permohonan_data.php';
             </div>
         </div>
 
-        <div class="bg-[#002b54] rounded-3xl p-10 md:p-12 text-center relative overflow-hidden shadow-2xl" data-aos="fade-up">
+        <div class="bg-red-950 rounded-3xl p-10 md:p-12 text-center relative overflow-hidden shadow-2xl" data-aos="fade-up">
             <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
             <div class="absolute bottom-0 left-0 w-32 h-32 bg-yellow-400 opacity-10 rounded-full -ml-10 -mb-10"></div>
 
             <div class="relative z-10">
                 <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Siap Mengajukan Permohonan?</h3>
-                <p class="text-blue-100 mb-8 max-w-xl mx-auto">
+                <p class="text-red-100 mb-8 max-w-xl mx-auto">
                     Silakan unduh formulir di bawah ini, lengkapi data yang dibutuhkan sesuai prosedur di atas.
                 </p>
                 
-                <a href="#" class="inline-flex items-center gap-3 bg-yellow-400 text-[#002b54] hover:bg-yellow-300 px-8 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg">
+                <a href="#" class="inline-flex items-center gap-3 bg-yellow-400 text-red-950 hover:bg-yellow-300 px-8 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>

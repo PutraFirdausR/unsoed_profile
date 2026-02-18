@@ -7,7 +7,7 @@
             <div class="relative transform overflow-hidden rounded-xl bg-white text-left shadow-2xl transition-all sm:w-full sm:max-w-lg" onclick="event.stopPropagation()">
                 
                 <div class="bg-gray-50 px-5 py-4 flex justify-between items-center border-b border-gray-100">
-                    <h3 class="text-sm font-bold text-[#002b54] uppercase tracking-wider">Detail Personil</h3>
+                    <h3 class="text-sm font-bold text-red-950 uppercase tracking-wider">Detail Personil</h3>
                     <button type="button" class="rounded-full bg-white text-gray-400 hover:text-red-500 hover:bg-red-50 focus:outline-none transition p-1.5" onclick="closeStaffModal()">
                         <span class="sr-only">Close</span>
                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -22,8 +22,8 @@
                 </div>
                 
                 <div class="bg-gray-50 px-6 py-5 border-t border-gray-100 text-center">
-                     <p id="modalName" class="text-lg font-bold text-[#002b54] mb-1"></p>
-                     <span id="modalDept" class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full"></span>
+                     <p id="modalName" class="text-lg font-bold text-red-950 mb-1"></p>
+                     <span id="modalDept" class="inline-block px-3 py-1 bg-red-50 text-red-900 text-xs font-bold rounded-full border border-red-100"></span>
                 </div>
 
             </div>

@@ -18,11 +18,11 @@ require __DIR__ . '/../ui/page_header.php';
 ?>
 
 <div class="container mx-auto px-4 py-16 max-w-4xl animate-fade-in-up">
-    <button onclick="history.back()" class="text-blue-600 hover:text-blue-800 mb-6 inline-flex items-center gap-2 font-bold transition-colors cursor-pointer">
+    <button onclick="history.back()" class="text-red-950 hover:text-red-800 mb-6 inline-flex items-center gap-2 font-bold transition-colors cursor-pointer">
         <span>&larr;</span> Kembali
     </button>
     
-    <h1 class="text-3xl md:text-4xl font-extrabold text-[#002b54] mb-4 leading-tight">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-red-950 mb-4 leading-tight">
         <?= e($data['title']) ?>
     </h1>
     

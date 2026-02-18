@@ -1,91 +1,94 @@
 <?php 
 $vm_data = require __DIR__ . '/../data/visi_misi_data.php';
 
-$page_title = 'Visi Misi';
+// Mengambil string visi dari dalam array agar tidak error conversion
+$visi_text = isset($vm_data['visi']['content']) ? $vm_data['visi']['content'] : '';
+
+$page_title = 'Visi & Misi';
 $page_bg    = '/unsoed_profile/public/assets/img/home.jpg'; 
 require __DIR__ . '/../ui/page_header.php'; 
 ?>
 
-<div class="bg-gray-50 min-h-screen font-sans text-slate-800 py-16">
-    <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+<div class="bg-white min-h-screen font-sans text-slate-700 py-16">
+    <div class="container mx-auto px-6 max-w-6xl">
 
-        <div class="mb-12 animate-fade-in-up" data-aos="zoom-in">
-            <div class="bg-[#002b54] rounded-3xl p-10 md:p-14 text-center relative overflow-hidden shadow-2xl shadow-blue-900/20 group">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-blue-500/30 transition-all duration-700"></div>
-                <div class="absolute bottom-0 left-0 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl -ml-10 -mb-10 group-hover:bg-yellow-500/30 transition-all duration-700"></div>
-                
-                <h2 class="text-blue-200 uppercase tracking-[0.2em] text-sm font-bold mb-6" >Visi Fakultas</h2>
-                <p class="text-2xl md:text-4xl font-semibold text-white leading-relaxed max-w-4xl mx-auto relative z-10">
-                    <?= $vm_data['visi']['content'] ?>
-                </p>
+        <div class="mb-20 ">
+            <div class="relative p-0.5 bg-linear-to-tr from-red-950 via-red-800 to-yellow-600 rounded-[2.5rem] shadow-2xl" data-aos="zoom-in">
+                <div class="bg-red-950 rounded-[2.4rem] p-10 md:p-16 text-center overflow-hidden relative">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-red-500/10 rounded-full blur-[80px]"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-4 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[10px] font-bold uppercase tracking-[0.4em] mb-8">
+                            Visi Utama
+                        </span>
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed max-w-4xl mx-auto italic">
+                            <?= $visi_text ?>
+                        </h2>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="mb-16">
-            <div class="flex items-center gap-4 mb-8" data-aos="fade-up">
-                <span class="w-10 h-0.5 bg-[#002b54]"></span>
-                <h3 class="text-xl font-bold text-[#002b54]">Misi Strategis</h3>
-            </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <?php foreach($vm_data['misi'] as $index => $misi): ?>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group" data-aos="fade-up">
-                    <span class="absolute top-0 right-0 bg-gray-50 text-gray-200 text-6xl font-bold -mt-2 -mr-2 opacity-50 group-hover:text-blue-50 transition-colors">
-                        <?= $index + 1 ?>
-                    </span>
-                    
-                    <div class="relative z-10">
-                        <div class="w-10 h-10 rounded-lg bg-blue-50 text-[#002b54] flex items-center justify-center font-bold mb-4 border border-blue-100 group-hover:bg-[#002b54] group-hover:text-white transition-colors">
-                            <?= $index + 1 ?>
-                        </div>
-                        <p class="text-slate-600 leading-relaxed text-sm md:text-base text-justify">
+            <div class="lg:col-span-6 space-y-8" data-aos="fade-up">
+                <div class="flex items-center gap-4 border-b border-slate-100 pb-4">
+                    <div class="w-10 h-10 rounded-xl bg-red-950 flex items-center justify-center text-yellow-500 shadow-md">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-red-950 uppercase tracking-tight">Misi Kami</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <?php foreach($vm_data['misi'] as $index => $misi): ?>
+                    <div class="group flex gap-5 p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-md transition-all duration-300" data-aos="fade-up">
+                        <span class="shrink-0 w-8 h-8 rounded-lg bg-red-950 text-white flex items-center justify-center font-bold text-xs">
+                            <?= str_pad($index + 1, 2, '0', STR_PAD_LEFT) ?>
+                        </span>
+                        <p class="text-sm md:text-base leading-relaxed text-slate-600 group-hover:text-slate-900 transition-colors">
                             <?= $misi ?>
                         </p>
                     </div>
-                    <div class="absolute bottom-0 left-0 h-1 w-0 bg-[#002b54] group-hover:w-full transition-all duration-500"></div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <div class="lg:col-span-4 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm h-full" data-aos="zoom-in">
-                <h3 class="text-xl font-bold text-[#002b54] mb-6 flex items-center gap-3">
-                    <svg class="w-6 h-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    Tujuan
-                </h3>
-                <ul class="space-y-6">
-                    <?php foreach($vm_data['tujuan'] as $tujuan): ?>
-                    <li class="flex items-start gap-3 group">
-                        <span class="mt-1.5 w-1.5 h-1.5 bg-gray-300 rounded-full group-hover:bg-yellow-500 group-hover:scale-150 transition-all duration-300 shrink-0"></span>
-                        <span class="text-sm text-slate-600 group-hover:text-slate-900 transition-colors text-justify">
-                            <?= $tujuan ?>
-                        </span>
-                    </li>
                     <?php endforeach; ?>
-                </ul>
+                </div>
             </div>
 
-            <div class="lg:col-span-8 bg-slate-50 rounded-3xl p-8 border border-slate-200/60 h-full" data-aos="zoom-in">
-                <h3 class="text-xl font-bold text-[#002b54] mb-6 flex items-center gap-3">
-                    <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Sasaran & Target
-                </h3>
+            <div class="lg:col-span-6 space-y-12" >
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <?php foreach($vm_data['sasaran'] as $sasaran): ?>
-                    <div class="flex items-center p-3 bg-white rounded-xl border border-white shadow-sm hover:border-blue-200 transition-colors group">
-                        <svg class="w-4 h-4 text-green-500 mr-3 shrink-0 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        <span class="text-sm text-slate-700 font-medium group-hover:text-slate-900" >
-                            <?= $sasaran ?>
-                        </span>
+                <div data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-red-950 mb-6 flex items-center gap-3">
+                        <span class="w-1.5 h-6 bg-yellow-500 rounded-full"></span>
+                        Tujuan Pendidikan
+                    </h3>
+                    <div class="grid grid-cols-1 gap-3" >
+                        <?php foreach($vm_data['tujuan'] as $tujuan): ?>
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-red-200 transition-colors group" data-aos="fade-up">
+                            <div class="mt-1 bg-red-950 rounded p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700 leading-snug"><?= $tujuan ?></span>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
                 </div>
+
+                <div data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-red-950 mb-6 flex items-center gap-3">
+                        <span class="w-1.5 h-6 bg-red-950 rounded-full"></span>
+                        Sasaran & Target Strategis
+                    </h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <?php foreach($vm_data['sasaran'] as $sasaran): ?>
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-red-200 transition-colors group" data-aos="fade-up">
+                            <div class="mt-1 bg-red-950 rounded p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700 leading-snug"><?= $sasaran ?></span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
             </div>
-
         </div>
-
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8" data-aos="fade-up">
     
-    <div class="bg-[#002b54] p-5 flex items-center gap-4">
-        <div class="w-10 h-10 rounded-full bg-yellow-400 text-[#002b54] flex items-center justify-center font-bold text-xl shadow-md">
+    <div class="bg-red-950 p-5 flex items-center gap-4">
+        <div class="w-10 h-10 rounded-full bg-yellow-400 text-red-950 flex items-center justify-center font-bold text-xl shadow-md">
             <?= $step['number'] ?>
         </div>
         <h3 class="text-white font-bold text-xl"><?= $step['title'] ?></h3>

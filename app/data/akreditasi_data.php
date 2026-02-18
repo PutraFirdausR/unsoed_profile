@@ -32,7 +32,7 @@ $akreditasiData = [
 
 $arsipData = [
     ['title' => 'Arsip Akreditasi 2000 - 2005', 'file' => '2000 – 2005.pdf'],
-    ['title' => 'Arsip Akreditasi 2006 – 2011 ', 'file' => '2006 – 2011 .pdf'],
+    ['title' => 'Arsip Akreditasi 2006 – 2011 ', 'file' => '2006 – 2011.pdf'],
     ['title' => 'Arsip Akreditasi 2010 – 2015', 'file' => '2010 – 2015.pdf'],
     ['title' => 'Arsip Akreditasi 2015 – 2020', 'file' => '2015 – 2020.pdf'],
     ['title' => 'Arsip Akreditasi MIH 2016 - 2021 ', 'file' => '2016 – 2021.pdf'],

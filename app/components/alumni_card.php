@@ -4,11 +4,11 @@
         <img src="<?= $alumni['foto'] ?>" 
              alt="<?= htmlspecialchars($alumni['nama']) ?>" 
              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-             onerror="this.src='https://ui-avatars.com/api/?name=<?= urlencode($alumni['nama']) ?>&background=eff6ff&color=002b54&size=512'">
+             onerror="this.src='https://ui-avatars.com/api/?name=<?= urlencode($alumni['nama']) ?>&background=fef2f2&color=450a0a&size=512'">
     </div>
 
     <div class="p-6 flex flex-col grow">
-        <h3 class="text-lg font-bold text-[#002b54] mb-1 leading-snug">
+        <h3 class="text-lg font-bold text-red-950 mb-1 leading-snug">
             <?= htmlspecialchars($alumni['nama']) ?>
         </h3>
         

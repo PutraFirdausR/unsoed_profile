@@ -4,7 +4,7 @@ return [
     'sejarah' => [
         'intro' => 'Pendirian Fakultas Hukum UNSOED didahului dengan pembentukan panitia berdasarkan Keputusan Rektor Universitas Jenderal Soedirman melalui Surat Kep. 022/PT30.Y/E.1979 membentuk Panitia untuk menjajaki kemungkinan berdirinya Fakultas Hukum dan mengadakan konsultasi dengan Fakultas Hukum di beberapa universitas yang sudah lebih awal lahir seperti Universitas Indonesia, Universitas Padjadjaran, Universitas Diponegoro, dan Universitas Gadjah Mada.',
         
-        'quote' => '"Dasar pemikiran pendirian Fakultas Hukum ialah adanya kebutuhan yang semakin mendesak akan adanya kebutuhan sarjana hukum yang profesional dan kompeten."',
+        'quote' => 'Dasar pemikiran pendirian Fakultas Hukum ialah adanya kebutuhan yang semakin mendesak akan adanya kebutuhan sarjana hukum yang profesional dan kompeten.',
         
         'paragraphs' => [
             'Berdasarkan hasil konsultasi tersebut, Panitia membuat rencana lengkap untuk mendirikan Fakultas Hukum. Melalui surat kawat tanggal 13 Mei 1981 dari Direktur Pembinaan Sarana Akademis, Fakultas Hukum Universitas Jenderal Soedirman dapat mulai menerima mahasiswa tahun akademik 1981/1982. Selanjutnya berdasarkan Keputusan Presiden Nomor 50/1982 Fakultas Hukum secara resmi menjadi salah satu Fakultas di lingkungan Universitas Jenderal Soedirman.',

@@ -21,7 +21,7 @@ function get_service_icon($type) {
 }
 ?>
 
-<section class="py-16 bg-[#002b54] border-b-2 border-white">
+<section class="py-16 bg-red-950 border-b-2 border-white">
     <div class="container mx-auto px-4 md:px-8">
         
         <div class="text-center mb-10">
@@ -29,10 +29,8 @@ function get_service_icon($type) {
                 Layanan Digital & Sistem Informasi
             </h2>
             <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 rounded-full"
-                 data-aos="fade-zoom-in"
-                 data-aos-easing="ease-in-back"
-                 data-aos-delay="100"
-                 data-aos-offset="0">
+                 data-aos="fade-right"
+                 data-aos-delay="200">
              </div>
         </div>
 
@@ -43,14 +41,14 @@ function get_service_icon($type) {
             
             <a href="<?= $svc['link'] ?>" target="_blank" class="group bg-white rounded-xl p-4 flex items-center gap-4 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-yellow-400">
                 
-                <div class="shrink-0 w-12 h-12 rounded-full bg-[#002b54] text-white flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-300">
+                <div class="shrink-0 w-12 h-12 rounded-full bg-red-950 text-white flex items-center justify-center group-hover:bg-yellow-500 transition-colors duration-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <?= get_service_icon($svc['icon_type']) ?>
                     </svg>
                 </div>
 
                 <div class="grow">
-                    <h3 class="text-sm font-extrabold text-[#002b54] uppercase leading-tight group-hover:text-black transition-colors">
+                    <h3 class="text-sm font-extrabold text-red-950 uppercase leading-tight group-hover:text-black transition-colors">
                         <?= htmlspecialchars($svc['title']) ?>
                     </h3>
                     </div>

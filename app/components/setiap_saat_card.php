@@ -1,8 +1,8 @@
-<div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 card-item flex flex-col h-full border-t-4 border-t-[#002b54] overflow-hidden group" data-aos="fade-up">
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 card-item flex flex-col h-full border-t-4 border-t-red-950 overflow-hidden group" data-aos="fade-up">
     
     <div class="p-6 pb-2">
         <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-[#002b54] flex items-center justify-center shrink-0 border border-blue-100 group-hover:bg-[#002b54] group-hover:text-white transition-colors duration-300">
+            <div class="w-12 h-12 rounded-xl bg-red-50 text-red-950 flex items-center justify-center shrink-0 border border-red-100 group-hover:bg-red-950 group-hover:text-white transition-colors duration-300">
                 <?php 
                 $icon = $data['icon'];
                 if($icon == 'building') echo '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>';
@@ -14,7 +14,7 @@
                 else echo '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
                 ?>
             </div>
-            <h3 class="text-lg font-bold text-[#002b54] category-title leading-snug"><?= $data['category'] ?></h3>
+            <h3 class="text-lg font-bold text-red-950 category-title leading-snug"><?= $data['category'] ?></h3>
         </div>
         <div class="h-px w-full bg-linear-to-r from-gray-200 to-transparent"></div>
     </div>
@@ -34,15 +34,15 @@
                     </div>
 
                 <?php else: ?>
-                    <a href="<?= $item['link'] ?>" target="<?= ($item['type']=='internal')?'_self':'_blank' ?>" class="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 hover:border-blue-100 border border-transparent transition-all duration-200 group/link">
-                        <span class="w-2 h-2 rounded-full bg-blue-600 shrink-0 group-hover/link:scale-125 transition-transform shadow-sm shadow-blue-200"></span>
+                    <a href="<?= $item['link'] ?>" target="<?= ($item['type']=='internal')?'_self':'_blank' ?>" class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-50 hover:border-red-100 border border-transparent transition-all duration-200 group/link">
+                        <span class="w-2 h-2 rounded-full bg-red-600 shrink-0 group-hover/link:scale-125 transition-transform shadow-sm shadow-red-200"></span>
                         <div class="flex-1 min-w-0">
-                            <span class="font-semibold text-sm text-gray-700 group-hover/link:text-[#002b54] item-text block"><?= $item['title'] ?></span>
+                            <span class="font-semibold text-sm text-gray-700 group-hover/link:text-red-950 item-text block"><?= $item['title'] ?></span>
                             <?php if(isset($item['note'])): ?>
-                                <span class="text-[11px] text-gray-500 block mt-0.5 group-hover/link:text-blue-600"><?= $item['note'] ?></span>
+                                <span class="text-[11px] text-gray-500 block mt-0.5 group-hover/link:text-red-600"><?= $item['note'] ?></span>
                             <?php endif; ?>
                         </div>
-                        <svg class="w-4 h-4 text-gray-300 group-hover/link:text-blue-600 group-hover/link:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-4 h-4 text-gray-300 group-hover/link:text-red-600 group-hover/link:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </a>

@@ -34,7 +34,7 @@ $asset_path = '/unsoed_profile/public/assets';
         </div>
     </div>
 
-    <div class="bg-[#002b54] relative">
+    <div class="bg-red-950 relative">
         <div class="container mx-auto px-4 md:px-8">
             <div class="flex justify-between items-center h-20"> 
                 

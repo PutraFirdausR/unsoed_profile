@@ -3,19 +3,21 @@ $img_file = $person['image'];
 $display_img = $base_url . "/public/assets/img/profil_kependidikan/" . $img_file;
 
 if(empty($img_file)) {
-    $display_img = 'https://ui-avatars.com/api/?name=' . urlencode($person['name']) . '&background=002b54&color=fff&size=400';
+    // Menggunakan hex 450a0a untuk red-950 pada avatar cadangan
+    $display_img = 'https://ui-avatars.com/api/?name=' . urlencode($person['name']) . '&background=450a0a&color=fff&size=400';
 }
 ?>
 
-<div class="group bg-white rounded-lg border border-gray-200 hover:border-[#002b54] transition-all duration-300 p-5 hover:shadow-md cursor-pointer h-full flex flex-col justify-between"
-     onclick="openStaffModal('<?= $display_img ?>', '<?= htmlspecialchars($person['name'], ENT_QUOTES) ?>', '<?= htmlspecialchars($person['department'], ENT_QUOTES) ?>')" data-aos="fade-up">
+<div class="group bg-white rounded-lg border border-gray-200 hover:border-red-950 transition-all duration-300 p-5 hover:shadow-md cursor-pointer h-full flex flex-col justify-between"
+     onclick="openStaffModal('<?= $display_img ?>', '<?= htmlspecialchars($person['name'], ENT_QUOTES) ?>', '<?= htmlspecialchars($person['department'], ENT_QUOTES) ?>')" 
+     data-aos="fade-up">
     
     <div>
-        <h3 class="text-base font-bold text-[#002b54] leading-snug group-hover:text-blue-700 mb-2">
+        <h3 class="text-base font-bold text-red-950 leading-snug group-hover:text-yellow-600 mb-2 transition-colors">
             <?= htmlspecialchars($person['name']) ?>
         </h3>
         <div class="w-8 h-0.5 bg-yellow-500 opacity-50 mb-2"></div>
-        <p class="text-xs text-gray-500 uppercase tracking-wide">
+        <p class="text-xs text-gray-400 uppercase tracking-wide font-medium">
             Staf Kependidikan
         </p>
     </div>

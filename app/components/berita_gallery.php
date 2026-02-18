@@ -15,16 +15,13 @@ try {
 <section class="py-12 bg-white">
     <div class="container mx-auto px-4 md:px-8">
         
-        <div class="text-center mb-10"
-     >
-            <h2 class="text-2xl md:text-3xl font-bold text-[#002b54] uppercase tracking-wider" sdata-aos="zoom-in">
-                Berita & Kabar Fakultass Hukum
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-red-950 uppercase tracking-wider" data-aos="zoom-in">
+                Berita & Kabar Fakultas Hukum
             </h2>
             <div class="h-1 w-20 bg-yellow-500 mx-auto mt-3 rounded-full"
-                 data-aos="fade-zoom-in"
-                 data-aos-easing="ease-in-back"
-                 data-aos-delay="100"
-                 data-aos-offset="0">
+                 data-aos="fade-right"
+                 data-aos-delay="200">
              </div>
         </div>
 
@@ -32,7 +29,7 @@ try {
             <p class="text-center text-gray-400 mt-8 italic">Belum ada berita yang diunggah.</p>
         <?php else: ?>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"  data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" data-aos="fade-up">
                 
                 <?php foreach($gallery_news as $item): 
                     $folder_gambar = '/unsoed_profile/public/assets/img/';
@@ -47,19 +44,19 @@ try {
                              alt="<?= e($item['title']) ?>" 
                              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         
-                        <div class="absolute top-4 left-4 bg-yellow-500 text-[#002b54] text-xs font-bold px-3 py-1 rounded shadow">
+                        <div class="absolute top-4 left-4 bg-yellow-500 text-red-950 text-xs font-bold px-3 py-1 rounded shadow">
                             <?= function_exists('tgl_indo') ? tgl_indo($item['date']) : date('d M Y', strtotime($item['date'])) ?>
                         </div>
                     </div>
 
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug group-hover:text-[#002b54] transition-colors line-clamp-2">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug group-hover:text-red-950 transition-colors line-clamp-2">
                             <?= e($item['title']) ?>
                         </h3>
                         
                         <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
                             <span class="text-xs font-semibold text-gray-500 flex items-center gap-1">
-                                <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <svg class="w-4 h-4 text-red-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                 Baca Selengkapnya
                             </span>
                             
@@ -74,9 +71,8 @@ try {
 
             </div>
 
-            <div class="mt-12 text-center"
-                 data-aos="zoom-in">
-               <a href="/unsoed_profile/public/semua-berita" class="inline-flex items-center gap-2 px-8 py-3 bg-[#002b54] text-white font-bold rounded-full hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <div class="mt-12 text-center" data-aos="zoom-in">
+               <a href="/unsoed_profile/public/semua-berita" class="inline-flex items-center gap-2 px-8 py-3 bg-red-950 text-white font-bold rounded-full hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                  Lihat Semua Berita
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                </a>

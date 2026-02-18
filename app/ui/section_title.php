@@ -1,7 +1,7 @@
 <?php
 $title = $title ?? 'Judul Section';
 $align = $align ?? 'center'; 
-$color = $color ?? 'text-[#002b54]';
+$color = $color ?? 'text-red-950';
 ?>
 
 <div class="text-<?= $align ?> mb-10">
