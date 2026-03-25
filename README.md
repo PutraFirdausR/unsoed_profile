@@ -1,4 +1,8 @@
-<img width="861" height="572" alt="image" src="https://github.com/user-attachments/assets/4d731284-66a1-40e1-8c58-24a9e23e6bf6" /><div align="center">
+<div align="center">
+
+  <img src="https://unsoed.ac.id/wp-content/uploads/2024/07/Fakultas-Hukum.jpg" alt="Unsoed Profile Banner" width="300" style="border-radius: 10px;">
+
+  <br><br>
 
   <h1>🎓 Unsoed Profile Website</h1>
   <p><strong>Modern & Responsive University Web Profile</strong></p>
@@ -11,41 +15,39 @@
 
 <hr />
 
-## 📖 Tentang Proyek Ini
+## 📖 About This Project
 
-**Unsoed Profile** adalah sebuah purwarupa (*prototype*) atau proyek *website profile* yang didedikasikan untuk Universitas Jenderal Soedirman (UNSOED). Proyek ini dirancang untuk menyajikan informasi akademik, fasilitas kampus, dan profil universitas dengan tampilan yang modern, bersih (*clean*), dan responsif di berbagai perangkat.
+**Unsoed Profile** is a prototype or web profile project dedicated to Universitas Jenderal Soedirman (UNSOED). This project is designed to present academic information, campus facilities, and the university's profile with a modern, clean, and responsive design across various devices.
 
-Fokus utama dari pengembangan ini adalah menciptakan *User Experience* (UX) yang informatif bagi calon mahasiswa, civitas akademika, maupun masyarakat umum.
+The main focus of this development is to create an informative User Experience (UX) for prospective students, the academic community, and the general public.
 
-## ✨ Fitur Utama
+## ✨ Key Features
 
-- **Navigasi Intuitif:** Memudahkan pencarian informasi terkait fakultas, program studi, dan pendaftaran.
-- **Desain Responsif:** Tampilan yang menyesuaikan secara otomatis baik saat diakses dari *smartphone*, tablet, maupun desktop berkat implementasi Tailwind CSS.
-- **Performa Optimal:** Dibangun menggunakan PHP murni / Framework untuk pemrosesan *server-side* yang cepat dan efisien.
-- **Galeri Kampus:** Menampilkan dokumentasi visual dari kegiatan dan fasilitas universitas.
-
----
+- **Intuitive Navigation:** Makes it easy to find information regarding faculties, study programs, and admissions.
+- **Responsive Design:** A layout that automatically adapts whether accessed from a smartphone, tablet, or desktop, thanks to the implementation of Tailwind CSS.
+- **Optimal Performance:** Built using native PHP / Framework for fast and efficient server-side processing.
+- **Campus Gallery:** Displays visual documentation of university activities and facilities.
 
 ## 🛠️ *Tech Stack*
 
-Proyek ini dikembangkan dengan teknologi berikut:
+This project was developed using the following technologies:
 
-- **Bahasa Pemrograman Utama:** PHP
+- **Main Programming Language:** PHP
 - **Styling / CSS Framework:** Tailwind CSS
-- **Interaktivitas:** JavaScript Vanilla
-- **Package Manager:** NPM (untuk instalasi Tailwind CSS)
+- **Interactivity:** Vanilla JavaScript
+- **Package Manager:** NPM (for Tailwind CSS installation)
 
-## 📂 Struktur Direktori
+## 📂 Directory Structure
 
-Berikut adalah gambaran struktur folder pada aplikasi ini:
+Here is an overview of the folder structure in this application:
 
 ```text
 unsoed_profile/
-├── app/                 # Inti aplikasi (Controller, Model, dll jika menggunakan MVC)
-├── public/              # File publik (index.php, gambar, CSS/JS hasil compile)
-├── src/                 # File sumber (CSS input Tailwind, dll)
-├── node_modules/        # Dependensi NPM (Tailwind)
+├── app/                 # Application core (Controllers, Models, etc., if using MVC)
+├── public/              # Public files (index.php, images, compiled CSS/JS)
+├── src/                 # Source files (Tailwind input CSS, etc.)
+├── node_modules/        # NPM dependencies (Tailwind)
+├── package.json         # NPM configuration
+├── tailwind.config.js   # Custom Tailwind CSS configuration
+└── README.md            # Project documentation
 ```
-├── package.json         # Konfigurasi NPM
-├── tailwind.config.js   # Konfigurasi kustom Tailwind CSS
-└── README.md            # Dokumentasi proyek
