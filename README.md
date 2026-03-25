@@ -1,8 +1,4 @@
-<div align="center">
-
-  <img src="https://via.placeholder.com/800x300.png?text=Unsoed+Profile+Banner" alt="Unsoed Profile Banner" width="800" style="border-radius: 10px;">
-
-  <br><br>
+<img width="861" height="572" alt="image" src="https://github.com/user-attachments/assets/4d731284-66a1-40e1-8c58-24a9e23e6bf6" /><div align="center">
 
   <h1>🎓 Unsoed Profile Website</h1>
   <p><strong>Modern & Responsive University Web Profile</strong></p>
